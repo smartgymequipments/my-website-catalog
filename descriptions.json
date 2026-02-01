@@ -1,0 +1,781 @@
+{
+    "drop-bar": {
+        "name": "drop bar",
+        "category": "Accessories\uf028",
+        "subcategory": "General",
+        "description": "",
+        "specs": {
+            "material": "steel"
+        }
+    },
+    "landmine": {
+        "name": "landmine",
+        "category": "Accessories\uf028",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "slip-squat-adjustable-stand": {
+        "name": "Slip squat adjustable stand",
+        "category": "Accessories\uf028",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "standing-lateral-raise": {
+        "name": "standing lateral raise",
+        "category": "Accessories\uf028",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "t-bar": {
+        "name": "t bar",
+        "category": "Accessories\uf028",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "cable-cross-over": {
+        "name": "Cable cross over",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "functional-trainer": {
+        "name": "Functional trainer",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "functional-trainer-with-smith": {
+        "name": "functional trainer with smith",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "5-station-multi-gym": {
+        "name": "5 station multi gym",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "hexagon-type": {
+        "name": "Hexagon type",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "home-multi-gym\uf028": {
+        "name": "Home multi gym\uf028",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "it-company-model-1": {
+        "name": "IT company model 1",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "it-company-model-2": {
+        "name": "IT Company model 2",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "multi-gym-2025": {
+        "name": "multi gym 2025",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "new-model": {
+        "name": "New model",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "type-(i)": {
+        "name": "Type (i)",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "type-(ii)": {
+        "name": "Type (ii)",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "type-(iii)": {
+        "name": "Type (iii)",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "type-4-station": {
+        "name": "Type 4 station",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "type-arch": {
+        "name": "Type arch",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "type-l": {
+        "name": "Type L",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "multi gym or jungle gym",
+        "description": "",
+        "specs": {}
+    },
+    "power-rack-with-smith-machine": {
+        "name": "power rack with smith machine",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "smith-machine": {
+        "name": "smith machine",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "smith-machine-with-squat-rack": {
+        "name": "smith machine with squat rack",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "triangular-multipurpose-cross-over": {
+        "name": "triangular multipurpose cross over",
+        "category": "Multifunctional and functional equipments",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "abs-exercise-machine": {
+        "name": "abs exercise machine",
+        "category": "plate loaded equipments",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "alternate-seated-biceps-curl": {
+        "name": "alternate seated biceps curl",
+        "category": "plate loaded equipments",
+        "subcategory": "arms",
+        "description": "",
+        "specs": {}
+    },
+    "plate-loaded-tricep-push-down-machine": {
+        "name": "Plate loaded tricep push down machine",
+        "category": "plate loaded equipments",
+        "subcategory": "arms",
+        "description": "",
+        "specs": {}
+    },
+    "prechur-curl": {
+        "name": "Prechur curl",
+        "category": "plate loaded equipments",
+        "subcategory": "arms",
+        "description": "",
+        "specs": {}
+    },
+    "seated-plate-loaded-triceps-extension": {
+        "name": "Seated plate loaded triceps extension",
+        "category": "plate loaded equipments",
+        "subcategory": "arms",
+        "description": "",
+        "specs": {}
+    },
+    "triceps-dips": {
+        "name": "triceps dips",
+        "category": "plate loaded equipments",
+        "subcategory": "arms",
+        "description": "",
+        "specs": {}
+    },
+    "incline-chest-flies": {
+        "name": "incline chest flies",
+        "category": "plate loaded equipments",
+        "subcategory": "Chest",
+        "description": "",
+        "specs": {}
+    },
+    "incline-chest-press": {
+        "name": "incline chest press",
+        "category": "plate loaded equipments",
+        "subcategory": "Chest",
+        "description": "",
+        "specs": {}
+    },
+    "isolatral-seated-chest-press": {
+        "name": "isolatral seated chest press",
+        "category": "plate loaded equipments",
+        "subcategory": "Chest",
+        "description": "",
+        "specs": {}
+    },
+    "multi-press": {
+        "name": "multi press",
+        "category": "plate loaded equipments",
+        "subcategory": "Chest",
+        "description": "",
+        "specs": {}
+    },
+    "compound-row-machine": {
+        "name": "compound row machine",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "isolatral-row": {
+        "name": "isolatral row",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "latpull-down": {
+        "name": "latpull down",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "latpull-down-with-chest-press": {
+        "name": "latpull down with chest press",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "liner-row-machine": {
+        "name": "liner row machine",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "liner-t-bar-row": {
+        "name": "liner t-bar row",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "low-row": {
+        "name": "low row",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "plate-loaded-high-pull-down-machine": {
+        "name": "Plate loaded high pull down machine",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "reverse-hyper-extension": {
+        "name": "reverse hyper extension",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "reverse-latpull-down-machine": {
+        "name": "reverse latpull down machine",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "standing-t-bar-row": {
+        "name": "standing t bar row",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "t-bar-row": {
+        "name": "t bar row",
+        "category": "plate loaded equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "45-degree-leg-press": {
+        "name": "45 degree leg press",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "assisted-glute-ham-raise": {
+        "name": "Assisted glute ham raise",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "belt-squat": {
+        "name": "belt squat",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "hacksquat": {
+        "name": "hacksquat",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "leg-curl-and-leg-extension": {
+        "name": "leg curl and leg extension",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "leg-press-leverage-type": {
+        "name": "leg press leverage type",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "leg-press-with-hack-squat": {
+        "name": "leg press with hack squat",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "pendulum-squat": {
+        "name": "pendulum squat",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "power-squat-(or)-v-squat": {
+        "name": "power squat (or) v squat",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "seated-calf-raise": {
+        "name": "seated calf raise",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "seated-calf-raise-with-tibia-raise": {
+        "name": "Seated calf raise with tibia raise",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "swing-squat": {
+        "name": "swing squat",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "vertical-leg-press": {
+        "name": "vertical leg press",
+        "category": "plate loaded equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "rear-delt-flies-machine": {
+        "name": "rear delt flies machine",
+        "category": "plate loaded equipments",
+        "subcategory": "shoulder",
+        "description": "",
+        "specs": {}
+    },
+    "seated-lateral-raise": {
+        "name": "seated lateral raise",
+        "category": "plate loaded equipments",
+        "subcategory": "shoulder",
+        "description": "",
+        "specs": {}
+    },
+    "seated-shoulder-press-with-lateral-raise-machine": {
+        "name": "Seated shoulder press with lateral raise machine",
+        "category": "plate loaded equipments",
+        "subcategory": "shoulder",
+        "description": "",
+        "specs": {}
+    },
+    "shoulder-press": {
+        "name": "Shoulder press",
+        "category": "plate loaded equipments",
+        "subcategory": "shoulder",
+        "description": "",
+        "specs": {}
+    },
+    "shrug-machine-with-deadlift": {
+        "name": "Shrug machine with deadlift",
+        "category": "plate loaded equipments",
+        "subcategory": "shoulder",
+        "description": "",
+        "specs": {}
+    },
+    "standing-lateral-raise-machine": {
+        "name": "Standing lateral raise machine",
+        "category": "plate loaded equipments",
+        "subcategory": "shoulder",
+        "description": "",
+        "specs": {}
+    },
+    "half-rack": {
+        "name": "half rack",
+        "category": "Racks and rigs",
+        "subcategory": "Racks",
+        "description": "",
+        "specs": {}
+    },
+    "power-rack": {
+        "name": "power rack",
+        "category": "Racks and rigs",
+        "subcategory": "Racks",
+        "description": "",
+        "specs": {}
+    },
+    "power-rack-with-smith-machine-racks-and-rigs": {
+        "name": "power rack with smith machine",
+        "category": "Racks and rigs",
+        "subcategory": "Racks",
+        "description": "",
+        "specs": {}
+    },
+    "squat-rack\uf028": {
+        "name": "squat rack\uf028",
+        "category": "Racks and rigs",
+        "subcategory": "Racks",
+        "description": "",
+        "specs": {}
+    },
+    "crossfit-cage": {
+        "name": "crossfit cage",
+        "category": "Racks and rigs",
+        "subcategory": "Rigs",
+        "description": "",
+        "specs": {}
+    },
+    "biceps-prechur-curl": {
+        "name": "Biceps prechur curl",
+        "category": "selectorized equipments",
+        "subcategory": "arms",
+        "description": "",
+        "specs": {}
+    },
+    "forearm-machine": {
+        "name": "forearm machine",
+        "category": "selectorized equipments",
+        "subcategory": "arms",
+        "description": "",
+        "specs": {}
+    },
+    "chest-press": {
+        "name": "Chest press",
+        "category": "selectorized equipments",
+        "subcategory": "Chest",
+        "description": "",
+        "specs": {}
+    },
+    "multi-press-selectorized-equipments": {
+        "name": "Multi press",
+        "category": "selectorized equipments",
+        "subcategory": "Chest",
+        "description": "",
+        "specs": {}
+    },
+    "peck-fly-with-rear-delt": {
+        "name": "peck fly with rear delt",
+        "category": "selectorized equipments",
+        "subcategory": "Chest",
+        "description": "",
+        "specs": {}
+    },
+    "assisted-chin-ups-and-dips": {
+        "name": "assisted chin ups and dips",
+        "category": "selectorized equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "dual-lat-pull-down": {
+        "name": "dual lat pull down",
+        "category": "selectorized equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "latpull-and-row": {
+        "name": "latpull and row",
+        "category": "selectorized equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "rowing": {
+        "name": "rowing",
+        "category": "selectorized equipments",
+        "subcategory": "lat",
+        "description": "",
+        "specs": {}
+    },
+    "adductor---abductor": {
+        "name": "Adductor - abductor",
+        "category": "selectorized equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "leg-curl-and-leg-extension-(-seated---prone-)": {
+        "name": "leg curl and leg extension ( Seated - prone )",
+        "category": "selectorized equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "seated-leg-curl-and-leg-extension": {
+        "name": "seated leg curl and leg extension",
+        "category": "selectorized equipments",
+        "subcategory": "legs",
+        "description": "",
+        "specs": {}
+    },
+    "lateral-raise": {
+        "name": "lateral raise",
+        "category": "selectorized equipments",
+        "subcategory": "shoulder",
+        "description": "",
+        "specs": {}
+    },
+    "shoulder-press-machine": {
+        "name": "Shoulder press machine",
+        "category": "selectorized equipments",
+        "subcategory": "shoulder",
+        "description": "",
+        "specs": {}
+    },
+    "adjustable-abdominal-board": {
+        "name": "Adjustable abdominal board",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "bench-pull": {
+        "name": "bench pull",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "bi---tri-bench": {
+        "name": "Bi - tri bench",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "fid-bench": {
+        "name": "FID bench",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "flat-bench": {
+        "name": "flat bench",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "hyper-extension": {
+        "name": "hyper extension",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "incline-bench": {
+        "name": "Incline bench",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "olympic-decline-bench": {
+        "name": "olympic decline bench",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "olympic-fid-bench": {
+        "name": "olympic FID bench",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "olympic-flat-bench": {
+        "name": "olympic flat bench",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "olympic-incline-bench": {
+        "name": "olympic incline bench",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "olympic-rod-stand": {
+        "name": "Olympic rod stand",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "plate-stand": {
+        "name": "plate stand",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "prechur-curl-manual": {
+        "name": "prechur curl manual",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "seal-row": {
+        "name": "Seal row",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "sissy-squat": {
+        "name": "sissy squat",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "sitting-standing-twister": {
+        "name": "sitting standing twister",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "sled": {
+        "name": "sled",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "three-tier-dumbbell-rack": {
+        "name": "three tier dumbbell rack",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "total-arm-blaster": {
+        "name": "Total arm blaster",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "twister": {
+        "name": "twister",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "two-tier-dumbbell-rack": {
+        "name": "two tier dumbbell rack",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "utility-stool": {
+        "name": "utility stool",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "vertical-knee-raise": {
+        "name": "vertical knee raise",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "vertical-knee-raise-with-chin-ups": {
+        "name": "vertical knee raise with chin ups",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    },
+    "weight-lifting-platform": {
+        "name": "weight lifting platform",
+        "category": "weight benches and storage",
+        "subcategory": "General",
+        "description": "",
+        "specs": {}
+    }
+}

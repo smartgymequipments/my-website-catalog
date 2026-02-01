@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Management Dashboard</title>
+    <meta name="description" content="Premium dashboard for viewing and managing gym equipment specifications.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Unbounded:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="data.js" defer></script>
+    <script src="thumbnails.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <!-- Left: Logo -->
+            <div class="header-left">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" alt="I-SMART Logo" class="site-logo-small">
+                </a>
+            </div>
+
+            <!-- Center: Search Bar -->
+            <div class="header-center">
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" placeholder="Search equipment..."
+                        aria-label="Search equipment">
+                    <button class="search-icon-btn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+                            fill="none">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <div id="search-results" class="search-results hidden"></div>
+                </div>
+            </div>
+
+            <!-- Right: Spacer -->
+            <div class="header-right">
+                <a href="quote.html" class="quote-btn">Get Quote for your Gym Setup</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container hero-section">
+
+        <p id="page-subtitle">Premium Gym Equipment Catalogue</p>
+    </div>
+
+    <main class="container">
+        <!-- New Category Showcase Grid -->
+        <div id="category-showcase" class="category-showcase"></div>
+
+        <!-- Main Category selection is handled here. Sub-sections are now on separate pages. -->
+
+    </main>
+
+    <!-- Modal Backdrop and Container -->
+    <div id="modal-backdrop" class="modal-backdrop hidden">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <button id="modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Equipment Name</h2>
+                <span class="modal-category" id="modal-category">Category</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <button id="prev-img" class="carousel-btn prev" aria-label="Previous Image">&lt;</button>
+                    <img id="modal-img" src="" alt="Equipment Image" class="modal-img">
+                    <button id="next-img" class="carousel-btn next" aria-label="Next Image">&gt;</button>
+                    <div class="carousel-dots" id="carousel-dots"></div>
+                </div>
+                <div class="modal-details" style="display: none;"></div>
+
+                <!-- Lightbox for Full Size Image -->
+                <div id="lightbox" class="lightbox hidden">
+                    <span id="lightbox-close" class="lightbox-close">&times;</span>
+                    <img id="lightbox-img" class="lightbox-content" src="" alt="Full Size">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919382117096" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" class="whatsapp-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M16 2C8.28 2 2 8.28 2 16c0 2.508.665 4.863 1.83 6.92L2.5 28.5l5.77-1.498A13.921 13.921 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.46c-2.31 0-4.5-.6-6.41-1.74l-.46-.27-4.04 1.05 1.08-3.94-.29-.46C4.6 20.08 3.86 18.1 3.86 16 3.86 9.3 9.3 3.86 16 3.86s12.14 5.44 12.14 12.14-5.44 12.46-12.14 12.46zm6.84-9.33c-.37-.19-2.21-1.09-2.55-1.21-.34-.12-.59-.19-.84.19-.25.37-.96 1.21-1.18 1.46-.22.25-.44.28-.81.09-1.85-.94-3.07-1.63-4.29-3.72-.15-.26.15-.24 1.07-2.09.11-.23.05-.43-.03-.6-.07-.17-.84-2.02-1.15-2.77-.3-.72-.61-.62-.84-.63h-.72c-.25 0-.66.09-1 .46-.34.37-1.31 1.28-1.31 3.12 0 1.84 1.34 3.62 1.53 3.87.19.25 2.63 4.02 6.38 5.64 2.45 1.06 3.39.85 4 .79.69-.07 2.21-.9 2.52-1.77.31-.87.31-1.62.22-1.77-.1-.15-.35-.24-.72-.43z"
+                fill="#FFF" />
+            <path d="M0 0h32v32H0z" fill="none" />
+        </svg>
+    </a>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote</title>
+    <meta name="description" content="Select equipment and get a quote via WhatsApp.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Unbounded:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="data.js" defer></script>
+    <script src="thumbnails.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" alt="I-SMART Logo" class="site-logo-small">
+                </a>
+            </div>
+
+            <div class="header-center">
+                <!-- Search suppressed on quote page or optional -->
+            </div>
+
+            <div class="header-right">
+                <!-- "Get Quote" button not needed on Quote page, or can be a "Home" button -->
+                <a href="index.html" class="quote-btn">Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container hero-section-small">
+        <h1 id="page-title">Get a Quote</h1>
+        <p id="page-subtitle">Select items to request a price</p>
+    </div>
+
+    <main class="container">
+        <form id="quote-form">
+            <!-- Contact Details Section -->
+            <div class="quote-contact-section">
+                <h2 class="section-title">Your Details</h2>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="user-name">Name <span class="required">*</span></label>
+                        <input type="text" id="user-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-number">Contact Number <span class="required">*</span></label>
+                        <input type="tel" id="contact-number" placeholder="Mobile Number" required>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="email-address">Email <span class="required">*</span></label>
+                        <input type="email" id="email-address" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="facility-name">Fitness Facility Name <span
+                                class="optional">(Optional)</span></label>
+                        <input type="text" id="facility-name" placeholder="Gym / Studio Name">
+                    </div>
+                </div>
+            </div>
+
+            <div id="quote-list" class="quote-grid">
+                <!-- Dynamic Content: Categories and Products with Checkboxes -->
+            </div>
+
+            <div class="quote-actions sticky-actions">
+                <div class="selection-info">
+                    <span id="selected-count">0</span> items selected
+                </div>
+                <div class="action-buttons" style="display: flex; gap: 10px; align-items: center;">
+                    <span style="color: var(--text-primary); margin-right: 15px; font-weight: 600;">Get Quote:</span>
+                    <button type="button" class="btn-whatsapp" onclick="submitQuote()"
+                        style="width: 100%; justify-content: center;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="margin-right: 8px;">
+                            <path
+                                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.698c1.005.572 1.903.87 3.05.87 3.197 0 5.772-2.585 5.771-5.767 0-3.184-2.581-5.765-5.763-5.765l-1.229.01zm-1.157 1.637a5.558 5.558 0 0 1 1.157-.113c3.085 0 5.592 2.396 5.592 5.592 0 3.082-2.39 5.592-5.592 5.592-1.041 0-2.022-.292-2.913-.807l-2.008.529.539-1.954c-.588-.958-.897-1.97-.897-3.14-.002-3.196 2.506-5.714 5.765-5.714.653 0 1.258.113 1.258.113zm-.123 2.155c-.173-.087-1.019-.504-1.176-.563-.158-.057-.272-.087-.386.087-.114.173-.442.563-.541.678-.1.115-.201.129-.373.043-.173-.086-.732-.27-1.393-.86-.516-.461-.865-1.03-1.03-1.317-.087-.173-.009-.267.077-.353.078-.078.173-.202.261-.303.086-.101.115-.173.173-.288.057-.115.029-.216-.015-.303-.043-.086-.386-.933-.529-1.278-.14-.34-.282-.293-.386-.299l-.332-.005c-.114 0-.301.043-.458.216-.158.173-.604.59-.604 1.442 0 .852.619 1.675.705 1.79.086.115 1.218 1.86 2.95 2.61.411.178.732.285.986.365.419.133.799.115 1.101.07.336-.05 1.019-.417 1.163-.82.144-.403.144-.75.101-.82-.043-.072-.158-.115-.331-.202z" />
+                        </svg>
+                        Get Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-- Modal Backdrop and Container -->
+    <div id="modal-backdrop" class="modal-backdrop hidden">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <button id="modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Equipment Name</h2>
+                <span class="modal-category" id="modal-category">Category</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <button id="prev-img" class="carousel-btn prev" aria-label="Previous Image">&lt;</button>
+                    <img id="modal-img" src="" alt="Equipment Image" class="modal-img">
+                    <button id="next-img" class="carousel-btn next" aria-label="Next Image">&gt;</button>
+                    <div class="carousel-dots" id="carousel-dots"></div>
+                </div>
+
+                <!-- Quote Selection In Modal using script logic to inject button if needed, or static here -->
+                <div id="modal-quote-action" style="margin-top: 15px; text-align: center;">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <div class="modal-details" style="display: none;"></div>
+
+                <!-- Lightbox for Full Size Image -->
+                <div id="lightbox" class="lightbox hidden">
+                    <span id="lightbox-close" class="lightbox-close">&times;</span>
+                    <img id="lightbox-img" class="lightbox-content" src="" alt="Full Size">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
