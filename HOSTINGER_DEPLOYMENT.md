@@ -1,40 +1,37 @@
-# Deployment Guide for Hostinger
+# Automatic Deployment Guide for Hostinger
 
-I have converted the python admin panel to **PHP**, which is fully compatible with Hostinger Shared Hosting out of the box.
+Your project is now configured for automatic deployment via Git. Follow these steps to connect your Hostinger account to this repository.
 
-## Steps to Deploy
+## Step 1: Connect Repository
 
-1.  **File Manager**:
-    -   Log in to your Hostinger Control Panel (hPanel).
-    -   Go to **File Manager**.
-    -   Navigate to `public_html`.
+1.  Log in to your **Hostinger Control Panel (hPanel)**.
+2.  Navigate to **Advanced** > **Git**.
+3.  **Repository URL**: Enter your GitHub repository URL:
+    `https://github.com/smartgymequipments/my-website-catalog.git`
+4.  **Branch**: Enter `main`.
+5.  **Install Directory**: Leave empty (to deploy to `public_html`) or enter a subfolder name.
+    -   *Note: If `public_html` is not empty, you might need to delete existing files first or use a subfolder.*
+6.  Click **Create**.
 
-2.  **Upload Files**:
-    -   Upload **ALL** files and folders from your local project folder to `public_html`.
-    -   Ensure you include the new files I created:
-        -   `admin_backend.php` (The backend logic)
-        -   `portal-access-99.php` (The login page)
-        -   `forgot-password.php` (Forgot Password page)
-        -   `reset-password.php` (Reset Password page)
-        -   `admin_config.json` (Configuration file)
-        -   `admin.js` (Updated logic)
-        -   `script.js` (Updated search logic)
-        -   `dashboard.html` (Updated dashboard)
-    -   Also ensure `images/` folder and `data.js` are uploaded.
+## Step 2: Set Up Automatic Updates (Webhook)
 
-3.  **Permissions (Important)**:
-    -   For the Admin Panel to work (upload images, add products, reset passwords), the server needs **Write Permissions**.
-    -   In Hostinger File Manager, right-click the `images` folder.
-    -   Select **Attributes** or **Permissions**.
-    -   Ensure it is set to **755** or **777** (if 755 doesn't work).
-    -   Also ensure `data.js`, `admin_config.json`, and the root directory (to create `reset_tokens.json` and `product_metadata.json`) have Write Permissions.
-    -   **Pro Tip**: If features fail, create empty files named `reset_tokens.json` and `product_metadata.json` and set their permissions to 777.
+1.  After creating the Git repository in Hostinger, look for the **Auto Deployment** section or **Webhook URL**.
+2.  Copy the **Webhook URL** provided by Hostinger.
+3.  Go to your **GitHub Repository Settings**:
+    -   Settings > Webhooks > Add webhook.
+    -   **Payload URL**: Paste the Hostinger Webhook URL.
+    -   **Content type**: `application/json`.
+    -   **Trigger**: Just the `push` event.
+    -   Click **Add webhook**.
 
-4.  **Access**:
-    -   Go to your website.
-    -   Type **"khamrade"** in search.
-    -   Or go directly to `yourdomain.com/portal-access-99.php`.
-    -   Login with `admin` / `password123`.
+## Step 3: Verify
 
-## Note
-The Python files (`admin_server.py`, `generate_data.py`) are **NOT** needed on Hostinger. You can skip uploading them.
+1.  Make a change in your local code.
+2.  I (the AI) will push the change to GitHub.
+3.  GitHub will notify Hostinger via the Webhook.
+4.  Hostinger will automatically pull the changes and update your live site.
+
+## Troubleshooting
+
+-   **Permissions**: Ensure the `images` folder and `data.js` have write permissions (755 or 777) in Hostinger File Manager for the admin panel to work.
+-   **Reset**: If deployment fails, you can manually click **"Deploy"** in the Hostinger Git section.
