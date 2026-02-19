@@ -79,7 +79,8 @@ if os.path.exists(images_path):
                     'name': equipment_name,
                     'category': category,
                     'subcategory': subcategory,
-                    'images': sorted(img_paths)
+                    'images': sorted(img_paths),
+                    'date_added': max([os.path.getmtime(os.path.join(root, img)) for img in local_images]) if local_images else 0
                 }
 
 # Write to data.js

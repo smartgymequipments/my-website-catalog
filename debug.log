@@ -1,0 +1,28 @@
+[0205/203802.011:INFO:ddg\webview\webview_embedded\com\com_cef_view_environment.cc:220] Created environment, environments size: 1
+[0205/203802.509:INFO:ddg\webview\webview_embedded\com\com_cef_view_environment.cc:220] Created environment, environments size: 2
+[0205/203841.535:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/203841.535:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/204022.361:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/204022.361:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/204430.091:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/204430.091:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/204446.674:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/204446.674:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/204819.109:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/204819.109:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/205240.077:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/205240.077:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/215202.648:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/215202.648:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/220531.036:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/220531.036:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/220551.541:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/220551.541:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/221139.795:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/221139.795:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/221200.574:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/221200.574:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/221450.416:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/221450.416:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected
+[0205/225020.640:WARNING:ddg\webview\common\ipc\channel.cc:220] Channel disconnected
+[0205/225020.641:WARNING:ddg\webview\webview_embedded\browser_instance.cc:253] Env: 2 BrowserInstance: channel error: Disconnected

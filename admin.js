@@ -1,486 +1,560 @@
-
-// Local Admin Server Config
-const API_BASE = window.location.origin; // e.g. http://localhost:8000
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Handle Login
-    const loginForm = document.getElementById('login-form');
-    if (loginForm) {
-        loginForm.addEventListener('submit', handleLogin);
-    }
+    loadProducts();
 
-    // 2. Handle Dashboard
-    if (window.location.pathname.endsWith('dashboard.html')) {
-        initDashboard();
-    }
+    // bind forms
+    document.getElementById('add-form').addEventListener('submit', handleAddProduct);
+    document.getElementById('edit-form').addEventListener('submit', handleEditProduct);
 });
 
-// --- AUTHENTICATION ---
+// Global state
+let allProducts = [];
 
-async function handleLogin(e) {
-    e.preventDefault();
-    const password = document.getElementById('password').value;
-    const errorMsg = document.getElementById('error-message');
+async function loadProducts() {
+    const list = document.getElementById('product-list');
+    list.innerHTML = '<div class="col-span-full text-center text-gray-400 py-10">Loading products...</div>';
 
     try {
-        const res = await fetch(`${API_BASE}/api/login`, {
-            method: 'POST',
-            body: JSON.stringify({ password }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-        const data = await res.json();
+        const res = await fetch('admin_backend.php?action=list_products');
+        if (!res.ok) {
+            if (res.status === 401) window.location.href = 'portal-access-99.php';
+            throw new Error('Failed to load products');
+        }
+        allProducts = await res.json();
 
-        if (data.success) {
-            localStorage.setItem('adminToken', data.token);
-            window.location.href = 'dashboard.html';
-        } else {
-            if (errorMsg) {
-                errorMsg.textContent = data.message;
-                errorMsg.style.display = 'block';
-            }
-        }
-    } catch (err) {
-        console.error(err);
-        if (errorMsg) {
-            errorMsg.textContent = "Server connection failed. Is admin_server.py running?";
-            errorMsg.style.display = 'block';
-        }
+        // Apply current filter initial
+        filterProducts();
+    } catch (e) {
+        list.innerHTML = `<div class="col-span-full text-center text-red-500">Error: ${e.message}</div>`;
     }
 }
 
-async function initDashboard() {
-    const token = localStorage.getItem('adminToken');
-    if (!token) {
-        window.location.href = 'portal-access-99.html';
+function filterProducts() {
+    const category = document.getElementById('filter-category').value;
+    const filtered = category === 'all'
+        ? allProducts
+        : allProducts.filter(p => p.category.toLowerCase() === category.toLowerCase());
+
+    renderProducts(filtered);
+}
+
+// --- Dynamic Text Scaling Helper ---
+function fitTextToContainer(element) {
+    if (!element) return;
+
+    // Strict Uniform Sizes (Small to ensure image visibility)
+    const isMobile = window.innerWidth < 768;
+    let size = isMobile ? 0.65 : 0.75; // rem
+
+    element.style.fontSize = `${size}rem`;
+    element.style.lineHeight = '1.3';
+    element.style.whiteSpace = 'normal';
+
+    const parent = element.parentElement;
+    if (!parent) return;
+
+    // Constraints
+    const minSize = 0.5;
+    const step = 0.05;
+
+    let safety = 0;
+    while (
+        (element.scrollHeight > parent.clientHeight || element.scrollWidth > parent.clientWidth) &&
+        size > minSize && safety < 20
+    ) {
+        size -= step;
+        element.style.fontSize = `${size}rem`;
+        safety++;
+    }
+}
+
+function renderProducts(products) {
+    const list = document.getElementById('product-list');
+    if (products.length === 0) {
+        list.innerHTML = '<div class="col-span-full text-center text-gray-400 py-10">No products found.</div>';
         return;
     }
 
-    // Check Auth
-    try {
-        const res = await fetch(`${API_BASE}/api/check-auth`, {
-            headers: { 'Authorization': `Bearer ${token}` }
-        });
-        if (res.status !== 200) {
-            throw new Error('Unauthorized');
+    list.innerHTML = products.map(p => {
+        // Determine current displayed image
+        // Check metadata if available, else fallback
+        let imgUrl = p.images && p.images.length > 0 ? p.images[0] : 'https://placehold.co/400x400/1e293b/FFF?text=No+Image';
+        if (currentThumbnailMetadata && currentThumbnailMetadata.products && currentThumbnailMetadata.products[p.key]) {
+            imgUrl = currentThumbnailMetadata.products[p.key];
         }
-    } catch (err) {
-        logout();
-        return;
-    }
 
-    // Load Data
-    renderProductList();
-
-    // Search Listener
-    const searchInput = document.getElementById('product-search');
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            renderProductList(e.target.value);
-        });
-    }
-
-    // Form Listener
-    const form = document.getElementById('product-form');
-    if (form) {
-        form.addEventListener('submit', handleSaveProduct);
-    }
-}
-
-function logout() {
-    localStorage.removeItem('adminToken');
-    window.location.href = 'portal-access-99.html';
-}
-
-// --- DASHBOARD LOGIC ---
-
-let allProductsCache = [];
-
-function getAllProducts() {
-    if (typeof equipmentData === 'undefined') return [];
-
-    let products = [];
-    Object.entries(equipmentData).forEach(([key, item]) => {
-        products.push({ key, ...item });
-    });
-    return products;
-}
-
-function renderProductList(searchQuery = '') {
-    const tbody = document.getElementById('product-table-body');
-    if (!tbody) return;
-
-    allProductsCache = getAllProducts();
-
-    const filtered = allProductsCache.filter(p => {
-        const q = searchQuery.toLowerCase();
-        return p.name.toLowerCase().includes(q) ||
-            p.category.toLowerCase().includes(q) ||
-            (p.subcategory || '').toLowerCase().includes(q);
-    });
-
-    tbody.innerHTML = filtered.map(p => {
-        const img = (p.images && p.images.length) ? p.images[0] : 'https://placehold.co/50?text=?';
         return `
-            <tr>
-                <td><img src="${img}" class="product-thumbnail"></td>
-                <td><strong>${p.name}</strong><br><small style="color:#64748b">${p.subcategory || ''}</small></td>
-                <td>${p.category}</td>
-                <td>
-                    <button class="btn-primary" style="padding: 0.5rem; font-size: 0.8rem;" onclick="editProduct('${p.key}')">Edit</button>
-                </td>
-            </tr>
+        <div class="relative aspect-[4/5] rounded-xl overflow-hidden border border-white/10 hover:border-yellow-400/50 transition-all shadow-lg group bg-black">
+            <!-- Full Image - Click to Cycle -->
+            <img src="${imgUrl}" alt="${p.name}" 
+                onclick='cycleProductThumbnail(event, ${JSON.stringify(p).replace(/'/g, "&#39;")})'
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100 cursor-pointer"
+                title="Click to cycle thumbnail">
+            
+            <!-- Text Overlay -->
+            <div class="absolute bottom-0 inset-x-0 p-4 flex flex-col justify-end h-[40%] bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none">
+                <div class="flex-1 flex items-end">
+                    <h3 class="font-bold text-white dynamic-text leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]" style="text-shadow: 1px 1px 3px black;">${p.name}</h3>
+                </div>
+            </div>
+
+            <!-- Action Buttons Overlay -->
+            <div class="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                 <button onclick='openEditModal(${JSON.stringify(p).replace(/'/g, "&#39;")})' 
+                    class="bg-black/50 hover:bg-yellow-400 hover:text-black text-white p-2 rounded-full backdrop-blur-sm border border-white/20 transition" title="Edit">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                    </svg>
+                </button>
+                <button onclick='openDeleteModal(${JSON.stringify(p).replace(/'/g, "&#39;")})' 
+                    class="bg-black/50 hover:bg-red-600 hover:text-white text-red-500 p-2 rounded-full backdrop-blur-sm border border-white/20 transition" title="Delete">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
         `;
     }).join('');
+
+    // Apply scaling
+    requestAnimationFrame(() => {
+        list.querySelectorAll('.dynamic-text').forEach(el => fitTextToContainer(el));
+    });
 }
 
-// Expose to window for HTML onclick
-window.editProduct = function (key) {
-    const product = allProductsCache.find(p => p.key === key);
-    if (!product) return;
+// --- CYCLE THUMBNAIL ---
+async function cycleProductThumbnail(e, product) {
+    if (!product.images || product.images.length === 0) return;
 
-    document.getElementById('edit-key').value = key;
-    document.getElementById('p-name').value = product.name;
+    e.stopPropagation(); // prevent other clicks
+    const imgEl = e.target;
 
-    // We need to WAIT for dropdowns to load before setting value?
-    // Or we set values and rely on dynamic load later?
-    // Let's trigger load first.
-    initProductFormDropdowns().then(async () => {
-        document.getElementById('p-category').value = product.category;
+    // Find current index
+    // The src might be absolute or relative, compare endsWith
+    let currentSrc = imgEl.getAttribute('src');
+    // Just use the logic: find match in images
+    let currentIndex = product.images.findIndex(img => currentSrc.endsWith(img) || img.endsWith(currentSrc));
 
-        // Then load subcats
-        await loadSubcatsForProductForm();
-        document.getElementById('p-subcategory').value = product.subcategory;
-    });
+    if (currentIndex === -1) currentIndex = 0;
 
-    document.getElementById('p-description').value = '';
-    document.getElementById('current-image-path').textContent = 'Current Image: ' + (product.images?.[0] || 'None');
+    // Next
+    const nextIndex = (currentIndex + 1) % product.images.length;
+    const nextImg = product.images[nextIndex];
 
-    document.getElementById('form-title').textContent = 'Edit Product';
-    switchView('add-view');
-};
+    // Update visuals immediately (Optimistic)
+    imgEl.src = nextImg;
 
-window.logout = logout;
-
-async function handleSaveProduct(e) {
-    e.preventDefault();
-    const token = localStorage.getItem('adminToken');
-
-    const key = document.getElementById('edit-key').value;
-    const name = document.getElementById('p-name').value;
-    const category = document.getElementById('p-category').value;
-    const subcategory = document.getElementById('p-subcategory').value;
-    const description = document.getElementById('p-description').value;
-    const imageInput = document.getElementById('p-image');
-
-    // 1. Upload Image (if selected)
-    let imagePath = null;
-    if (imageInput.files.length > 0) {
-        const formData = new FormData();
-        formData.append('image', imageInput.files[0]);
-        formData.append('category', category);
-        formData.append('subcategory', subcategory);
-        formData.append('name', name);
-
-        try {
-            const upRes = await fetch(`${API_BASE}/api/upload-image`, {
-                method: 'POST',
-                headers: { 'Authorization': `Bearer ${token}` },
-                body: formData
-            });
-            const upData = await upRes.json();
-            if (!upData.success) throw new Error(upData.message);
-            imagePath = upData.path;
-        } catch (err) {
-            alert('Image Upload Failed: ' + err.message);
-            return;
-        }
-    }
-
-    // 2. Update Description / Metadata
-    const productKey = key || name.toLowerCase().replace(/\s+/g, '-');
-
+    // Save to backend
+    // Similar to setThumbnail but we hardcode type='product'
     try {
-        const res = await fetch(`${API_BASE}/api/update-product`, {
+        const res = await fetch('admin_backend.php?action=set_thumbnail', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                key: productKey,
-                description: description,
-                // specs: ...
+                type: 'product',
+                key: product.key,
+                image_path: nextImg
             })
         });
-        const data = await res.json();
-        if (data.success) {
-            alert('Product Saved Locally!');
-            switchView('list-view');
+
+        if (!res.ok) {
+            // Revert on error?
+            console.error("Failed to save cycled thumbnail");
         } else {
-            alert('Error: ' + data.message);
+            // Update local metadata clone so re-renders are correct
+            if (!currentThumbnailMetadata) currentThumbnailMetadata = {};
+            if (!currentThumbnailMetadata.products) currentThumbnailMetadata.products = {};
+            currentThumbnailMetadata.products[product.key] = nextImg;
         }
     } catch (err) {
-        alert('Save Failed');
+        console.error("Network error cycling thumbnail");
     }
 }
 
-window.publishChanges = async function () {
-    if (!confirm('This will regenerate data.js. Proceed?')) return;
+// --- FETCH SUBCATEGORIES ---
+async function fetchSubcategories(context, categoryOverride = null) {
+    const categorySelect = document.getElementById(context === 'add' ? 'add-category' : 'edit-category');
+    const subcategorySelect = document.getElementById(context === 'add' ? 'add-subcategory' : 'edit-subcategory');
 
-    const token = localStorage.getItem('adminToken');
+    const category = categoryOverride || categorySelect.value;
+    if (!category) return;
+
     try {
-        const res = await fetch(`${API_BASE}/api/publish`, {
+        const res = await fetch(`admin_backend.php?action=subcategories&category=${encodeURIComponent(category)}`);
+        const subcategories = await res.json();
+
+        subcategorySelect.innerHTML = '<option value="General">General</option>';
+        if (subcategories.length > 0) {
+            subcategories.forEach(sub => {
+                if (sub !== 'General') {
+                    const option = document.createElement('option');
+                    option.value = sub;
+                    option.textContent = sub;
+                    subcategorySelect.appendChild(option);
+                }
+            });
+        }
+    } catch (e) {
+        console.error('Failed to fetch subcategories', e);
+        subcategorySelect.innerHTML = '<option value="General">General</option>';
+    }
+}
+
+
+// --- ADD MODAL ---
+function openAddModal() {
+    document.getElementById('add-modal').classList.remove('hidden');
+}
+
+function closeAddModal() {
+    document.getElementById('add-modal').classList.add('hidden');
+    document.getElementById('add-form').reset();
+    document.getElementById('add-subcategory').innerHTML = '<option value="General">General</option>';
+}
+
+async function handleAddProduct(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Saving...';
+    btn.disabled = true;
+
+    try {
+        const formData = new FormData(e.target);
+
+        // PHP Backend Call
+        const res = await fetch('admin_backend.php?action=add_product', {
             method: 'POST',
-            headers: { 'Authorization': `Bearer ${token}` }
+            body: formData
         });
-        const data = await res.json();
-        if (data.success) {
-            alert('Success! Website data updated.');
-            location.reload(); // Reload to see new data
+
+        if (res.ok) {
+            closeAddModal();
+            loadProducts();
         } else {
-            alert('Error: ' + data.message);
+            const data = await res.json();
+            alert('Error: ' + (data.error || 'Unknown error'));
         }
     } catch (err) {
-        alert('Publish Failed');
+        alert('Failed to connect to server');
+    } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
     }
-};
-
-window.deployToGitHub = async function () {
-    if (!confirm('This will upload all changes to GitHub. Ensure you have set up Git on this computer! Proceed?')) return;
-
-    const token = localStorage.getItem('adminToken');
-    try {
-        const res = await fetch(`${API_BASE}/api/deploy-github`, {
-            method: 'POST',
-            headers: { 'Authorization': `Bearer ${token}` }
-        });
-        const data = await res.json();
-        if (data.success) {
-            alert('Success! ' + data.message);
-        } else {
-            alert('Details: ' + data.message);
-        }
-    } catch (err) {
-        alert('Deploy Failed. Is Git installed?');
-    }
-};
-
-// --- CATEGORY & SUB MANAGER ---
-
-async function fetchCategoriesAPI() {
-    const token = localStorage.getItem('adminToken');
-    try {
-        const res = await fetch(`${API_BASE}/api/list-categories`, {
-            method: 'POST',
-            headers: { 'Authorization': `Bearer ${token}` }
-        });
-        const data = await res.json();
-        return data.success ? data.categories : [];
-    } catch { return []; }
 }
 
-async function fetchSubCategoriesAPI(category) {
-    const token = localStorage.getItem('adminToken');
-    try {
-        const res = await fetch(`${API_BASE}/api/list-subcategories`, {
-            method: 'POST',
-            body: JSON.stringify({ category }),
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
+// --- EDIT MODAL ---
+let currentEditProduct = null;
+let currentThumbnailMetadata = null;
+
+function openEditModal(product) {
+    currentEditProduct = product;
+    const modal = document.getElementById('edit-modal');
+    modal.classList.remove('hidden');
+
+    document.getElementById('edit-title').value = product.name;
+    document.getElementById('edit-original-folder').value = product.folder_path;
+
+    // Set Category
+    document.getElementById('edit-category').value = product.category;
+
+    // Fetch Subcategories then set Subcategory
+    fetchSubcategories('edit', product.category).then(() => {
+        document.getElementById('edit-subcategory').value = product.subcategory || 'General';
+    });
+
+    // Set YouTube URL
+    document.getElementById('edit-youtube-url').value = product.youtube || '';
+
+    fetchThumbnailMetadata().then(() => {
+        renderImageGallery(product.images);
+    });
+}
+
+// --- THUMBNAIL LOGIC ---
+async function setThumbnail(type, key, imagePath, checkbox) {
+    // Optimistic UI update: Uncheck others of same type
+    // This is tricky because we don't have references to all checkboxes easily in this function context
+    // So we'll reload or just let it stay. Ideally, uncheck others.
+
+    // Actually, force single selection logic UI side
+    if (checkbox.checked) {
+        const modal = document.getElementById('edit-modal');
+        const checkboxes = modal.querySelectorAll(`.thumb-check-${type}`);
+        checkboxes.forEach(cb => {
+            if (cb !== checkbox) cb.checked = false;
         });
-        const data = await res.json();
-        return data.success ? data.subcategories : [];
-    } catch { return []; }
-}
-
-// Render the Structure Manager (Left Side)
-async function renderStructureManager() {
-    const list = document.getElementById('cat-manager-list');
-    if (!list) return;
-
-    const cats = await fetchCategoriesAPI();
-
-    list.innerHTML = cats.map(c => `
-        <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155;">
-            <a href="#" onclick="selectCategoryForStructure('${c}')" style="flex: 1; border: none; padding: 10px; color: #94a3b8; text-decoration: none;">${c}</a>
-            <button onclick="deleteCategory('${c}')" style="background: none; border: none; color: #ef4444; cursor: pointer; padding: 0 10px;">&times;</button>
-        </li>
-    `).join('');
-}
-
-// Select Category in Structure Manager -> Load Right Side
-window.selectCategoryForStructure = async function (cat) {
-    document.getElementById('selected-cat-for-sub').value = cat;
-    document.getElementById('sub-manager-title').textContent = `Subcategories of: ${cat}`;
-    document.getElementById('sub-manager-content').style.display = 'block';
-    document.getElementById('sub-manager-placeholder').style.display = 'none';
-
-    // Highlight
-    document.querySelectorAll('#cat-manager-list a').forEach(a => a.style.color = '#94a3b8');
-    // Simple active style could be added here
-
-    const subList = document.getElementById('sub-manager-list');
-    subList.innerHTML = '<li style="color: #64748b; padding: 1rem;">Loading...</li>';
-
-    const subs = await fetchSubCategoriesAPI(cat);
-
-    if (subs.length === 0) {
-        subList.innerHTML = '<li style="color: #64748b; padding: 1rem;">No subcategories yet.</li>';
     } else {
-        subList.innerHTML = subs.map(s => `
-            <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155;">
-                <span style="padding: 1rem; color: #cbd5e1;">${s}</span>
-                <button onclick="deleteSubCategory('${cat}', '${s}')" style="background: none; border: none; color: #ef4444; cursor: pointer; padding: 0 10px;">&times;</button>
-            </li>
-        `).join('');
+        // If unchecking, do we allow 'no thumbnail'? Yes.
     }
-};
 
-// -- Actions --
-
-window.addCategory = async function () {
-    const input = document.getElementById('new-cat-name');
-    const name = input.value.trim();
-    if (!name) return alert('Enter a name');
-
-    const token = localStorage.getItem('adminToken');
+    // Call Backend
     try {
-        const res = await fetch(`${API_BASE}/api/add-category`, {
+        const res = await fetch('admin_backend.php?action=set_thumbnail', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({ category: name })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                type: type, // 'product', 'category', 'subcategory'
+                key: key,
+                image_path: imagePath
+            })
         });
-        const data = await res.json();
-        if (data.success) {
-            input.value = '';
-            renderStructureManager(); // Refresh list
-        } else {
-            alert(data.message);
+
+        if (!res.ok) {
+            checkbox.checked = !checkbox.checked; // Revert
+            alert("Failed to save thumbnail setting.");
         }
-    } catch (err) { alert('Failed'); }
-};
-
-window.addSubCategory = async function () {
-    const cat = document.getElementById('selected-cat-for-sub').value;
-    const input = document.getElementById('new-sub-name');
-    const name = input.value.trim();
-    if (!cat) return alert('Select a category first');
-    if (!name) return alert('Enter a name');
-
-    const token = localStorage.getItem('adminToken');
-    try {
-        const res = await fetch(`${API_BASE}/api/add-subcategory`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({ category: cat, subcategory: name })
-        });
-        const data = await res.json();
-        if (data.success) {
-            input.value = '';
-            selectCategoryForStructure(cat); // Refresh sub list
-        } else {
-            alert(data.message);
-        }
-    } catch (err) { alert('Failed'); }
-};
-
-window.deleteCategory = async function (name) {
-    if (!confirm(`Delete Category "${name}" and all contents?`)) return;
-    const token = localStorage.getItem('adminToken');
-    try {
-        const res = await fetch(`${API_BASE}/api/delete-category`, {
-            method: 'POST',
-            body: JSON.stringify({ category: name }),
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }
-        });
-        if ((await res.json()).success) {
-            renderStructureManager();
-            document.getElementById('sub-manager-content').style.display = 'none';
-            document.getElementById('sub-manager-placeholder').style.display = 'block';
-        } else { alert('Failed'); }
-    } catch { alert('Failed'); }
-};
-
-window.deleteSubCategory = async function (cat, sub) {
-    if (!confirm(`Delete Subcategory "${sub}"?`)) return;
-    const token = localStorage.getItem('adminToken');
-    try {
-        const res = await fetch(`${API_BASE}/api/delete-subcategory`, {
-            method: 'POST',
-            body: JSON.stringify({ category: cat, subcategory: sub }),
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }
-        });
-        if ((await res.json()).success) {
-            selectCategoryForStructure(cat);
-        } else { alert('Failed'); }
-    } catch { alert('Failed'); }
-};
-
-
-// --- PRODUCT FORM DYNAMIC DROPDOWNS ---
-
-async function initProductFormDropdowns() {
-    const catSelect = document.getElementById('p-category');
-    if (!catSelect) return;
-
-    catSelect.innerHTML = '<option value="">Loading...</option>';
-    const cats = await fetchCategoriesAPI();
-
-    catSelect.innerHTML = '<option value="">Select Category...</option>' +
-        cats.map(c => `<option value="${c}">${c}</option>`).join('');
+    } catch (e) {
+        checkbox.checked = !checkbox.checked;
+        alert("Network error.");
+    }
 }
 
-window.loadSubcatsForProductForm = async function () {
-    const catSelect = document.getElementById('p-category');
-    const subSelect = document.getElementById('p-subcategory');
-    const cat = catSelect.value;
 
-    subSelect.innerHTML = '<option value="">Loading...</option>';
+function renderImageGallery(images) {
+    const list = document.getElementById('edit-image-list');
+    list.innerHTML = '';
 
-    if (!cat) {
-        subSelect.innerHTML = '<option value="">Select Category First</option>';
+    if (!images || images.length === 0) {
+        list.innerHTML = '<p class="text-gray-500 text-sm col-span-3">No images.</p>';
         return;
     }
 
-    const subs = await fetchSubCategoriesAPI(cat);
-    if (subs.length === 0) {
-        subSelect.innerHTML = '<option value="">No subcategories found</option>';
-    } else {
-        subSelect.innerHTML = subs.map(s => `<option value="${s}">${s}</option>`).join('');
-    }
-};
+    // Metadata Helpers
+    const isProductThumb = (img) => currentThumbnailMetadata?.products?.[currentEditProduct.key] === img;
+    const isCategoryThumb = (img) => currentThumbnailMetadata?.categories?.[currentEditProduct.category] === img;
+    const isSubcatThumb = (img) => currentThumbnailMetadata?.subcategories?.[currentEditProduct.subcategory] === img;
 
+    images.forEach(img => {
+        const div = document.createElement('div');
+        div.className = 'bg-gray-800 rounded-lg overflow-hidden border border-gray-700 flex flex-col';
 
-// Hook switchView
-const originalSwitchView = window.switchView || window.switchView; // Ensure it's defined
-window.switchView = function (viewId) {
-    // switchView might initially be defined inside a switchView variable or window
-    document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-    document.getElementById(viewId).classList.add('active');
+        // Image Top
+        div.innerHTML = `
+            <div class="relative group h-32 w-full bg-black">
+                ${img.match(/\.(mp4|webm|ogg|mov)$/i)
+                ? `<video src="${img}" class="h-full w-full object-cover" controls muted></video>`
+                : `<img src="${img}" class="h-full w-full object-cover">`
+            }
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                    <button onclick="deleteImage('${img}')" class="bg-red-600 text-white p-1 rounded hover:bg-red-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                    </button>
+                    <a href="${img}" target="_blank" class="bg-blue-600 text-white p-1 rounded hover:bg-blue-700 ml-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Checkbox Area -->
+            <div class="p-2 space-y-2 text-[10px] text-gray-300 bg-gray-900 border-t border-gray-700">
+                 <!-- Product Thumbnail -->
+                 <label class="flex items-center gap-2 cursor-pointer hover:text-yellow-400">
+                    <input type="checkbox" class="thumb-check-product rounded border-gray-600 bg-gray-700 text-yellow-400 focus:ring-yellow-400"
+                        ${isProductThumb(img) ? 'checked' : ''}
+                        onchange="setThumbnail('product', '${currentEditProduct.key}', '${img}', this)">
+                    <span>Product Thumb</span>
+                 </label>
+                 
+                 <!-- Category Thumbnail -->
+                 <label class="flex items-center gap-2 cursor-pointer hover:text-yellow-400">
+                    <input type="checkbox" class="thumb-check-category rounded border-gray-600 bg-gray-700 text-yellow-400 focus:ring-yellow-400"
+                        ${isCategoryThumb(img) ? 'checked' : ''}
+                        onchange="setThumbnail('category', '${currentEditProduct.category}', '${img}', this)">
+                    <span>Category Thumb</span>
+                 </label>
+                 
+                 <!-- Subcategory Thumbnail -->
+                 <label class="flex items-center gap-2 cursor-pointer hover:text-yellow-400">
+                    <input type="checkbox" class="thumb-check-subcategory rounded border-gray-600 bg-gray-700 text-yellow-400 focus:ring-yellow-400"
+                        ${isSubcatThumb(img) ? 'checked' : ''}
+                        onchange="setThumbnail('subcategory', '${currentEditProduct.subcategory}', '${img}', this)">
+                    <span>Subcat Thumb</span>
+                 </label>
+            </div>
+        `;
+        list.appendChild(div);
+    });
 
-    // Reset form Logic
-    if (viewId === 'add-view' && !document.getElementById('edit-key').value) {
-        document.getElementById('product-form').reset();
-        document.getElementById('form-title').textContent = 'Add New Product';
-        document.getElementById('current-image-path').textContent = '';
-    }
-    if (viewId === 'list-view') {
-        document.getElementById('edit-key').value = '';
-    }
+    // Note: We are NOT pre-filling the checkboxes because we don't have the metadata loaded here yet.
+    // Ideally we should fetch metadata and check the boxes.
+    // For now, let's trigger a fetch for metadata or assume the user just sets them.
+    // Better: Fetch metadata for this product context.
+    fetchThumbnailMetadata();
+}
 
-    // New Logic
-    if (viewId === 'category-view') {
-        renderStructureManager();
+async function fetchThumbnailMetadata() {
+    try {
+        const res = await fetch('admin_backend.php?action=get_thumbnail_metadata');
+        if (res.ok) {
+            currentThumbnailMetadata = await res.json();
+        }
+    } catch (e) {
+        console.error("Failed to fetch metadata", e);
     }
-    if (viewId === 'add-view') {
-        initProductFormDropdowns();
+}
+
+async function uploadNewImage() {
+    const fileInput = document.getElementById('new-image-input');
+    if (!fileInput.files.length) return;
+
+    const btn = document.querySelector('#edit-modal button.bg-blue-600');
+    const originalText = btn.textContent;
+    btn.textContent = '...';
+    btn.disabled = true;
+
+    try {
+        const formData = new FormData();
+        for (let i = 0; i < fileInput.files.length; i++) {
+            formData.append('images[]', fileInput.files[i]);
+        }
+        formData.append('folder_path', currentEditProduct.folder_path);
+
+        // PHP Backend Call
+        const res = await fetch('admin_backend.php?action=add_image', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (res.ok) {
+            await loadProducts();
+            // Refresh logic
+            const listRes = await fetch('admin_backend.php?action=list_products');
+            const products = await listRes.json();
+            const updated = products.find(p => p.folder_path === currentEditProduct.folder_path);
+
+            if (updated) {
+                currentEditProduct = updated;
+                renderImageGallery(updated.images);
+                fileInput.value = '';
+            }
+        } else {
+            try {
+                const data = await res.json();
+                alert('Failed to upload: ' + (data.error || 'Unknown error'));
+            } catch (jsonErr) {
+                alert('Failed to upload: Server returned invalid JSON');
+            }
+        }
+    } catch (e) {
+        console.error(e);
+        alert('Error uploading');
+    } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
     }
-};
+}
+
+async function deleteImage(imagePath) {
+    if (!confirm('Delete this image?')) return;
+
+    try {
+        const res = await fetch('admin_backend.php?action=delete_image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ image_path: imagePath })
+        });
+
+        if (res.ok) {
+            const listRes = await fetch('admin_backend.php?action=list_products');
+            const products = await listRes.json();
+            const updated = products.find(p => p.folder_path === currentEditProduct.folder_path);
+
+            if (updated) {
+                currentEditProduct = updated;
+                renderImageGallery(updated.images);
+                renderProducts(products);
+            }
+        } else {
+            alert('Failed to delete');
+        }
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+function closeEditModal() {
+    document.getElementById('edit-modal').classList.add('hidden');
+    document.getElementById('edit-form').reset();
+    currentEditProduct = null;
+}
+
+async function handleEditProduct(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Saving...';
+    btn.disabled = true;
+
+    try {
+        const formData = new FormData(e.target);
+
+        // PHP Backend Call
+        const res = await fetch('admin_backend.php?action=edit_product', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (res.ok) {
+            closeEditModal();
+            loadProducts();
+        } else {
+            const data = await res.json();
+            alert('Error: ' + (data.error || 'Unknown error'));
+        }
+    } catch (err) {
+        alert('Failed to connect to server');
+    } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+    }
+}
+
+// --- DELETE MODAL ---
+function openDeleteModal(product) {
+    document.getElementById('delete-modal').classList.remove('hidden');
+    document.getElementById('delete-product-name').textContent = product.name;
+    document.getElementById('delete-folder-path').value = product.folder_path;
+}
+
+function closeDeleteModal() {
+    document.getElementById('delete-modal').classList.add('hidden');
+}
+
+async function confirmDelete() {
+    const folderPath = document.getElementById('delete-folder-path').value;
+    const btn = document.querySelector('#delete-modal button.bg-red-600');
+    const originalText = btn.textContent;
+    btn.textContent = 'Deleting...';
+    btn.disabled = true;
+
+    try {
+        const res = await fetch('admin_backend.php?action=delete_product', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ folder_path: folderPath })
+        });
+
+        if (res.ok) {
+            closeDeleteModal();
+            loadProducts();
+        } else {
+            const data = await res.json();
+            alert('Error: ' + (data.error || 'Unknown error'));
+        }
+    } catch (err) {
+        alert('Failed to connect to server');
+    } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+    }
+}
+
+async function logout() {
+    await fetch('admin_backend.php?action=logout');
+    window.location.href = 'portal-access-99.php';
+}

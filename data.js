@@ -5,7 +5,8 @@ const equipmentData = {
         "subcategory": "drop bar",
         "images": [
             "images/Accessories/drop bar/drop-bar-barbell-smartgymequipment-chennai-redhills.webp"
-        ]
+        ],
+        "date_added": 1769438636.663301
     },
     "landmine": {
         "name": "landmine",
@@ -13,15 +14,17 @@ const equipmentData = {
         "subcategory": "landmine",
         "images": [
             "images/Accessories/landmine/landmine.webp"
-        ]
+        ],
+        "date_added": 1769438685.9515786
     },
-    "slip-squat-adjustable-stand": {
-        "name": "Slip squat adjustable stand",
+    "split_squat_stand_pin_type": {
+        "name": "Split_squat_stand_pin_type",
         "category": "Accessories",
-        "subcategory": "Slip squat adjustable stand",
+        "subcategory": "Split_squat_stand_pin_type",
         "images": [
-            "images/Accessories/Slip squat adjustable stand/leg split squat adjustable_result_result.webp"
-        ]
+            "images/Accessories/Split_squat_stand_pin_type/leg split squat adjustable_result_result.webp"
+        ],
+        "date_added": 1769439006.6161525
     },
     "standing-lateral-raise": {
         "name": "standing lateral raise",
@@ -29,7 +32,8 @@ const equipmentData = {
         "subcategory": "standing lateral raise",
         "images": [
             "images/Accessories/standing lateral raise/standing lateral raise-plate-loaded-top-smart-gym-equipment.webp"
-        ]
+        ],
+        "date_added": 1769439948.9143376
     },
     "t-bar": {
         "name": "t bar",
@@ -37,7 +41,8 @@ const equipmentData = {
         "subcategory": "t bar",
         "images": [
             "images/Accessories/t bar/t-bar-top-smart-gym-equipment-chennai-redhills.webp"
-        ]
+        ],
+        "date_added": 1769439949.0500858
     },
     "cable-cross-over": {
         "name": "Cable cross over",
@@ -89,7 +94,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Cable cross over/cable-crossover-smartgymequipment-chennai-redhills (7).webp",
             "images/Multifunctional and functional equipments/Cable cross over/cable-crossover-smartgymequipment-chennai-redhills (8).webp",
             "images/Multifunctional and functional equipments/Cable cross over/cable-crossover-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769446919.331753
     },
     "functional-trainer": {
         "name": "Functional trainer",
@@ -116,7 +122,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Functional trainer/functional-trainer-with-chest-support-smartgymequipment-chennai-redhills (7).webp",
             "images/Multifunctional and functional equipments/Functional trainer/functional-trainer-with-chest-support-smartgymequipment-chennai-redhills (8).webp",
             "images/Multifunctional and functional equipments/Functional trainer/functional-trainer-with-chest-support-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769446937.3556633
     },
     "functional-trainer-with-smith": {
         "name": "functional trainer with smith",
@@ -147,211 +154,225 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/functional trainer with smith/functional-trainer-with-smith-machine-smartgymequipment-chennai-redhills (7).webp",
             "images/Multifunctional and functional equipments/functional trainer with smith/functional-trainer-with-smith-machine-smartgymequipment-chennai-redhills (8).webp",
             "images/Multifunctional and functional equipments/functional trainer with smith/functional-trainer-with-smith-machine-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769438668.7347913
     },
     "5-station-multi-gym": {
         "name": "5 station multi gym",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/5 station multi gym/multigym-jungle-gym-smartgymequipment-chennai-redhills.webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/5 station multi gym/multigym-jungle-gym-smartgymequipment-chennai-redhills.webp"
+        ],
+        "date_added": 1769446964.9530716
     },
     "hexagon-type": {
         "name": "Hexagon type",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (4).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (5).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (6).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (7).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (8).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (4).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (5).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (6).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (7).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (8).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769438384.9872935
     },
     "home-multi-gym\uf028": {
         "name": "Home multi gym\uf028",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (4).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (5).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (6).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (7).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (8).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (4).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (5).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (6).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (7).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (8).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769438671.8585687
     },
     "it-company-model-1": {
         "name": "IT company model 1",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
+        ],
+        "date_added": 1769439605.7174108
     },
     "it-company-model-2": {
         "name": "IT Company model 2",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/IT Company model 2/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/IT Company model 2/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/IT Company model 2/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT Company model 2/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT Company model 2/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT Company model 2/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
+        ],
+        "date_added": 1769439020.7820742
     },
     "multi-gym-2025": {
         "name": "multi gym 2025",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (4).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (5).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (6).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (7).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (8).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (4).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (5).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (6).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (7).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (8).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769450479.8251157
     },
     "new-model": {
         "name": "New model",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (10).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (11).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (12).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (13).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (14).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (15).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (16).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (17).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (18).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (19).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (20).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (21).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (22).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (23).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (24).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (25).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (26).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (27).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (28).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (29).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (30).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (31).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (32).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (33).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (4).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (5).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (6).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (7).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (8).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (10).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (11).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (12).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (13).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (14).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (15).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (16).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (17).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (18).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (19).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (20).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (21).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (22).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (23).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (24).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (25).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (26).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (27).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (28).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (29).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (30).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (31).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (32).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (33).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (4).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (5).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (6).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (7).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (8).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439028.4675546
     },
     "type-(i)": {
         "name": "Type (i)",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439022.7110224
     },
     "type-(ii)": {
         "name": "Type (ii)",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (10).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (11).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (12).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (13).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (14).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (15).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (16).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (4).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (5).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (6).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (7).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (8).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (10).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (11).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (12).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (13).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (14).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (15).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (16).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (4).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (5).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (6).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (7).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (8).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439607.7853413
     },
     "type-(iii)": {
         "name": "Type (iii)",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (4).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (4).webp"
+        ],
+        "date_added": 1769439025.6418629
     },
     "type-4-station": {
         "name": "Type 4 station",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (4).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (5).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (4).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (5).webp"
+        ],
+        "date_added": 1769438383.7868338
     },
     "type-arch": {
         "name": "Type arch",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (4).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (5).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (6).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (4).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (5).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (6).webp"
+        ],
+        "date_added": 1769439023.2204652
     },
     "type-l": {
         "name": "Type L",
         "category": "Multifunctional and functional equipments",
-        "subcategory": "multi gym or jungle gym",
+        "subcategory": "Multigym or Jungle Gym",
         "images": [
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (1).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (2).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (3).webp",
-            "images/Multifunctional and functional equipments/multi gym or jungle gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (4).webp"
-        ]
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (1).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (2).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (3).webp",
+            "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (4).webp"
+        ],
+        "date_added": 1769439609.3140118
     },
     "power-rack-with-smith-machine": {
         "name": "power rack with smith machine",
@@ -368,7 +389,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/power rack with smith machine/powerrack-with-smith-machine-smartgymequipment-chennai-redhills (7).webp",
             "images/Multifunctional and functional equipments/power rack with smith machine/powerrack-with-smith-machine-smartgymequipment-chennai-redhills (8).webp",
             "images/Multifunctional and functional equipments/power rack with smith machine/powerrack-with-smith-machine-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769439903.8000264
     },
     "smith-machine": {
         "name": "smith machine",
@@ -399,7 +421,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/smith machine/smith-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
             "images/Multifunctional and functional equipments/smith machine/smith-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
             "images/Multifunctional and functional equipments/smith machine/smith-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769439943.5548532
     },
     "smith-machine-with-squat-rack": {
         "name": "smith machine with squat rack",
@@ -410,7 +433,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/smith machine with squat rack/smith machine with squat rack-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
             "images/Multifunctional and functional equipments/smith machine with squat rack/smith machine with squat rack-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
             "images/Multifunctional and functional equipments/smith machine with squat rack/smith machine with squat rack-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
-        ]
+        ],
+        "date_added": 1769439939.939579
     },
     "triangular-multipurpose-cross-over": {
         "name": "triangular multipurpose cross over",
@@ -421,7 +445,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/triangular multipurpose cross over/three-station-triangular-multipurpose-machine-smartgymequipment-chennai-redhills  (2).webp",
             "images/Multifunctional and functional equipments/triangular multipurpose cross over/three-station-triangular-multipurpose-machine-smartgymequipment-chennai-redhills  (3).webp",
             "images/Multifunctional and functional equipments/triangular multipurpose cross over/three-station-triangular-multipurpose-machine-smartgymequipment-chennai-redhills  (4).webp"
-        ]
+        ],
+        "date_added": 1769439949.5442593
     },
     "abdominal-exerciser": {
         "name": "Abdominal Exerciser",
@@ -433,687 +458,728 @@ const equipmentData = {
             "images/plate loaded equipments/Abs Machines/Abdominal Exerciser/abdomen-exerciser-machine-smartgymequipment-chennai-redhills  (3).webp",
             "images/plate loaded equipments/Abs Machines/Abdominal Exerciser/abdomen-exerciser-machine-smartgymequipment-chennai-redhills  (4).webp",
             "images/plate loaded equipments/Abs Machines/Abdominal Exerciser/abdomen-exerciser-machine-smartgymequipment-chennai-redhills  (5).webp"
-        ]
+        ],
+        "date_added": 1769438387.9812448
     },
     "alternate-seated-biceps-curl": {
         "name": "alternate seated biceps curl",
         "category": "plate loaded equipments",
-        "subcategory": "arms Machines",
+        "subcategory": "Arm Machines",
         "images": [
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (1).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (10).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (11).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (12).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (13).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (14).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (15).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (16).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (17).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (18).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (19).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (2).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (20).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (21).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (22).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (23).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (3).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (4).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (5).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (6).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (7).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (8).webp",
-            "images/plate loaded equipments/arms/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (9).webp"
-        ]
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (1).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (10).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (11).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (12).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (13).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (14).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (15).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (16).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (17).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (18).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (19).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (2).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (20).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (21).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (22).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (23).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (3).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (4).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (5).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (6).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (7).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (8).webp",
+            "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (9).webp"
+        ],
+        "date_added": 1769439873.3534818
     },
     "plate-loaded-tricep-push-down-machine": {
         "name": "Plate loaded tricep push down machine",
         "category": "plate loaded equipments",
-        "subcategory": "arms Machines",
+        "subcategory": "Arm Machines",
         "images": [
-            "images/plate loaded equipments/arms/Plate loaded tricep push down machine/triceps-pushdown-machine-plateloaded-smartgymequipment-chennai-redhills  (1).webp",
-            "images/plate loaded equipments/arms/Plate loaded tricep push down machine/triceps-pushdown-machine-plateloaded-smartgymequipment-chennai-redhills  (2).webp"
-        ]
+            "images/plate loaded equipments/Arm Machines/Plate loaded tricep push down machine/triceps-pushdown-machine-plateloaded-smartgymequipment-chennai-redhills  (1).webp",
+            "images/plate loaded equipments/Arm Machines/Plate loaded tricep push down machine/triceps-pushdown-machine-plateloaded-smartgymequipment-chennai-redhills  (2).webp"
+        ],
+        "date_added": 1769450566.131637
     },
     "prechur-curl": {
         "name": "Prechur curl",
         "category": "plate loaded equipments",
-        "subcategory": "arms Machines",
+        "subcategory": "Arm Machines",
         "images": [
-            "images/plate loaded equipments/arms/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (1).webp",
-            "images/plate loaded equipments/arms/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (2).webp",
-            "images/plate loaded equipments/arms/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (3).webp",
-            "images/plate loaded equipments/arms/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (4).webp",
-            "images/plate loaded equipments/arms/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (5).webp",
-            "images/plate loaded equipments/arms/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (6).webp",
-            "images/plate loaded equipments/arms/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (7).webp",
-            "images/plate loaded equipments/arms/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (8).webp",
-            "images/plate loaded equipments/arms/Prechur curl/prechur-curl-machinetop-smart-gym-equipment-india-chennai-redhills (1).webp",
-            "images/plate loaded equipments/arms/Prechur curl/prechur-curl-machinetop-smart-gym-equipment-india-chennai-redhills (2).webp"
-        ]
+            "images/plate loaded equipments/Arm Machines/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (1).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (2).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (3).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (4).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (5).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (6).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (7).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/plate-loaded-prechur-curl-machine-smartgymequipment-chennai-redhills  (8).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/prechur-curl-machinetop-smart-gym-equipment-india-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Arm Machines/Prechur curl/prechur-curl-machinetop-smart-gym-equipment-india-chennai-redhills (2).webp"
+        ],
+        "date_added": 1769439907.275959
     },
     "seated-plate-loaded-triceps-extension": {
         "name": "Seated plate loaded triceps extension",
         "category": "plate loaded equipments",
-        "subcategory": "arms Machines",
+        "subcategory": "Arm Machines",
         "images": [
-            "images/plate loaded equipments/arms/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/arms/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (2).webp",
-            "images/plate loaded equipments/arms/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (3).webp",
-            "images/plate loaded equipments/arms/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (4).webp"
-        ]
+            "images/plate loaded equipments/Arm Machines/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Arm Machines/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Arm Machines/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Arm Machines/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (4).webp"
+        ],
+        "date_added": 1769439889.5887294
     },
     "triceps-dips": {
         "name": "triceps dips",
         "category": "plate loaded equipments",
-        "subcategory": "arms Machines",
+        "subcategory": "Arm Machines",
         "images": [
-            "images/plate loaded equipments/arms/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (1).webp",
-            "images/plate loaded equipments/arms/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (2).webp",
-            "images/plate loaded equipments/arms/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (3).webp",
-            "images/plate loaded equipments/arms/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (4).webp",
-            "images/plate loaded equipments/arms/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (5).webp"
-        ]
+            "images/plate loaded equipments/Arm Machines/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (1).webp",
+            "images/plate loaded equipments/Arm Machines/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (2).webp",
+            "images/plate loaded equipments/Arm Machines/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (3).webp",
+            "images/plate loaded equipments/Arm Machines/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (4).webp",
+            "images/plate loaded equipments/Arm Machines/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (5).webp"
+        ],
+        "date_added": 1769439889.241116
+    },
+    "compound-row-machine": {
+        "name": "compound row machine",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (1).webp",
+            "images/plate loaded equipments/Back Machines/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (2).webp",
+            "images/plate loaded equipments/Back Machines/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (3).webp",
+            "images/plate loaded equipments/Back Machines/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (4).webp",
+            "images/plate loaded equipments/Back Machines/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (5).webp",
+            "images/plate loaded equipments/Back Machines/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (6).webp"
+        ],
+        "date_added": 1769439862.4396365
+    },
+    "isolatral-row": {
+        "name": "isolatral row",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (1).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (10).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (11).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (12).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (13).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (14).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (15).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (2).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (3).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (4).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (5).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (6).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (7).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (8).webp",
+            "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (9).webp"
+        ],
+        "date_added": 1769439885.5871503
+    },
+    "latpull-down": {
+        "name": "latpull down",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439875.8521442
+    },
+    "latpull-down-with-chest-press": {
+        "name": "latpull down with chest press",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769438694.0842807
+    },
+    "liner-row-machine": {
+        "name": "liner row machine",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Back Machines/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Back Machines/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Back Machines/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Back Machines/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Back Machines/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (6).webp"
+        ],
+        "date_added": 1769450662.3141954
+    },
+    "liner-t-bar-row": {
+        "name": "liner t-bar row",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/liner t-bar row/liner-t-bar-row-machine (1).webp",
+            "images/plate loaded equipments/Back Machines/liner t-bar row/liner-t-bar-row-machine.webp"
+        ],
+        "date_added": 1769439010.574379
+    },
+    "low-row": {
+        "name": "low row",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Back Machines/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Back Machines/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (3).webp"
+        ],
+        "date_added": 1769439878.1746447
+    },
+    "plate-loaded-high-pull-down-machine": {
+        "name": "Plate loaded high pull down machine",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (1).webp",
+            "images/plate loaded equipments/Back Machines/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (2).webp",
+            "images/plate loaded equipments/Back Machines/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (3).webp",
+            "images/plate loaded equipments/Back Machines/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (4).webp"
+        ],
+        "date_added": 1769439864.890133
+    },
+    "reverse-hyper-extension": {
+        "name": "reverse hyper extension",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (1).webp",
+            "images/plate loaded equipments/Back Machines/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (2).webp",
+            "images/plate loaded equipments/Back Machines/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (3).webp",
+            "images/plate loaded equipments/Back Machines/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (4).webp"
+        ],
+        "date_added": 1769439907.8797553
+    },
+    "reverse-latpull-down-machine": {
+        "name": "reverse latpull down machine",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Back Machines/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Back Machines/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Back Machines/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Back Machines/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Back Machines/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Back Machines/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (8).webp"
+        ],
+        "date_added": 1769439883.2759354
+    },
+    "standing-t-bar-row": {
+        "name": "standing t bar row",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/standing t bar row/plateloaded-standing-tbar-row-machine-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Back Machines/standing t bar row/plateloaded-standing-tbar-row-machine-smartgymequipment-chennai-redhills (2).webp"
+        ],
+        "date_added": 1769439889.7872722
+    },
+    "t-bar-row": {
+        "name": "t bar row",
+        "category": "plate loaded equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439895.630885
     },
     "incline-chest-flies": {
         "name": "incline chest flies",
         "category": "plate loaded equipments",
         "subcategory": "Chest Machines",
         "images": [
-            "images/plate loaded equipments/Chest/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/Chest/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/Chest/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/Chest/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/Chest/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
-        ]
+            "images/plate loaded equipments/Chest Machines/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
+        ],
+        "date_added": 1769450596.8537717
     },
     "incline-chest-press": {
         "name": "incline chest press",
         "category": "plate loaded equipments",
         "subcategory": "Chest Machines",
         "images": [
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/Chest/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769450617.6363378
     },
     "isolatral-seated-chest-press": {
         "name": "isolatral seated chest press",
         "category": "plate loaded equipments",
         "subcategory": "Chest Machines",
         "images": [
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/Chest/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769438683.2164187
     },
     "multi-press": {
         "name": "multi press",
         "category": "plate loaded equipments",
         "subcategory": "Chest Machines",
         "images": [
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/Chest/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
-    },
-    "compound-row-machine": {
-        "name": "compound row machine",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (1).webp",
-            "images/plate loaded equipments/lat/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (2).webp",
-            "images/plate loaded equipments/lat/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (3).webp",
-            "images/plate loaded equipments/lat/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (4).webp",
-            "images/plate loaded equipments/lat/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (5).webp",
-            "images/plate loaded equipments/lat/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (6).webp"
-        ]
-    },
-    "isolatral-row": {
-        "name": "isolatral row",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (1).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (10).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (11).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (12).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (13).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (14).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (15).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (2).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (3).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (4).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (5).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (6).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (7).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (8).webp",
-            "images/plate loaded equipments/lat/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (9).webp"
-        ]
-    },
-    "latpull-down": {
-        "name": "latpull down",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (10).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (11).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (2).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (3).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (4).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (6).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (7).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (8).webp",
-            "images/plate loaded equipments/lat/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (9).webp"
-        ]
-    },
-    "latpull-down-with-chest-press": {
-        "name": "latpull down with chest press",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (10).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (11).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (2).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (3).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (4).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (5).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (6).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (7).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (8).webp",
-            "images/plate loaded equipments/lat/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (9).webp"
-        ]
-    },
-    "liner-row-machine": {
-        "name": "liner row machine",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/lat/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (2).webp",
-            "images/plate loaded equipments/lat/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (3).webp",
-            "images/plate loaded equipments/lat/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (4).webp",
-            "images/plate loaded equipments/lat/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (5).webp",
-            "images/plate loaded equipments/lat/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (6).webp"
-        ]
-    },
-    "liner-t-bar-row": {
-        "name": "liner t-bar row",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/liner t-bar row/liner-t-bar-row-machine (1).webp",
-            "images/plate loaded equipments/lat/liner t-bar row/liner-t-bar-row-machine.webp"
-        ]
-    },
-    "low-row": {
-        "name": "low row",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/lat/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (2).webp",
-            "images/plate loaded equipments/lat/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (3).webp"
-        ]
-    },
-    "plate-loaded-high-pull-down-machine": {
-        "name": "Plate loaded high pull down machine",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (1).webp",
-            "images/plate loaded equipments/lat/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (2).webp",
-            "images/plate loaded equipments/lat/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (3).webp",
-            "images/plate loaded equipments/lat/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (4).webp"
-        ]
-    },
-    "reverse-hyper-extension": {
-        "name": "reverse hyper extension",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (1).webp",
-            "images/plate loaded equipments/lat/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (2).webp",
-            "images/plate loaded equipments/lat/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (3).webp",
-            "images/plate loaded equipments/lat/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (4).webp"
-        ]
-    },
-    "reverse-latpull-down-machine": {
-        "name": "reverse latpull down machine",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/lat/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (2).webp",
-            "images/plate loaded equipments/lat/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (3).webp",
-            "images/plate loaded equipments/lat/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (5).webp",
-            "images/plate loaded equipments/lat/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (6).webp",
-            "images/plate loaded equipments/lat/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (7).webp",
-            "images/plate loaded equipments/lat/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (8).webp"
-        ]
-    },
-    "standing-t-bar-row": {
-        "name": "standing t bar row",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/standing t bar row/plateloaded-standing-tbar-row-machine-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/lat/standing t bar row/plateloaded-standing-tbar-row-machine-smartgymequipment-chennai-redhills (2).webp"
-        ]
-    },
-    "t-bar-row": {
-        "name": "t bar row",
-        "category": "plate loaded equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (10).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (11).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (12).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (13).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (14).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (15).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (16).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (2).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (4).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (5).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (6).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (7).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (8).webp",
-            "images/plate loaded equipments/lat/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439018.1919255
     },
     "45-degree-leg-press": {
         "name": "45 degree leg press",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/legs/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439009.8122396
     },
     "assisted-glute-ham-raise": {
         "name": "Assisted glute ham raise",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/Assisted glute ham raise/assisted glute ham-top-smart-gym-equipment-india-tamilnadu-chennai-redhills.webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/Assisted glute ham raise/assisted glute ham-top-smart-gym-equipment-india-tamilnadu-chennai-redhills.webp"
+        ],
+        "date_added": 1769438603.694464
     },
     "belt-squat": {
         "name": "belt squat",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/legs/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/legs/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/legs/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/legs/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Leg Machines/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Leg Machines/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Leg Machines/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Leg Machines/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp"
+        ],
+        "date_added": 1769438611.526949
     },
     "hacksquat": {
         "name": "hacksquat",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/hacksquat/plate loaded hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/hacksquat/plate loaded hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/legs/hacksquat/plate loaded hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/hacksquat/plate loaded hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/hacksquat/plate loaded hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Leg Machines/hacksquat/plate loaded hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp"
+        ],
+        "date_added": 1769439648.687924
     },
     "leg-curl-and-leg-extension": {
         "name": "leg curl and leg extension",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/legs/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/legs/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/legs/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Leg Machines/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Leg Machines/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Leg Machines/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
+        ],
+        "date_added": 1769439650.4695153
     },
     "leg-press-leverage-type": {
         "name": "leg press leverage type",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/legs/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/legs/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/legs/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Leg Machines/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Leg Machines/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Leg Machines/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
+        ],
+        "date_added": 1769439007.5170095
     },
     "leg-press-with-hack-squat": {
         "name": "leg press with hack squat",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (21).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (22).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (23).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (24).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (26).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (27).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (28).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (29).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (30).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (31).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (32).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (33).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (34).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (35).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (36).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (37).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (38).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (39).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (40).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (41).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (42).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (43).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (44).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (45).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/legs/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (21).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (22).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (23).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (24).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (26).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (27).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (28).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (29).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (30).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (31).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (32).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (33).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (34).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (35).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (36).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (37).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (38).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (39).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (40).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (41).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (42).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (43).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (44).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (45).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769449761.9740787
     },
     "pendulum-squat": {
         "name": "pendulum squat",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/legs/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/legs/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/legs/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/legs/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/legs/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/legs/pendulum squat/pendulam-squat.webp",
-            "images/plate loaded equipments/legs/pendulum squat/plateloaded-pendulum-squat-machine-chest-supported-smartgymequipment-chennai-redhills (3).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Leg Machines/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Leg Machines/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Leg Machines/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Leg Machines/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Leg Machines/pendulum squat/pendulam squat-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Leg Machines/pendulum squat/pendulam-squat.webp",
+            "images/plate loaded equipments/Leg Machines/pendulum squat/plateloaded-pendulum-squat-machine-chest-supported-smartgymequipment-chennai-redhills (3).webp"
+        ],
+        "date_added": 1769439878.3084548
     },
     "power-squat-(or)-v-squat": {
         "name": "power squat (or) v squat",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (21).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (22).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (23).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (24).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (25).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (26).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (27).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (28).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/legs/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (21).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (22).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (23).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (24).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (25).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (26).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (27).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (28).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439772.4485235
     },
     "seated-calf-raise": {
         "name": "seated calf raise",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/legs/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769449590.4233403
     },
     "seated-calf-raise-with-tibia-raise": {
         "name": "Seated calf raise with tibia raise",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/Seated calf raise with tibia raise/plateloaded-seated-calf-raise-with-tibia-raise-machine-smartgymequipment (1).webp",
-            "images/plate loaded equipments/legs/Seated calf raise with tibia raise/plateloaded-seated-calf-raise-with-tibia-raise-machine-smartgymequipment (2).webp",
-            "images/plate loaded equipments/legs/Seated calf raise with tibia raise/plateloaded-seated-calf-raise-with-tibia-raise-machine-smartgymequipment (3).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/Seated calf raise with tibia raise/plateloaded-seated-calf-raise-with-tibia-raise-machine-smartgymequipment (1).webp",
+            "images/plate loaded equipments/Leg Machines/Seated calf raise with tibia raise/plateloaded-seated-calf-raise-with-tibia-raise-machine-smartgymequipment (2).webp",
+            "images/plate loaded equipments/Leg Machines/Seated calf raise with tibia raise/plateloaded-seated-calf-raise-with-tibia-raise-machine-smartgymequipment (3).webp"
+        ],
+        "date_added": 1769449799.5044193
     },
     "swing-squat": {
         "name": "swing squat",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/swing squat/plateloaded-swing-squat-machine-smartgymequipment.webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/swing squat/plateloaded-swing-squat-machine-smartgymequipment.webp"
+        ],
+        "date_added": 1769449814.4280546
     },
     "vertical-leg-press": {
         "name": "vertical leg press",
         "category": "plate loaded equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/plate loaded equipments/legs/vertical leg press/plate loaded vertical legpress machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/legs/vertical leg press/plate loaded vertical legpress machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp"
-        ]
+            "images/plate loaded equipments/Leg Machines/vertical leg press/plate loaded vertical legpress machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Leg Machines/vertical leg press/plate loaded vertical legpress machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp"
+        ],
+        "date_added": 1769439861.8737066
     },
     "rear-delt-flies-machine": {
         "name": "rear delt flies machine",
         "category": "plate loaded equipments",
-        "subcategory": "shoulder Machines",
+        "subcategory": "Shoulder Machines",
         "images": [
-            "images/plate loaded equipments/shoulder/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (1).webp",
-            "images/plate loaded equipments/shoulder/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (2).webp",
-            "images/plate loaded equipments/shoulder/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (3).webp",
-            "images/plate loaded equipments/shoulder/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (4).webp"
-        ]
+            "images/plate loaded equipments/Shoulder Machines/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Shoulder Machines/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Shoulder Machines/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Shoulder Machines/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (4).webp"
+        ],
+        "date_added": 1769449451.3273153
     },
     "seated-lateral-raise": {
         "name": "seated lateral raise",
         "category": "plate loaded equipments",
-        "subcategory": "shoulder Machines",
+        "subcategory": "Shoulder Machines",
         "images": [
-            "images/plate loaded equipments/shoulder/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/shoulder/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/shoulder/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/shoulder/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
-        ]
+            "images/plate loaded equipments/Shoulder Machines/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Shoulder Machines/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Shoulder Machines/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Shoulder Machines/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
+        ],
+        "date_added": 1769439648.9757144
     },
     "seated-shoulder-press-with-lateral-raise-machine": {
         "name": "Seated shoulder press with lateral raise machine",
         "category": "plate loaded equipments",
-        "subcategory": "shoulder Machines",
+        "subcategory": "Shoulder Machines",
         "images": [
-            "images/plate loaded equipments/shoulder/Seated shoulder press with lateral raise machine/shoulder-press-machine-with-lateral-raise-machine-top-smart-gym-equipment-india-chennai-redhills (1).webp",
-            "images/plate loaded equipments/shoulder/Seated shoulder press with lateral raise machine/shoulder-press-machine-with-lateral-raise-machine-top-smart-gym-equipment-india-chennai-redhills (2).webp",
-            "images/plate loaded equipments/shoulder/Seated shoulder press with lateral raise machine/shoulder-press-machine-with-lateral-raise-machine-top-smart-gym-equipment-india-chennai-redhills (3).webp"
-        ]
+            "images/plate loaded equipments/Shoulder Machines/Seated shoulder press with lateral raise machine/shoulder-press-machine-with-lateral-raise-machine-top-smart-gym-equipment-india-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Shoulder Machines/Seated shoulder press with lateral raise machine/shoulder-press-machine-with-lateral-raise-machine-top-smart-gym-equipment-india-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Shoulder Machines/Seated shoulder press with lateral raise machine/shoulder-press-machine-with-lateral-raise-machine-top-smart-gym-equipment-india-chennai-redhills (3).webp"
+        ],
+        "date_added": 1769439930.907134
     },
     "shoulder-press": {
         "name": "Shoulder press",
         "category": "plate loaded equipments",
-        "subcategory": "shoulder Machines",
+        "subcategory": "Shoulder Machines",
         "images": [
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (21).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (22).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (23).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (24).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (26).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (27).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (28).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (29).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (30).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (31).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (32).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (33).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (34).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (35).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (36).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (37).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (38).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (39).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/shoulder/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (21).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (22).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (23).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (24).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (26).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (27).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (28).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (29).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (30).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (31).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (32).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (33).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (34).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (35).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (36).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (37).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (38).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (39).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439853.004961
     },
     "shrug-machine-with-deadlift": {
         "name": "Shrug machine with deadlift",
         "category": "plate loaded equipments",
-        "subcategory": "shoulder Machines",
+        "subcategory": "Shoulder Machines",
         "images": [
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (21).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (22).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (23).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (24).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (25).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
-            "images/plate loaded equipments/shoulder/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
-        ]
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (1).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (10).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (11).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (12).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (13).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (14).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (15).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (16).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (17).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (18).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (19).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (20).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (21).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (22).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (23).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (24).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (25).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (6).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (8).webp",
+            "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769450776.1777813
     },
     "standing-lateral-raise-machine": {
         "name": "Standing lateral raise machine",
         "category": "plate loaded equipments",
-        "subcategory": "shoulder Machines",
+        "subcategory": "Shoulder Machines",
         "images": [
-            "images/plate loaded equipments/shoulder/Standing lateral raise machine/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills.webp"
-        ]
+            "images/plate loaded equipments/Shoulder Machines/Standing lateral raise machine/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills.webp"
+        ],
+        "date_added": 1769439649.1688037
     },
     "half-rack": {
         "name": "half rack",
@@ -1126,7 +1192,8 @@ const equipmentData = {
             "images/Racks and rigs/Racks/half rack/half-rack-machine-smartgymequipment-chennai-redhills (4).webp",
             "images/Racks and rigs/Racks/half rack/half-rack-machine-smartgymequipment-chennai-redhills (5).webp",
             "images/Racks and rigs/Racks/half rack/half-rack-machine-smartgymequipment-chennai-redhills (6).webp"
-        ]
+        ],
+        "date_added": 1769438670.207811
     },
     "power-rack": {
         "name": "power rack",
@@ -1158,7 +1225,8 @@ const equipmentData = {
             "images/Racks and rigs/Racks/power rack/power-rack-smartgymequipment-chennai-redhills (7).webp",
             "images/Racks and rigs/Racks/power rack/power-rack-smartgymequipment-chennai-redhills (8).webp",
             "images/Racks and rigs/Racks/power rack/power-rack-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769439899.8988872
     },
     "power-rack-with-smith-machine-racks-and-rigs": {
         "name": "power rack with smith machine",
@@ -1177,7 +1245,8 @@ const equipmentData = {
             "images/Racks and rigs/Racks/power rack with smith machine/powerrack-with-smith-machine-smartgymequipment-chennai-redhills (9).webp",
             "images/Racks and rigs/Racks/power rack with smith machine/smith with power rack (1).webp",
             "images/Racks and rigs/Racks/power rack with smith machine/smith with power rack (2).webp"
-        ]
+        ],
+        "date_added": 1769450816.2973392
     },
     "squat-rack\uf028": {
         "name": "squat rack\uf028",
@@ -1202,7 +1271,8 @@ const equipmentData = {
             "images/Racks and rigs/Racks/squat rack\uf028/squat-rack-smartgymequipment-chennai-redhills (7).webp",
             "images/Racks and rigs/Racks/squat rack\uf028/squat-rack-smartgymequipment-chennai-redhills (8).webp",
             "images/Racks and rigs/Racks/squat rack\uf028/squat-rack-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769439948.805875
     },
     "crossfit-cage": {
         "name": "crossfit cage",
@@ -1226,413 +1296,428 @@ const equipmentData = {
             "images/Racks and rigs/Rigs/crossfit cage/crossfit-cage-smartgymequipment-chennai-redhills (7).webp",
             "images/Racks and rigs/Rigs/crossfit cage/crossfit-cage-smartgymequipment-chennai-redhills (8).webp",
             "images/Racks and rigs/Rigs/crossfit cage/crossfit-cage-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769438635.8674245
     },
     "biceps-prechur-curl": {
         "name": "Biceps prechur curl",
         "category": "selectorized equipments",
-        "subcategory": "arms Machines",
+        "subcategory": "Arm Machines",
         "images": [
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (1).webp",
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (11).webp",
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (2).webp",
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (3).webp",
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (4).webp",
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (6).webp",
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (7).webp",
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (8).webp",
-            "images/selectorized equipments/arms/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (9).webp"
-        ]
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (1).webp",
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (11).webp",
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (2).webp",
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (3).webp",
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (4).webp",
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (6).webp",
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (7).webp",
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (8).webp",
+            "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (9).webp"
+        ],
+        "date_added": 1769439907.093787
     },
     "forearm-machine": {
         "name": "forearm machine",
         "category": "selectorized equipments",
-        "subcategory": "arms Machines",
+        "subcategory": "Arm Machines",
         "images": [
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-new-2026.webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (1).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (11).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (13).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (15).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (16).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (17).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (18).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (19).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (2).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (20).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (3).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (4).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (5).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (6).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (7).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (8).webp",
-            "images/selectorized equipments/arms/forearm machine/forearm-machine-top-smart-gym-equipment-india-chennai-redhills.webp"
-        ]
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-new-2026.webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (1).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (11).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (13).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (15).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (16).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (17).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (18).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (19).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (2).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (20).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (3).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (4).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (5).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (6).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (7).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-pinloaded-selectorized-smartgymequipment-chennai-redhills (8).webp",
+            "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-top-smart-gym-equipment-india-chennai-redhills.webp"
+        ],
+        "date_added": 1769438655.6763158
+    },
+    "assisted-chin-ups-and-dips": {
+        "name": "assisted chin ups and dips",
+        "category": "selectorized equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted chin ups with dips 2026 new (1).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted chin ups with dips 2026 new (1)_1.webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted chin ups with dips 2026 new (2).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted chin ups with dips 2026 new (2)_1.webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted chin ups with dips 2026 new (3).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted chin ups with dips 2026 new (3)_1.webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted chin ups with dips 2026 new (4).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (1).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (10).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (11).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (12).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (13).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (14).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (15).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (16).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (17).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (18).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (19).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (2).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (20).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (21).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (3).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (4).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (5).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (6).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (7).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (8).webp",
+            "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769438610.7698178
+    },
+    "dual-lat-pull-down": {
+        "name": "dual lat pull down",
+        "category": "selectorized equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (1).webp",
+            "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (2).webp",
+            "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (3).webp",
+            "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (4).webp",
+            "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (5).webp",
+            "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (6).webp"
+        ],
+        "date_added": 1769439913.111756
+    },
+    "latpull-and-row": {
+        "name": "latpull and row",
+        "category": "selectorized equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/selectorized equipments/Back Machines/latpull and row/latpulldown and rowing machine-new-2026 (1).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/latpulldown and rowing machine-new-2026 (2).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (10).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (11).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (12).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (13).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (14).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (15).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (16).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (17).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (18).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (19).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (2).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (20).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (21).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (22).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (23).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (25).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (26).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (27).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (28).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (29).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (3).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (30).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (31).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (32).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (33).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (34).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (35).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (36).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (37).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (38).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (39).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (4).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (40).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (41).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (42).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (43).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (45).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (46).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (47).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (48).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (49).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (5).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (50).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (51).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (52).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (53).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (54).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (55).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (56).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (57).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (59).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (6).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (60).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (61).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (62).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (63).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (64).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (65).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (7).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (8).webp",
+            "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769451238.0771425
+    },
+    "rowing": {
+        "name": "rowing",
+        "category": "selectorized equipments",
+        "subcategory": "Back Machines",
+        "images": [
+            "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (1).webp",
+            "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (2).webp",
+            "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (3).webp",
+            "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (4).webp",
+            "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (5).webp",
+            "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (6).webp",
+            "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (7).webp",
+            "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (8).webp"
+        ],
+        "date_added": 1769439928.8329675
     },
     "chest-press": {
         "name": "Chest press",
         "category": "selectorized equipments",
         "subcategory": "Chest Machines",
         "images": [
-            "images/selectorized equipments/Chest/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (1).webp",
-            "images/selectorized equipments/Chest/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (2).webp",
-            "images/selectorized equipments/Chest/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (3).webp",
-            "images/selectorized equipments/Chest/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (4).webp"
-        ]
+            "images/selectorized equipments/Chest Machines/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (1).webp",
+            "images/selectorized equipments/Chest Machines/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (2).webp",
+            "images/selectorized equipments/Chest Machines/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (3).webp",
+            "images/selectorized equipments/Chest Machines/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (4).webp"
+        ],
+        "date_added": 1769439929.1652722
     },
     "multi-press-selectorized-equipments": {
         "name": "Multi press",
         "category": "selectorized equipments",
         "subcategory": "Chest Machines",
         "images": [
-            "images/selectorized equipments/Chest/Multi press/multi-press-machine-new-2026.webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (1).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (10).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (12).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (13).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (14).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (15).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (17).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (18).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (19).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (20).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (21).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (22).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (3).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (4).webp",
-            "images/selectorized equipments/Chest/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (7).webp"
-        ]
+            "images/selectorized equipments/Chest Machines/Multi press/multi-press-machine-new-2026.webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (1).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (10).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (12).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (13).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (14).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (15).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (17).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (18).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (19).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (20).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (21).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (22).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (3).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (4).webp",
+            "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (7).webp"
+        ],
+        "date_added": 1769439910.9971664
     },
     "peck-fly-with-rear-delt": {
         "name": "peck fly with rear delt",
         "category": "selectorized equipments",
         "subcategory": "Chest Machines",
         "images": [
-            "images/selectorized equipments/Chest/peck fly with rear delt/peck-fly-with-rear-delt-machine-2026-new (1).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peck-fly-with-rear-delt-machine-2026-new (2).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (1).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (10).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (11).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (12).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (13).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (14).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (15).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (16).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (17).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (18).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (19).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (20).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (21).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (22).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (24).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (25).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (26).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (27).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (28).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (3).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (30).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (31).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (32).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (33).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (35).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (36).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (37).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (38).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (39).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (4).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (40).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (41).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (42).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (43).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (44).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (45).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (46).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (47).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (48).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (49).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (5).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (50).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (51).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (52).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (53).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (54).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (7).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (8).webp",
-            "images/selectorized equipments/Chest/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (9).webp"
-        ]
-    },
-    "assisted-chin-ups-and-dips": {
-        "name": "assisted chin ups and dips",
-        "category": "selectorized equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted chin ups with dips 2026 new (1).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted chin ups with dips 2026 new (1)_1.webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted chin ups with dips 2026 new (2).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted chin ups with dips 2026 new (2)_1.webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted chin ups with dips 2026 new (3).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted chin ups with dips 2026 new (3)_1.webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted chin ups with dips 2026 new (4).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (1).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (10).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (11).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (12).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (13).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (14).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (15).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (16).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (17).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (18).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (19).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (2).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (20).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (21).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (3).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (4).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (5).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (6).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (7).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (8).webp",
-            "images/selectorized equipments/lat/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (9).webp"
-        ]
-    },
-    "dual-lat-pull-down": {
-        "name": "dual lat pull down",
-        "category": "selectorized equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/selectorized equipments/lat/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (1).webp",
-            "images/selectorized equipments/lat/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (2).webp",
-            "images/selectorized equipments/lat/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (3).webp",
-            "images/selectorized equipments/lat/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (4).webp",
-            "images/selectorized equipments/lat/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (5).webp",
-            "images/selectorized equipments/lat/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (6).webp"
-        ]
-    },
-    "latpull-and-row": {
-        "name": "latpull and row",
-        "category": "selectorized equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/selectorized equipments/lat/latpull and row/latpulldown and rowing machine-new-2026 (1).webp",
-            "images/selectorized equipments/lat/latpull and row/latpulldown and rowing machine-new-2026 (2).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (10).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (11).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (12).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (13).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (14).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (15).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (16).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (17).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (18).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (19).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (2).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (20).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (21).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (22).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (23).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (25).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (26).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (27).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (28).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (29).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (3).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (30).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (31).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (32).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (33).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (34).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (35).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (36).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (37).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (38).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (39).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (4).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (40).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (41).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (42).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (43).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (45).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (46).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (47).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (48).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (49).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (5).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (50).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (51).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (52).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (53).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (54).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (55).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (56).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (57).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (59).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (6).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (60).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (61).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (62).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (63).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (64).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (65).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (7).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (8).webp",
-            "images/selectorized equipments/lat/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (9).webp"
-        ]
-    },
-    "rowing": {
-        "name": "rowing",
-        "category": "selectorized equipments",
-        "subcategory": "lat Machines",
-        "images": [
-            "images/selectorized equipments/lat/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (1).webp",
-            "images/selectorized equipments/lat/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (2).webp",
-            "images/selectorized equipments/lat/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (3).webp",
-            "images/selectorized equipments/lat/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (4).webp",
-            "images/selectorized equipments/lat/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (5).webp",
-            "images/selectorized equipments/lat/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (6).webp",
-            "images/selectorized equipments/lat/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (7).webp",
-            "images/selectorized equipments/lat/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (8).webp"
-        ]
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peck-fly-with-rear-delt-machine-2026-new (1).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peck-fly-with-rear-delt-machine-2026-new (2).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (1).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (10).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (11).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (12).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (13).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (14).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (15).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (16).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (17).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (18).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (19).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (20).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (21).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (22).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (24).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (25).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (26).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (27).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (28).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (3).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (30).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (31).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (32).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (33).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (35).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (36).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (37).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (38).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (39).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (4).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (40).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (41).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (42).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (43).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (44).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (45).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (46).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (47).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (48).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (49).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (5).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (50).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (51).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (52).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (53).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (54).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (7).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (8).webp",
+            "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439645.7785556
     },
     "adductor---abductor": {
         "name": "Adductor - abductor",
         "category": "selectorized equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/selectorized equipments/legs/Adductor - abductor/abductor-adductor-machine-top-smart-gym-equipment-india-chennai-redhills (1).webp",
-            "images/selectorized equipments/legs/Adductor - abductor/abductor-adductor-machine-top-smart-gym-equipment-india-chennai-redhills (2).webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (1).webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (10)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (11)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (12)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (2)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (3)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (4)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (5)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (6)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (7)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (8)_result.webp",
-            "images/selectorized equipments/legs/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (9)_result.webp"
-        ]
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/abductor-adductor-machine-top-smart-gym-equipment-india-chennai-redhills (1).webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/abductor-adductor-machine-top-smart-gym-equipment-india-chennai-redhills (2).webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (1).webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (10)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (11)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (12)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (2)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (3)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (4)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (5)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (6)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (7)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (8)_result.webp",
+            "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (9)_result.webp"
+        ],
+        "date_added": 1769439912.492916
     },
     "leg-curl-and-leg-extension-(-seated---prone-)": {
         "name": "leg curl and leg extension ( Seated - prone )",
         "category": "selectorized equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/leg-extension-leg-curl-new-2026 (1).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/leg-extension-leg-curl-new-2026 (2).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (1).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (10).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (11).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (12).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (13).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (14).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (15).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (16).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (17).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (18).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (19).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (2).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (20).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (21).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (22).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (23).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (24).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (25).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (26).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (27).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (28).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (29).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (3).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (30).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (31).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (32).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (33).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (34).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (35).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (36).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (37).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (38).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (39).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (4).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (40).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (41).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (42).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (43).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (44).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (5).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (6).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (7).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (8).webp",
-            "images/selectorized equipments/legs/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (9).webp"
-        ]
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/leg-extension-leg-curl-new-2026 (1).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/leg-extension-leg-curl-new-2026 (2).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (1).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (10).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (11).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (12).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (13).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (14).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (15).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (16).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (17).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (18).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (19).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (2).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (20).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (21).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (22).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (23).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (24).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (25).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (26).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (27).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (28).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (29).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (3).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (30).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (31).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (32).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (33).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (34).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (35).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (36).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (37).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (38).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (39).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (4).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (40).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (41).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (42).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (43).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (44).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (5).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (6).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (7).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (8).webp",
+            "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (9).webp"
+        ],
+        "date_added": 1769439960.055984
     },
     "seated-leg-curl-and-leg-extension": {
         "name": "seated leg curl and leg extension",
         "category": "selectorized equipments",
-        "subcategory": "legs Machines",
+        "subcategory": "Leg Machines",
         "images": [
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (1).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (10).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (11).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (12).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (2).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (3).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (4).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (5).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (6).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (7).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (8).webp",
-            "images/selectorized equipments/legs/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (1).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (10).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (11).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (12).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (2).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (3).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (4).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (5).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (6).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (7).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (8).webp",
+            "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769451287.337542
     },
     "lateral-raise": {
         "name": "lateral raise",
         "category": "selectorized equipments",
-        "subcategory": "shoulder Machines",
+        "subcategory": "Shoulder Machines",
         "images": [
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (1).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (10).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (11).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (12).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (13).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (14).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (15).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (16).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (17).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (18).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (19).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (2).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (20).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (21).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (22).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (23).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (24).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (27).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (28).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (29).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (3).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (30).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (31).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (32).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (4).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (5).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (6).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (7).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (8).webp",
-            "images/selectorized equipments/shoulder/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (1).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (10).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (11).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (12).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (13).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (14).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (15).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (16).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (17).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (18).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (19).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (2).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (20).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (21).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (22).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (23).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (24).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (27).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (28).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (29).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (3).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (30).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (31).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (32).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (4).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (5).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (6).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (7).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (8).webp",
+            "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769438692.5369537
     },
     "shoulder-press-machine": {
         "name": "Shoulder press machine",
         "category": "selectorized equipments",
-        "subcategory": "shoulder Machines",
+        "subcategory": "Shoulder Machines",
         "images": [
-            "images/selectorized equipments/shoulder/Shoulder press machine/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (11).webp",
-            "images/selectorized equipments/shoulder/Shoulder press machine/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (16).webp",
-            "images/selectorized equipments/shoulder/Shoulder press machine/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (9).webp"
-        ]
+            "images/selectorized equipments/Shoulder Machines/Shoulder press machine/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (11).webp",
+            "images/selectorized equipments/Shoulder Machines/Shoulder press machine/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (16).webp",
+            "images/selectorized equipments/Shoulder Machines/Shoulder press machine/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (9).webp"
+        ],
+        "date_added": 1769439910.2299204
     },
     "adjustable-abdomen-bench-2.0": {
         "name": "Adjustable abdomen bench 2.0",
@@ -1642,7 +1727,8 @@ const equipmentData = {
             "images/weight benches and storage/Adjustable abdomen bench 2.0/adjustable abdomen bench v2.0 new 2026 (1).webp",
             "images/weight benches and storage/Adjustable abdomen bench 2.0/adjustable abdomen bench v2.0 new 2026 (2).webp",
             "images/weight benches and storage/Adjustable abdomen bench 2.0/adjustable abdomen bench v2.0 new 2026 (3).webp"
-        ]
+        ],
+        "date_added": 1769451567.0905185
     },
     "adjustable-abdominal-board": {
         "name": "Adjustable abdominal board",
@@ -1657,7 +1743,8 @@ const equipmentData = {
             "images/weight benches and storage/Adjustable abdominal board/adjustable-abdomen-bench-torso-smartgymequipment-chennai-redhills (6).webp",
             "images/weight benches and storage/Adjustable abdominal board/adjustable-abdomen-bench-torso-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/Adjustable abdominal board/adjustable-abdomen-board-new-2026.webp"
-        ]
+        ],
+        "date_added": 1769438591.3980856
     },
     "bench-pull": {
         "name": "bench pull",
@@ -1665,7 +1752,8 @@ const equipmentData = {
         "subcategory": "bench pull",
         "images": [
             "images/weight benches and storage/bench pull/bench-pull-machine-smartgymequipment-chennai-redhills.webp"
-        ]
+        ],
+        "date_added": 1769438611.715639
     },
     "bi---tri-bench": {
         "name": "Bi - tri bench",
@@ -1674,7 +1762,8 @@ const equipmentData = {
         "images": [
             "images/weight benches and storage/Bi - tri bench/bicep-tricep-bench-smartgymequipment-chennai-redhills (1).webp",
             "images/weight benches and storage/Bi - tri bench/bicep-tricep-bench-smartgymequipment-chennai-redhills (2).webp"
-        ]
+        ],
+        "date_added": 1769451662.799884
     },
     "completely-adjustable-olympic-fid-bench-press": {
         "name": "Completely adjustable olympic fid bench press",
@@ -1682,7 +1771,8 @@ const equipmentData = {
         "subcategory": "Completely adjustable olympic fid bench press",
         "images": [
             "images/weight benches and storage/Completely adjustable olympic fid bench press/complete-adjustable-olympic-fid-bench-press.webp"
-        ]
+        ],
+        "date_added": 1769438623.1916502
     },
     "dumbell-rack-mini": {
         "name": "Dumbell rack mini",
@@ -1691,7 +1781,8 @@ const equipmentData = {
         "images": [
             "images/weight benches and storage/Dumbell rack mini/mini-dumbell-rack.webp",
             "images/weight benches and storage/Dumbell rack mini/mini-dumbell-rackl- 2026.webp"
-        ]
+        ],
+        "date_added": 1769439010.7803967
     },
     "fid-bench": {
         "name": "FID bench",
@@ -1725,7 +1816,8 @@ const equipmentData = {
             "images/weight benches and storage/FID bench/flat-incline-decline-bench-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/FID bench/flat-incline-decline-bench-smartgymequipment-chennai-redhills (8).webp",
             "images/weight benches and storage/FID bench/flat-incline-decline-bench-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769438648.3811848
     },
     "flat-bench": {
         "name": "flat bench",
@@ -1738,7 +1830,8 @@ const equipmentData = {
             "images/weight benches and storage/flat bench/flat-bench-smartgymequipment-chennai-redhills (4).webp",
             "images/weight benches and storage/flat bench/flat-bench-smartgymequipment-chennai-redhills (5).webp",
             "images/weight benches and storage/flat bench/flat-bench-smartgymequipment-chennai-redhills (6).webp"
-        ]
+        ],
+        "date_added": 1769438638.639744
     },
     "hyper-extension": {
         "name": "hyper extension",
@@ -1759,7 +1852,8 @@ const equipmentData = {
             "images/weight benches and storage/hyper extension/hyper-extension-machine-smartgymequipment-chennai-redhills (8).webp",
             "images/weight benches and storage/hyper extension/hyper-extension-machine-smartgymequipment-chennai-redhills (9).webp",
             "images/weight benches and storage/hyper extension/hyper-extension-new-2026.webp"
-        ]
+        ],
+        "date_added": 1769438676.3783426
     },
     "incline-bench": {
         "name": "Incline bench",
@@ -1768,7 +1862,8 @@ const equipmentData = {
         "images": [
             "images/weight benches and storage/Incline bench/incline-bench-smartgymequipment-chennai-redhills (1).webp",
             "images/weight benches and storage/Incline bench/incline-bench-smartgymequipment-chennai-redhills (2).webp"
-        ]
+        ],
+        "date_added": 1769438685.20143
     },
     "olympic-decline-bench": {
         "name": "olympic decline bench",
@@ -1782,7 +1877,8 @@ const equipmentData = {
             "images/weight benches and storage/olympic decline bench/olympic-decline-benchpress-smartgymequipment-chennai-redhills (5).webp",
             "images/weight benches and storage/olympic decline bench/olympic-decline-benchpress-smartgymequipment-chennai-redhills (6).webp",
             "images/weight benches and storage/olympic decline bench/olympic-decline-benchpress-smartgymequipment-chennai-redhills (7).webp"
-        ]
+        ],
+        "date_added": 1769439611.6671708
     },
     "olympic-fid-bench": {
         "name": "olympic FID bench",
@@ -1854,7 +1950,8 @@ const equipmentData = {
             "images/weight benches and storage/olympic FID bench/olympic-fid-benchpress-machine-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/olympic FID bench/olympic-fid-benchpress-machine-smartgymequipment-chennai-redhills (8).webp",
             "images/weight benches and storage/olympic FID bench/olympic-fid-benchpress-machine-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769439626.7234755
     },
     "olympic-flat-bench": {
         "name": "olympic flat bench",
@@ -1882,7 +1979,8 @@ const equipmentData = {
             "images/weight benches and storage/olympic flat bench/olympic-flat-bench-press-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/olympic flat bench/olympic-flat-bench-press-smartgymequipment-chennai-redhills (8).webp",
             "images/weight benches and storage/olympic flat bench/olympic-flat-bench-press-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769439631.676372
     },
     "olympic-incline-bench": {
         "name": "olympic incline bench",
@@ -1894,7 +1992,8 @@ const equipmentData = {
             "images/weight benches and storage/olympic incline bench/olympic-incline-benchpress-machine-smartgymequipment-chennai-redhills (3).webp",
             "images/weight benches and storage/olympic incline bench/olympic-incline-benchpress-machine-smartgymequipment-chennai-redhills (4).webp",
             "images/weight benches and storage/olympic incline bench/olympic-incline-benchpress-machine-smartgymequipment-chennai-redhills (6).webp"
-        ]
+        ],
+        "date_added": 1769439632.30265
     },
     "olympic-rod-stand": {
         "name": "Olympic rod stand",
@@ -1904,7 +2003,8 @@ const equipmentData = {
             "images/weight benches and storage/Olympic rod stand/olympic-barbell-stand-rod-smartgymequipment-chennai-redhills (2).webp",
             "images/weight benches and storage/Olympic rod stand/olympic-barbell-stand-rod-smartgymequipment-chennai-redhills (3).webp",
             "images/weight benches and storage/Olympic rod stand/olympic-barbell-stand-rod-smartgymequipment-chennai-redhills .webp"
-        ]
+        ],
+        "date_added": 1769439610.759154
     },
     "plate-stand": {
         "name": "plate stand",
@@ -1920,7 +2020,8 @@ const equipmentData = {
             "images/weight benches and storage/plate stand/olympic-weight-plate-stand-smartgymequipment-chennai-redhills (6).webp",
             "images/weight benches and storage/plate stand/olympic-weight-plate-stand-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/plate stand/olympic-weight-plate-stand-smartgymequipment-chennai-redhills (8).webp"
-        ]
+        ],
+        "date_added": 1769439635.1327446
     },
     "prechur-curl-manual": {
         "name": "prechur curl manual",
@@ -1935,7 +2036,8 @@ const equipmentData = {
             "images/weight benches and storage/prechur curl manual/prechur-curl-bench-machine-smartgymequipment-chennai-redhills (6).webp",
             "images/weight benches and storage/prechur curl manual/prechur-curl-bench-machine-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/prechur curl manual/prechur-curl-bench-machine-smartgymequipment-chennai-redhills (8).webp"
-        ]
+        ],
+        "date_added": 1769439906.00516
     },
     "seal-row": {
         "name": "Seal row",
@@ -1944,7 +2046,8 @@ const equipmentData = {
         "images": [
             "images/weight benches and storage/Seal row/seal-row-bench-machine-smartgymequipment-chennai-redhills (1).webp",
             "images/weight benches and storage/Seal row/seal-row-bench-machine-smartgymequipment-chennai-redhills (2).webp"
-        ]
+        ],
+        "date_added": 1769439908.1307757
     },
     "sissy-squat": {
         "name": "sissy squat",
@@ -1954,7 +2057,8 @@ const equipmentData = {
             "images/weight benches and storage/sissy squat/sissy-squat-machine-smartgymequipment-chennai-redhills (1).webp",
             "images/weight benches and storage/sissy squat/sissy-squat-machine-smartgymequipment-chennai-redhills (2).webp",
             "images/weight benches and storage/sissy squat/sissy-squat-machine-smartgymequipment-chennai-redhills (3).webp"
-        ]
+        ],
+        "date_added": 1769439932.7668056
     },
     "sitting-standing-twister": {
         "name": "sitting standing twister",
@@ -1981,7 +2085,8 @@ const equipmentData = {
             "images/weight benches and storage/sitting standing twister/sitting-standing-twister-smartgymequipment-chennai-redhills (37).webp",
             "images/weight benches and storage/sitting standing twister/sitting-standing-twister-smartgymequipment-chennai-redhills (38).webp",
             "images/weight benches and storage/sitting standing twister/sitting-standing-twister-smartgymequipment-chennai-redhills (39).webp"
-        ]
+        ],
+        "date_added": 1769439935.8374038
     },
     "sled": {
         "name": "sled",
@@ -1994,7 +2099,8 @@ const equipmentData = {
             "images/weight benches and storage/sled/sled-smartgymequipment-chennai-redhills (4).webp",
             "images/weight benches and storage/sled/sled-smartgymequipment-chennai-redhills (5).webp",
             "images/weight benches and storage/sled/sled-smartgymequipment-chennai-redhills (6).webp"
-        ]
+        ],
+        "date_added": 1769451773.5196538
     },
     "three-tier-dumbbell-rack": {
         "name": "three tier dumbbell rack",
@@ -2003,7 +2109,8 @@ const equipmentData = {
         "images": [
             "images/weight benches and storage/three tier dumbbell rack/three-tier-dumbell-rackl-smartgymequipment-chennai-redhills (1).webp",
             "images/weight benches and storage/three tier dumbbell rack/three-tier-dumbell-rackl-smartgymequipment-chennai-redhills (2).webp"
-        ]
+        ],
+        "date_added": 1769439950.4967754
     },
     "total-arm-blaster": {
         "name": "Total arm blaster",
@@ -2011,7 +2118,8 @@ const equipmentData = {
         "subcategory": "Total arm blaster",
         "images": [
             "images/weight benches and storage/Total arm blaster/total-arm-biceps-blaster-smartgymequipment-chennai-redhills.webp"
-        ]
+        ],
+        "date_added": 1769451791.313125
     },
     "twister": {
         "name": "twister",
@@ -2022,7 +2130,8 @@ const equipmentData = {
             "images/weight benches and storage/twister/twister-new-2026 (2).webp",
             "images/weight benches and storage/twister/twister-smartgymequipment-chennai-redhills (1).webp",
             "images/weight benches and storage/twister/twister-smartgymequipment-chennai-redhills (2).webp"
-        ]
+        ],
+        "date_added": 1769439963.1185863
     },
     "two-tier-dumbbell-rack": {
         "name": "two tier dumbbell rack",
@@ -2056,7 +2165,8 @@ const equipmentData = {
             "images/weight benches and storage/two tier dumbbell rack/two-tier-dumbell-rack-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/two tier dumbbell rack/two-tier-dumbell-rack-smartgymequipment-chennai-redhills (8).webp",
             "images/weight benches and storage/two tier dumbbell rack/two-tier-dumbell-rack-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769439969.8442883
     },
     "utility-stool": {
         "name": "utility stool",
@@ -2074,7 +2184,8 @@ const equipmentData = {
             "images/weight benches and storage/utility stool/utility-multipurpose-stool-smartgymequipment-chennai-redhills (6).webp",
             "images/weight benches and storage/utility stool/utility-multipurpose-stool-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/utility stool/utility-multipurpose-stool-smartgymequipment-chennai-redhills .webp"
-        ]
+        ],
+        "date_added": 1769439974.3272064
     },
     "vertical-knee-raise": {
         "name": "vertical knee raise",
@@ -2095,7 +2206,8 @@ const equipmentData = {
             "images/weight benches and storage/vertical knee raise/vertical-knee-raise-smartgymequipment-chennai-redhills (7).webp",
             "images/weight benches and storage/vertical knee raise/vertical-knee-raise-smartgymequipment-chennai-redhills (8).webp",
             "images/weight benches and storage/vertical knee raise/vertical-knee-raise-smartgymequipment-chennai-redhills (9).webp"
-        ]
+        ],
+        "date_added": 1769439978.2185855
     },
     "vertical-knee-raise-with-chin-ups": {
         "name": "vertical knee raise with chin ups",
@@ -2103,7 +2215,8 @@ const equipmentData = {
         "subcategory": "vertical knee raise with chin ups",
         "images": [
             "images/weight benches and storage/vertical knee raise with chin ups/vertical-knee-raise-with-chin-ups-smartgymequipment-chennai-redhills.webp"
-        ]
+        ],
+        "date_added": 1769439978.4403172
     },
     "weight-lifting-platform": {
         "name": "weight lifting platform",
@@ -2112,6 +2225,7 @@ const equipmentData = {
         "images": [
             "images/weight benches and storage/weight lifting platform/weightlifting-platform-smartgymequipment-chennai-redhills (1).webp",
             "images/weight benches and storage/weight lifting platform/weightlifting-platform-smartgymequipment-chennai-redhills (2).webp"
-        ]
+        ],
+        "date_added": 1769451830.8976178
     }
 };

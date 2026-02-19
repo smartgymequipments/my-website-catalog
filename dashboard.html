@@ -1,358 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Product Manager</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="data.js"></script>
-    <script src="admin.js" defer></script>
+    <title>Admin Dashboard - Smart Gym Equipments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Unbounded:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            background-color: #0f172a;
-            color: white;
-            font-family: 'Outfit', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            min-height: 100vh;
+            font-family: 'Unbounded', sans-serif;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 250px;
-            background: #1e293b;
-            border-right: 1px solid #334155;
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            height: 100%;
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .sidebar-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid #334155;
-        }
-
-        .sidebar-header h2 {
-            margin: 0;
-            font-size: 1.25rem;
-            color: #e6c200;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex: 1;
-        }
-
-        .nav-links li a {
-            display: block;
-            padding: 1rem 1.5rem;
-            color: #94a3b8;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .nav-links li a:hover,
-        .nav-links li a.active {
-            background: #334155;
-            color: white;
-            border-left: 3px solid #e6c200;
-        }
-
-        .logout-section {
-            padding: 1rem;
-            border-top: 1px solid #334155;
-        }
-
-        .logout-btn {
-            width: 100%;
-            padding: 0.75rem;
-            background: transparent;
-            border: 1px solid #ef4444;
-            color: #ef4444;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .logout-btn:hover {
-            background: #ef4444;
-            color: white;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 250px;
-            padding: 2rem;
-            flex: 1;
-            width: calc(100% - 250px);
-        }
-
-        .header-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: #e6c200;
-            color: black;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        .btn-success {
-            background: #22c55e;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* Views */
-        .view-section {
-            display: none;
-        }
-
-        .view-section.active {
-            display: block;
-        }
-
-        /* Product List */
-        .product-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #1e293b;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .product-table th,
-        .product-table td {
-            text-align: left;
-            padding: 1rem;
-            border-bottom: 1px solid #334155;
-        }
-
-        .product-table th {
-            background: #0f172a;
-            color: #94a3b8;
-        }
-
-        .product-thumbnail {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
-        /* Forms */
-        .form-container {
-            background: #1e293b;
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 800px;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #cbd5e1;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 4px;
-            color: white;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .half-width {
-            flex: 1;
+        .glass-header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 
-<body>
+<body class="bg-black text-white min-h-screen">
 
-    <!-- Sidebar -->
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h2>Admin Portal</h2>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" class="active" onclick="switchView('list-view')">All Products</a></li>
-            <li><a href="#" onclick="switchView('add-view')">Add New Product</a></li>
-            <li><a href="#" onclick="switchView('category-view')">Category Manager</a></li>
-        </ul>
-        <div class="logout-section">
-            <button class="logout-btn" onclick="logout()">Logout</button>
+    <!-- Navigation -->
+    <nav class="glass-header sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <div
+                            class="h-8 w-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
+                            A</div>
+                        <span class="font-bold text-xl text-yellow-400 tracking-wide">Admin Portal</span>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button onclick="logout()"
+                        class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition">Logout</button>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
 
-        <!-- List View -->
-        <div id="list-view" class="view-section active">
-            <div class="header-bar">
-                <h1>All Products</h1>
-                <div class="header-actions">
-                    <button class="btn-success" onclick="publishChanges()">1. Generate Data</button>
-                    <button class="btn-primary" style="background:#3b82f6; color:white;" onclick="deployToGitHub()">2.
-                        Push to Cloud</button>
+        <!-- Stats / Header -->
+        <div class="px-4 sm:px-0">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4">
+                <h1 class="text-4xl font-bold text-white tracking-tight">Product Management</h1>
+                <!-- Filter & Add -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <select id="filter-category" onchange="filterProducts()"
+                        class="bg-gray-900 text-white border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-yellow-400 text-sm">
+                        <option value="all">All Categories</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Multifunctional and functional equipments">Multifunctional & Functional</option>
+                        <option value="plate loaded equipments">Plate Loaded</option>
+                        <option value="selectorized equipments">Selectorized</option>
+                        <option value="Racks and rigs">Racks & Rigs</option>
+                        <option value="weight benches and storage">Weight Benches & Storage</option>
+                    </select>
+
+                    <button onclick="openAddModal()"
+                        class="bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-yellow-400/20 transform hover:-translate-y-0.5 transition flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Add New Product
+                    </button>
                 </div>
             </div>
 
-            <div class="search-bar" style="margin-bottom: 1rem;">
-                <input type="text" id="product-search" placeholder="Search products..."
-                    style="width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; color: white; border-radius: 6px;">
+            <!-- Product List Grid -->
+            <div class="glass rounded-xl p-6 min-h-[50vh]">
+                <div id="product-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Loaded via JS -->
+                    <div class="col-span-full text-center text-gray-400 py-10">Loading products...</div>
+                </div>
             </div>
-
-            <table class="product-table">
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="product-table-body">
-                    <!-- JS Injected -->
-                </tbody>
-            </table>
         </div>
+    </div>
 
-        <!-- Add/Edit View -->
-        <div id="add-view" class="view-section">
-            <div class="header-bar">
-                <h1 id="form-title">Add New Product</h1>
-                <button class="btn-primary" style="background: #334155; color:white;"
-                    onclick="switchView('list-view')">Cancel</button>
-            </div>
+    <!-- Add Product Modal -->
+    <div id="add-modal" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-black bg-opacity-90 transition-opacity backdrop-blur-sm" aria-hidden="true"
+                onclick="closeAddModal()"></div>
 
-            <div class="form-container">
-                <form id="product-form">
-                    <input type="hidden" id="edit-key">
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-                    <div class="form-row">
-                        <div class="form-group half-width">
-                            <label>Product Name</label>
-                            <input type="text" id="p-name" required>
-                        </div>
-                        <div class="form-group half-width">
-                            <label>Category</label>
-                            <select id="p-category" required onchange="loadSubcatsForProductForm()">
-                                <option value="">Loading...</option>
+            <div
+                class="inline-block align-middle glass rounded-xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full border border-white/10">
+                <div class="px-6 py-6">
+                    <h3 class="text-2xl leading-6 font-bold text-yellow-400 mb-6" id="modal-title">Add New Product</h3>
+                    <form id="add-form" class="space-y-5">
+                        <div>
+                            <label
+                                class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Category</label>
+                            <select name="category" id="add-category" onchange="fetchSubcategories('add')" required
+                                class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="Accessories">Accessories</option>
+                                <option value="Multifunctional and functional equipments">Multifunctional & Functional
+                                </option>
+                                <option value="plate loaded equipments">Plate Loaded</option>
+                                <option value="selectorized equipments">Selectorized</option>
+                                <option value="Racks and rigs">Racks & Rigs</option>
+                                <option value="weight benches and storage">Weight Benches & Storage</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Sub Category</label>
-                        <select id="p-subcategory" required>
-                            <option value="">Select Category First</option>
-                        </select>
-                        <small style="color: #64748b;">(Or create new via Category Manager)</small>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea id="p-description" rows="4"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Product Image</label>
-                        <input type="file" id="p-image" accept="image/*">
-                        <p id="current-image-path" style="font-size: 0.8rem; color: #e6c200; margin-top: 5px;"></p>
-                    </div>
-
-                    <button type="submit" class="btn-primary" style="width: 100%;">Save Product</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Category Manager View -->
-        <div id="category-view" class="view-section">
-            <div class="header-bar">
-                <h1>Manage Categories</h1>
-            </div>
-
-            <!-- Structure Manager -->
-            <div style="display: flex; gap: 2rem; height: calc(100vh - 200px);">
-
-                <!-- Left: Categories -->
-                <div style="flex: 1; background: #1e293b; padding: 1rem; border-radius: 8px; overflow-y: auto;">
-                    <h3>Categories</h3>
-                    <div class="form-row" style="margin-bottom: 1rem;">
-                        <input type="text" id="new-cat-name" placeholder="New Category Name" style="width: 100%;">
-                        <button class="btn-primary" onclick="addCategory()">Add</button>
-                    </div>
-                    <ul id="cat-manager-list" class="nav-links" style="border: 1px solid #334155; border-radius: 4px;">
-                        <!-- dynamic -->
-                    </ul>
-                </div>
-
-                <!-- Right: Subcategories -->
-                <div style="flex: 1; background: #1e293b; padding: 1rem; border-radius: 8px; overflow-y: auto;">
-                    <h3 id="sub-manager-title">Subcategories</h3>
-                    <div id="sub-manager-content" style="display:none;">
-                        <input type="hidden" id="selected-cat-for-sub">
-                        <div class="form-row" style="margin-bottom: 1rem;">
-                            <input type="text" id="new-sub-name" placeholder="New Subcategory Name"
-                                style="width: 100%;">
-                            <button class="btn-primary" onclick="addSubCategory()">Add</button>
+                        <div>
+                            <label
+                                class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Subcategory</label>
+                            <select name="subcategory" id="add-subcategory"
+                                class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                                <option value="General">General</option>
+                            </select>
+                            <p class="text-xs text-gray-500 mt-1">Select "General" if no specific subcategory exists.
+                            </p>
                         </div>
-                        <ul id="sub-manager-list" class="nav-links"
-                            style="border: 1px solid #334155; border-radius: 4px;">
-                            <!-- dynamic -->
-                        </ul>
-                    </div>
-                    <p id="sub-manager-placeholder" style="color: #64748b; margin-top: 2rem; text-align: center;">Select
-                        a Category to manage its subcategories.</p>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Product
+                                Name</label>
+                            <input type="text" name="title" required
+                                class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">YouTube
+                                Video URL (Optional)</label>
+                            <input type="url" name="youtube_url" placeholder="https://www.youtube.com/watch?v=..."
+                                class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Product
+                                Image</label>
+                            <input type="file" name="images[]" required multiple accept="image/*,video/*"
+                                class="block w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-bold file:bg-yellow-400 file:text-black hover:file:bg-yellow-300 pointer-events-none-file">
+                        </div>
+                        <div class="mt-8 flex gap-3">
+                            <button type="submit"
+                                class="flex-1 justify-center rounded-md border border-transparent shadow-sm px-4 py-3 bg-yellow-400 text-base font-bold text-black hover:bg-yellow-300 focus:outline-none sm:text-sm transition">Save
+                                Product</button>
+                            <button type="button" onclick="closeAddModal()"
+                                class="flex-1 justify-center rounded-md border border-gray-600 shadow-sm px-4 py-3 bg-transparent text-base font-medium text-gray-300 hover:bg-white/10 focus:outline-none sm:text-sm transition">Cancel</button>
+                        </div>
+                    </form>
                 </div>
-
             </div>
         </div>
+    </div>
 
-    </main>
+    <!-- Edit Product Modal -->
+    <div id="edit-modal" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title-edit"
+        role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-black bg-opacity-90 transition-opacity backdrop-blur-sm" aria-hidden="true"
+                onclick="closeEditModal()"></div>
 
+            <div
+                class="inline-block align-middle glass rounded-xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full border border-white/10">
+                <div class="px-6 py-6">
+                    <h3 class="text-2xl leading-6 font-bold text-yellow-400 mb-6" id="modal-title-edit">Edit Product
+                    </h3>
+                    <form id="edit-form" class="space-y-5">
+                        <input type="hidden" name="original_folder" id="edit-original-folder">
+
+                        <!-- Image Management Section -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Product
+                                Images</label>
+                            <div id="edit-image-list" class="grid grid-cols-3 sm:grid-cols-4 gap-4 mb-4">
+                                <!-- Images rendered here -->
+                            </div>
+
+                            <div class="mt-2 bg-white/5 p-4 rounded-lg border border-white/10">
+                                <label class="block text-xs font-bold text-gray-400 uppercase mb-2">Add New
+                                    Image</label>
+                                <div class="flex gap-2 items-center">
+                                    <input type="file" id="new-image-input" multiple accept="image/*,video/*"
+                                        class="block w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-bold file:bg-gray-700 file:text-white hover:file:bg-gray-600">
+                                    <button type="button" onclick="uploadNewImage()"
+                                        class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md font-bold text-sm transition shadow-lg">Upload</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="border-gray-700 my-6">
+
+                        <!-- Category / Subcategory Edit -->
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Category</label>
+                                <select name="category" id="edit-category" onchange="fetchSubcategories('edit')"
+                                    required
+                                    class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                                    <option value="Accessories">Accessories</option>
+                                    <option value="Multifunctional and functional equipments">Multifunctional &
+                                        Functional</option>
+                                    <option value="plate loaded equipments">Plate Loaded</option>
+                                    <option value="selectorized equipments">Selectorized</option>
+                                    <option value="Racks and rigs">Racks & Rigs</option>
+                                    <option value="weight benches and storage">Weight Benches & Storage</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Subcategory</label>
+                                <select name="subcategory" id="edit-subcategory"
+                                    class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                                    <option value="General">General</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Product
+                                Name</label>
+                            <input type="text" name="title" id="edit-title" required
+                                class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">YouTube
+                                Video URL</label>
+                            <input type="url" name="youtube_url" id="edit-youtube-url"
+                                placeholder="https://www.youtube.com/watch?v=..."
+                                class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                        </div>
+
+                        <div class="mt-8 flex gap-3">
+                            <button type="submit"
+                                class="flex-1 justify-center rounded-md border border-transparent shadow-sm px-4 py-3 bg-yellow-400 text-base font-bold text-black hover:bg-yellow-300 focus:outline-none sm:text-sm transition">Save
+                                Changes</button>
+                            <button type="button" onclick="closeEditModal()"
+                                class="flex-1 justify-center rounded-md border border-gray-600 shadow-sm px-4 py-3 bg-transparent text-base font-medium text-gray-300 hover:bg-white/10 focus:outline-none sm:text-sm transition">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title-delete"
+        role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-black bg-opacity-90 transition-opacity backdrop-blur-sm" aria-hidden="true"
+                onclick="closeDeleteModal()"></div>
+
+            <div
+                class="inline-block align-middle glass rounded-xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-md sm:w-full border border-red-500/30">
+                <div class="px-6 py-6">
+                    <h3 class="text-xl leading-6 font-bold text-red-500 mb-4" id="modal-title-delete">Delete Product?
+                    </h3>
+                    <p class="text-gray-300 text-sm mb-6">Are you sure you want to delete <span id="delete-product-name"
+                            class="font-bold text-white"></span>? This action cannot be undone.</p>
+                    <input type="hidden" id="delete-folder-path">
+
+                    <div class="flex gap-3">
+                        <button onclick="confirmDelete()"
+                            class="flex-1 justify-center rounded-md border border-transparent shadow-sm px-4 py-3 bg-red-600 text-base font-bold text-white hover:bg-red-700 focus:outline-none sm:text-sm transition">Delete
+                            Forever</button>
+                        <button onclick="closeDeleteModal()"
+                            class="flex-1 justify-center rounded-md border border-gray-600 shadow-sm px-4 py-3 bg-transparent text-base font-medium text-gray-300 hover:bg-white/10 focus:outline-none sm:text-sm transition">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
 </body>
 
 </html>

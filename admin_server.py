@@ -1,422 +1,394 @@
-
-import http.server
-import socketserver
-import json
-
 import os
-
+import json
+import re
+from flask import Flask, request, jsonify, session, redirect, send_from_directory, url_for
+from functools import wraps
+from werkzeug.utils import secure_filename
 import shutil
-import base64
-import random
-import string
-import subprocess
-import sys
+
+app = Flask(__name__, static_folder='.', static_url_path='')
 
 # Configuration
-PORT = 8000
-ADMIN_PASSWORD = "admin"  # Simple password for local use
-SESSION_TOKEN = "".join(random.choices(string.ascii_letters + string.digits, k=32))
-DESCRIPTIONS_FILE = 'descriptions.json'
+app.secret_key = 'super_secret_key_change_this_in_production'  # TO DO: Change this
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IMAGES_DIR = os.path.join(BASE_DIR, 'images')
+DATA_JS_PATH = os.path.join(BASE_DIR, 'data.js')
+DESCRIPTIONS_JSON_PATH = os.path.join(BASE_DIR, 'descriptions.json')
 
-class AdminRequestHandler(http.server.SimpleHTTPRequestHandler):
+# Helper: Slugify
+def slugify(text):
+    return re.sub(r'[\s]+', '-', text.lower())
+
+# Helper: Auth Decorator
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'logged_in' not in session:
+            return redirect('/portal-access-99')
+        return f(*args, **kwargs)
+    return decorated_function
+
+# Helper: Safe Filename (Preserve Spaces)
+def safe_filename(filename):
+    # Remove path traversal characters
+    filename = os.path.basename(filename)
+    # Allow spaces, but still remove some dangerous chars if needed
+    # For now, just rely on basename to prevent traversal
+    # and maybe remove typically problematic chars but Keep Spaces.
+    # Actually, let's strictly just prevent traversal and use the name.
+    return filename
+
+# --- Routes ---
+
+@app.route('/')
+def home():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/<path:path>')
+def serve_static(path):
+    return send_from_directory('.', path)
+
+# 1. Hidden Login Route
+@app.route('/portal-access-99')
+def login_page():
+    if 'logged_in' in session:
+        return redirect('/dashboard')
+    # Simple HTML login form embedded for simplicity, or serve a file
+    return '''
+    <!DOCTYPE html>
+    <html class="dark">
+    <head>
+        <title>Portal Access</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            .glass {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        </style>
+    </head>
+    <body class="bg-black flex items-center justify-center h-screen font-sans">
+        <div class="glass p-8 rounded-xl shadow-2xl w-full max-w-sm">
+            <h2 class="text-3xl text-yellow-400 font-bold mb-6 text-center">Restricted Access</h2>
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label class="block text-gray-300 mb-2 text-sm uppercase tracking-wide">Username</label>
+                    <input type="text" id="username" class="w-full p-3 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition">
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-2 text-sm uppercase tracking-wide">Password</label>
+                    <input type="password" id="password" class="w-full p-3 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition">
+                </div>
+                <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold p-3 rounded transition shadow-lg hover:shadow-yellow-400/20">Login</button>
+            </form>
+            <p id="error" class="text-red-500 mt-4 text-center hidden font-bold"></p>
+        </div>
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const u = document.getElementById('username').value;
+                const p = document.getElementById('password').value;
+                
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({username: u, password: p})
+                });
+                
+                if (res.ok) {
+                    window.location.href = '/dashboard';
+                } else {
+                    document.getElementById('error').textContent = 'Invalid credentials';
+                    document.getElementById('error').classList.remove('hidden');
+                }
+            });
+        </script>
+    </body>
+    </html>
+    '''
+
+# 2. Protected Dashboard Route
+@app.route('/dashboard')
+@login_required
+def dashboard():
+    return send_from_directory('.', 'dashboard.html')
+
+# --- API ---
+
+@app.route('/api/login', methods=['POST'])
+def api_login():
+    data = request.json
+    # Hardcoded credentials as requested/planned
+    if data.get('username') == 'admin' and data.get('password') == 'password123':
+        session['logged_in'] = True
+        return jsonify({'success': True})
+    return jsonify({'success': False}), 401
+
+@app.route('/api/logout', methods=['POST'])
+def api_logout():
+    session.pop('logged_in', None)
+    return jsonify({'success': True})
+
+@app.route('/api/products', methods=['GET'])
+@login_required
+def get_products():
+    # Read data.js and return as JSON
+    products = []
     
-    def do_GET(self):
-        if self.path == '/api/check-auth':
-            self.handle_check_auth()
-        else:
-            super().do_GET()
-
-    def do_POST(self):
-        if self.path == '/api/login':
-            self.handle_login()
-        elif self.path == '/api/publish':
-            self.handle_publish()
-        elif self.path == '/api/update-product':
-            self.handle_update_product()
-        elif self.path == '/api/upload-image':
-            self.handle_upload_image()
-        elif self.path == '/api/add-category':
-            self.handle_add_category()
-        elif self.path == '/api/delete-category':
-            self.handle_delete_category()
-        elif self.path == '/api/list-categories':
-            self.handle_list_categories()
-        elif self.path == '/api/list-subcategories':
-            self.handle_list_subcategories()
-        elif self.path == '/api/add-subcategory':
-            self.handle_add_subcategory()
-        elif self.path == '/api/delete-subcategory':
-            self.handle_delete_subcategory()
-        elif self.path == '/api/deploy-github':
-            self.handle_deploy_github()
-        else:
-            self.send_error(404, "API Endpoint not found")
-
-    def handle_deploy_github(self):
-        if not self.check_token(): return
+    if os.path.exists(IMAGES_DIR):
+        categories = [d for d in os.listdir(IMAGES_DIR) if os.path.isdir(os.path.join(IMAGES_DIR, d))]
         
+        for category in categories:
+            cat_path = os.path.join(IMAGES_DIR, category)
+            for root, dirs, files in os.walk(cat_path):
+                valid_exts = ('.jpg', '.jpeg', '.png', '.webp', '.gif')
+                local_images = [f for f in files if f.lower().endswith(valid_exts)]
+                
+                if local_images:
+                    equipment_name = os.path.basename(root)
+                    
+                    # Logic to determine subcategory
+                    rel_from_cat = os.path.relpath(root, cat_path)
+                    parts = rel_from_cat.split(os.sep)
+                    
+                    subcategory = "General"
+                    if rel_from_cat != '.':
+                        subcategory = parts[0]
+                    
+                    # Construct image paths
+                    img_paths = []
+                    for img in local_images:
+                         # relative web path
+                         full_path = os.path.join(root, img)
+                         rel_path = os.path.relpath(full_path, BASE_DIR).replace(os.sep, '/')
+                         img_paths.append(rel_path)
+                    
+                    key = slugify(equipment_name)
+                    
+                    products.append({
+                        'key': key, 
+                        'name': equipment_name,
+                        'category': category,
+                        'subcategory': subcategory,
+                        'images': img_paths,
+                        'folder_path': os.path.relpath(root, BASE_DIR).replace(os.sep, '/') 
+                    })
+                    
+    return jsonify(products)
+
+@app.route('/api/subcategories', methods=['GET'])
+@login_required
+def get_subcategories():
+    category = request.args.get('category')
+    if not category:
+        return jsonify([])
+        
+    cat_path = os.path.join(IMAGES_DIR, category)
+    if not os.path.exists(cat_path):
+        return jsonify([])
+        
+    # List immediate directories in the category folder
+    subcategories = [d for d in os.listdir(cat_path) if os.path.isdir(os.path.join(cat_path, d))]
+    
+    # Filter out product folders? 
+    # This is tricky because the structure is confusing: images/Category/Subcategory/Product OR images/Category/Product
+    # A heuristic: if a folder has images directly inside it, it's likely a product. If it has folders inside it, it's a subcategory.
+    # But product folders can be empty of images if new.
+    # Let's rely on the user's existing structure.
+    
+    # Actually, let's just return all directories. The user can choose. 
+    # Or better, we can scan the entire depth and collect all "intermediate" folders that act as subcategories.
+    # For now, listing immediate children is a safe bet. WE can include "General" always.
+    
+    result = ['General'] + subcategories
+    return jsonify(list(set(result))) # removing duplicates if 'General' exists
+
+@app.route('/api/product/add', methods=['POST'])
+@login_required
+def add_product():
+    # Form data: title, category, subcategory, image file
+    title = request.form.get('title')
+    category = request.form.get('category')
+    subcategory = request.form.get('subcategory')
+    file = request.files.get('image')
+    
+    if not title or not category or not file:
+        return jsonify({'error': 'Missing fields'}), 400
+        
+    safe_title = secure_filename(title)
+    
+    target_dir = os.path.join(IMAGES_DIR, category)
+    if subcategory and subcategory != 'General':
+        target_dir = os.path.join(target_dir, subcategory)
+    
+    product_dir = os.path.join(target_dir, safe_title)
+    
+    if not os.path.exists(product_dir):
+        os.makedirs(product_dir)
+        
+    filename = safe_filename(file.filename)
+    file.save(os.path.join(product_dir, filename))
+    
+    regenerate_data_js()
+    return jsonify({'success': True})
+
+@app.route('/api/product/edit', methods=['POST'])
+@login_required
+def edit_product():
+    # Update title (rename folder)
+    original_folder = request.form.get('original_folder') 
+    new_title = request.form.get('title')
+    
+    if not original_folder or not os.path.exists(os.path.join(BASE_DIR, original_folder)):
+        return jsonify({'error': 'Product not found'}), 404
+        
+    abs_folder = os.path.join(BASE_DIR, original_folder)
+    parent_dir = os.path.dirname(abs_folder)
+    
+    current_name = os.path.basename(abs_folder)
+    current_safe = secure_filename(current_name)
+    new_safe = secure_filename(new_title)
+    
+    final_folder = abs_folder
+    
+    if new_title and new_safe != current_safe:
+        new_path = os.path.join(parent_dir, new_safe)
+        os.rename(abs_folder, new_path)
+        final_folder = new_path
+        
+    regenerate_data_js()
+    return jsonify({'success': True, 'new_folder_path': os.path.relpath(final_folder, BASE_DIR).replace(os.sep, '/')})
+
+@app.route('/api/product/image/add', methods=['POST'])
+@login_required
+def add_product_image():
+    folder_path = request.form.get('folder_path')
+    file = request.files.get('image')
+    
+    if not folder_path or not file:
+         return jsonify({'error': 'Missing data'}), 400
+         
+    abs_path = os.path.join(BASE_DIR, folder_path)
+    if not os.path.exists(abs_path):
+        return jsonify({'error': 'Product path not found'}), 404
+        
+    filename = safe_filename(file.filename)
+    file.save(os.path.join(abs_path, filename))
+    
+    regenerate_data_js()
+    return jsonify({'success': True})
+
+@app.route('/api/product/image/delete', methods=['POST'])
+@login_required
+def delete_product_image():
+    image_path = request.json.get('image_path') # relative web path e.g. images/Cat/Sub/Prod/img.webp
+    
+    if not image_path:
+        return jsonify({'error': 'Missing image path'}), 400
+        
+    abs_path = os.path.join(BASE_DIR, image_path)
+    
+    # Security check
+    if not os.path.abspath(abs_path).startswith(os.path.abspath(IMAGES_DIR)):
+         return jsonify({'error': 'Invalid path'}), 400
+         
+    if os.path.exists(abs_path):
+        os.remove(abs_path)
+        regenerate_data_js()
+        return jsonify({'success': True})
+    else:
+        return jsonify({'error': 'Image not found'}), 404
+
+@app.route('/api/product/delete', methods=['POST'])
+@login_required
+def delete_product():
+    folder_path = request.json.get('folder_path')
+    
+    if not folder_path:
+        return jsonify({'error': 'Missing folder path'}), 400
+        
+    abs_path = os.path.join(BASE_DIR, folder_path)
+    
+    if not os.path.abspath(abs_path).startswith(os.path.abspath(IMAGES_DIR)):
+         return jsonify({'error': 'Invalid path'}), 400
+         
+    if os.path.exists(abs_path):
         try:
-            # 1. Git Add
-            subprocess.run(["git", "add", "."], check=True, capture_output=True)
-            
-            # 2. Git Commit (allow empty if nothing changed, but usually check=True fails if nothing staged? 
-            # Actually, commit returns 1 if nothing to commit unless we allow empty. 
-            # Better: check status first or just ignore error on commit if "clean")
-            proc_commit = subprocess.run(["git", "commit", "-m", "Auto-update from Admin Portal"], capture_output=True, text=True)
-            
-            # 3. Git Push
-            # Note: This requires credentials to be cached or SSH key setup!
-            proc_push = subprocess.run(["git", "push", "origin", "main"], capture_output=True, text=True)
-            
-            if proc_push.returncode == 0:
-                self.send_json_response({'success': True, 'message': 'Pushed to GitHub successfully!'})
-            else:
-                 self.send_json_response({'success': False, 'message': f'Push failed: {proc_push.stderr}'}, 500)
-                 
+            shutil.rmtree(abs_path)
+            regenerate_data_js()
+            return jsonify({'success': True})
         except Exception as e:
-            self.send_json_response({'success': False, 'message': str(e)}, 500)
+            return jsonify({'error': str(e)}), 500
+    else:
+        return jsonify({'error': 'Product not found'}), 404
 
-
-    def handle_list_categories(self):
-        if not self.check_token(): return
+@app.route('/api/thumbnail/set', methods=['POST'])
+@login_required
+def set_thumbnail():
+    data = request.json
+    type_ = data.get('type') # product, category, subcategory
+    key = data.get('key')
+    image_path = data.get('image_path')
+    
+    if not type_ or not key or not image_path:
+        return jsonify({'error': 'Missing fields'}), 400
         
-        images_dir = os.path.join(os.getcwd(), 'images')
-        if not os.path.exists(images_dir):
-            self.send_json_response({'success': True, 'categories': []})
-            return
-
-        try:
-            # List directories only
-            cats = [d for d in os.listdir(images_dir) if os.path.isdir(os.path.join(images_dir, d))]
-            cats.sort()
-            self.send_json_response({'success': True, 'categories': cats})
-        except Exception as e:
-            self.send_json_response({'success': False, 'message': str(e)}, 500)
-
-    def handle_list_subcategories(self):
-        if not self.check_token(): return
+    meta_path = 'thumbnail_metadata.json'
+    meta = {}
+    if os.path.exists(meta_path):
+         with open(meta_path, 'r') as f:
+             try: meta = json.load(f)
+             except: pass
+             
+    if 'products' not in meta: meta['products'] = {}
+    if 'categories' not in meta: meta['categories'] = {}
+    if 'subcategories' not in meta: meta['subcategories'] = {}
+    
+    if type_ == 'product':
+        meta['products'][key] = image_path
+    elif type_ == 'category':
+        meta['categories'][key] = image_path
+    elif type_ == 'subcategory':
+        meta['subcategories'][key] = image_path
         
-        length = int(self.headers.get('content-length', 0))
-        body = self.rfile.read(length).decode('utf-8')
-        data = json.loads(body)
+    with open(meta_path, 'w') as f:
+        json.dump(meta, f, indent=4)
         
-        category = data.get('category')
-        if not category:
-            self.send_json_response({'success': False, 'message': 'Category required'}, 400)
-            return
-            
-        cat_dir = os.path.join(os.getcwd(), 'images', category)
-        if not os.path.exists(cat_dir):
-             self.send_json_response({'success': False, 'message': 'Category not found'}, 404)
-             return
+    regenerate_data_js() # Logic updated to include thumbnails
+    return jsonify({'success': True})
 
-        try:
-            subs = [d for d in os.listdir(cat_dir) if os.path.isdir(os.path.join(cat_dir, d))]
-            subs.sort()
-            self.send_json_response({'success': True, 'subcategories': subs})
-        except Exception as e:
-            self.send_json_response({'success': False, 'message': str(e)}, 500)
+# --- Utils ---
 
-    def handle_add_subcategory(self):
-        if not self.check_token(): return
-        
-        length = int(self.headers.get('content-length', 0))
-        body = self.rfile.read(length).decode('utf-8')
-        data = json.loads(body)
-        
-        category = data.get('category')
-        subcategory = data.get('subcategory')
-        
-        if not category or not subcategory:
-            self.send_json_response({'success': False, 'message': 'Category and Subcategory required'}, 400)
-            return
+def regenerate_data_js():
+    # Only run data generation if needed (e.g. products changed)
+    # But here we mostly need thumbnail generation
+    # Let's run both to be safe
+    os.system('python generate_data.py')
+    os.system('python generate_thumbnails.py')
 
-        def clean(s): return "".join([c for c in s if c.isalpha() or c.isdigit() or c in (' ', '-', '_')]).strip()
-        cat_clean = clean(category) # Assuming category folder name is clean, but maybe passed raw?
-        # Actually logic depends if we pass raw name or folder name. 
-        # For safety, let's assume we pass what we got from list-categories which is folder name.
-        # But if user typed it? Let's clean subcategory.
-        
-        # We need to find the REAL directory matching 'category' if casing differs? 
-        # For now assume exact match or simple clean.
-        
-        sub_clean = clean(subcategory)
-        
-        target_dir = os.path.join(os.getcwd(), 'images', category, sub_clean)
-        
-        if os.path.exists(target_dir):
-             self.send_json_response({'success': False, 'message': 'Subcategory already exists'}, 400)
-             return
+# --- PHP Shim Route ---
+@app.route('/admin_backend.php', methods=['GET', 'POST'])
+def php_shim():
+    action = request.args.get('action')
+    if action == 'login': return api_login()
+    if action == 'logout': return api_logout()
+    if action == 'list_products': return get_products()
+    if action == 'subcategories': return get_subcategories()
+    if action == 'add_product': return add_product()
+    if action == 'edit_product': return edit_product()
+    if action == 'add_image': return add_product_image()
+    if action == 'delete_image': return delete_product_image()
+    if action == 'delete_product': return delete_product()
+    if action == 'set_thumbnail': return set_thumbnail()
+    if action == 'image_upload': return add_product_image() # Alias just in case
+    return jsonify({'error': 'Invalid action'}), 400
 
-        try:
-            os.makedirs(target_dir)
-            self.send_json_response({'success': True})
-        except Exception as e:
-            self.send_json_response({'success': False, 'message': str(e)}, 500)
+# Alias for the PHP file explicit access
+@app.route('/portal-access-99.php')
+def login_page_alias():
+    return login_page()
 
-    def handle_delete_subcategory(self):
-        if not self.check_token(): return
-        
-        length = int(self.headers.get('content-length', 0))
-        body = self.rfile.read(length).decode('utf-8')
-        data = json.loads(body)
-        
-        category = data.get('category')
-        subcategory = data.get('subcategory')
-        
-        if not category or not subcategory:
-            self.send_json_response({'success': False, 'message': 'Category and Subcategory required'}, 400)
-            return
-
-        target_dir = os.path.join(os.getcwd(), 'images', category, subcategory)
-        
-        if not os.path.exists(target_dir):
-            self.send_json_response({'success': False, 'message': 'Subcategory not found'}, 404)
-            return
-            
-        try:
-            shutil.rmtree(target_dir)
-            self.send_json_response({'success': True})
-        except Exception as e:
-            self.send_json_response({'success': False, 'message': str(e)}, 500) 
-
-
-    def handle_add_category(self):
-        if not self.check_token(): return
-        
-        length = int(self.headers.get('content-length', 0))
-        body = self.rfile.read(length).decode('utf-8')
-        data = json.loads(body)
-        
-        category = data.get('category')
-        if not category:
-            self.send_json_response({'success': False, 'message': 'Category name required'}, 400)
-            return
-
-        def clean(s): return "".join([c for c in s if c.isalpha() or c.isdigit() or c in (' ', '-', '_')]).strip()
-        cat_clean = clean(category)
-        
-        target_dir = os.path.join(os.getcwd(), 'images', cat_clean)
-        
-        if os.path.exists(target_dir):
-            self.send_json_response({'success': False, 'message': 'Category already exists'}, 400)
-            return
-            
-        try:
-            os.makedirs(target_dir)
-            self.send_json_response({'success': True})
-        except Exception as e:
-            self.send_json_response({'success': False, 'message': str(e)}, 500)
-
-    def handle_delete_category(self):
-        if not self.check_token(): return
-        
-        length = int(self.headers.get('content-length', 0))
-        body = self.rfile.read(length).decode('utf-8')
-        data = json.loads(body)
-        
-        category = data.get('category')
-        if not category:
-            self.send_json_response({'success': False, 'message': 'Category name required'}, 400)
-            return
-
-        target_dir = os.path.join(os.getcwd(), 'images', category)
-        
-        if not os.path.exists(target_dir):
-            self.send_json_response({'success': False, 'message': 'Category not found'}, 404)
-            return
-            
-        try:
-            shutil.rmtree(target_dir)
-            self.send_json_response({'success': True})
-        except Exception as e:
-            self.send_json_response({'success': False, 'message': str(e)}, 500)
-
-
-
-    def handle_login(self):
-        length = int(self.headers.get('content-length', 0))
-        body = self.rfile.read(length).decode('utf-8')
-        try:
-            data = json.loads(body)
-            password = data.get('password')
-            if password == ADMIN_PASSWORD:
-                self.send_response(200)
-                self.send_header('Content-type', 'application/json')
-                self.end_headers()
-                response = {'success': True, 'token': SESSION_TOKEN}
-                self.wfile.write(json.dumps(response).encode('utf-8'))
-            else:
-                self.send_response(401)
-                self.send_header('Content-type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps({'success': False, 'message': 'Invalid Password'}).encode('utf-8'))
-        except:
-            self.send_error(400, "Invalid Request")
-
-    def handle_check_auth(self):
-        # For simplicity in this local server, we check the Authorization header
-        auth_header = self.headers.get('Authorization')
-        if auth_header == f"Bearer {SESSION_TOKEN}":
-            self.send_response(200)
-            self.send_header('Content-type', 'application/json')
-            self.end_headers()
-            self.wfile.write(json.dumps({'success': True}).encode('utf-8'))
-        else:
-            self.send_response(401)
-            self.end_headers()
-
-    def handle_publish(self):
-        if not self.check_token(): return
-        
-        try:
-            # Run generate_data.py
-            result = subprocess.run([sys.executable, 'generate_data.py'], capture_output=True, text=True)
-            # Run generate_thumbnails.py
-            subprocess.run([sys.executable, 'generate_thumbnails.py'], capture_output=True, text=True)
-            
-            if result.returncode == 0:
-                self.send_json_response({'success': True, 'message': 'Data regenerated successfully'})
-            else:
-                self.send_json_response({'success': False, 'message': f'Error: {result.stderr}'}, 500)
-        except Exception as e:
-            self.send_json_response({'success': False, 'message': str(e)}, 500)
-
-    def handle_update_product(self):
-        if not self.check_token(): return
-        
-        length = int(self.headers.get('content-length', 0))
-        body = self.rfile.read(length).decode('utf-8')
-        data = json.loads(body)
-        
-        product_key = data.get('key')
-        description = data.get('description', '')
-        specs = data.get('specs', {})
-        
-        if not product_key:
-            self.send_json_response({'success': False, 'message': 'Missing product key'}, 400)
-            return
-
-        # Load existing descriptions
-        descriptions = {}
-        if os.path.exists(DESCRIPTIONS_FILE):
-            try:
-                with open(DESCRIPTIONS_FILE, 'r', encoding='utf-8') as f:
-                    descriptions = json.load(f)
-            except:
-                pass
-        
-        # Update
-        if product_key not in descriptions:
-            descriptions[product_key] = {}
-            
-        descriptions[product_key]['description'] = description
-        descriptions[product_key]['specs'] = specs
-        
-        # Save
-        with open(DESCRIPTIONS_FILE, 'w', encoding='utf-8') as f:
-            json.dump(descriptions, f, indent=4)
-            
-        self.send_json_response({'success': True})
-
-
-    def handle_upload_image(self):
-        if not self.check_token(): return
-
-        content_type = self.headers.get('Content-Type')
-        if not content_type or 'multipart/form-data' not in content_type:
-            self.send_json_response({'success': False, 'message': 'Content-Type must be multipart/form-data'}, 400)
-            return
-
-        import email.parser
-        from io import BytesIO
-
-        # Wrap the input in a BytesIO for parsing
-        content_length = int(self.headers.get('Content-Length', 0))
-        body = self.rfile.read(content_length)
-        
-        # Create headers for the parser
-        headers = f"Content-Type: {content_type}\r\n"
-        msg = email.parser.BytesParser().parsebytes(headers.encode('ascii') + b"\r\n" + body)
-
-        if not msg.is_multipart():
-            self.send_json_response({'success': False, 'message': 'Multipart data required'}, 400)
-            return
-            
-        file_data = None
-        filename = None
-        category = None
-        subcategory = None
-        name = None
-        
-        for part in msg.get_payload():
-            cd = part.get('Content-Disposition')
-            if not cd: continue
-            
-            # Simple parsing of Content-Disposition
-            disposition_dict = {}
-            for item in cd.split(';'):
-                if '=' in item:
-                    key, value = item.strip().split('=', 1)
-                    disposition_dict[key] = value.strip('"')
-
-            field_name = disposition_dict.get('name')
-            
-            if field_name == 'image':
-                filename = disposition_dict.get('filename')
-                if filename:
-                    file_data = part.get_payload(decode=True)
-            elif field_name == 'category':
-                category = part.get_payload(decode=True).decode('utf-8')
-            elif field_name == 'subcategory':
-                subcategory = part.get_payload(decode=True).decode('utf-8')
-            elif field_name == 'name':
-                name = part.get_payload(decode=True).decode('utf-8')
-
-        if not file_data or not category or not subcategory or not name:
-             self.send_json_response({'success': False, 'message': f'Missing fields: {filename}, {category}, {subcategory}, {name}'}, 400)
-             return
-            
-        # Construct path: images/Category/Subcategory/Name/filename
-        def clean(s): return "".join([c for c in s if c.isalpha() or c.isdigit() or c in (' ', '-', '_')]).strip()
-        
-        cat_clean = clean(category)
-        sub_clean = clean(subcategory)
-        name_clean = clean(name)
-        filename_clean = os.path.basename(filename) # basic security
-        
-        target_dir = os.path.join(os.getcwd(), 'images', cat_clean, sub_clean, name_clean)
-        os.makedirs(target_dir, exist_ok=True)
-        
-        target_path = os.path.join(target_dir, filename_clean)
-        
-        with open(target_path, 'wb') as f:
-            f.write(file_data)
-            
-        self.send_json_response({'success': True, 'path': target_path})
-
-
-    def check_token(self):
-        auth_header = self.headers.get('Authorization')
-        if auth_header != f"Bearer {SESSION_TOKEN}":
-            self.send_response(401)
-            self.end_headers()
-            return False
-        return True
-
-    def send_json_response(self, data, status=200):
-        self.send_response(status)
-        self.send_header('Content-type', 'application/json')
-        self.end_headers()
-        self.wfile.write(json.dumps(data).encode('utf-8'))
-
-print(f"Starting Admin Server on port {PORT}...")
-print(f"Open http://localhost:{PORT}/portal-access-99.html to log in.")
-print(f"Password: {ADMIN_PASSWORD}")
-
-with socketserver.TCPServer(("", PORT), AdminRequestHandler) as httpd:
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt:
-        print("\nStopping server...")
-        httpd.server_close()
+if __name__ == '__main__':
+    app.run(port=8000, debug=True)

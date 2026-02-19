@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Unbounded:wght@300;400;600;700&display=swap"
         rel="stylesheet">
-    <script src="data.js" defer></script>
+    <script src="data.js?v=<?php echo time(); ?>" defer></script>
     <script src="thumbnails.js" defer></script>
     <script src="script.js" defer></script>
 </head>
@@ -59,6 +59,32 @@
             <!-- Dynamic Content -->
         </div>
     </main>
+
+    <!-- Modal Backdrop and Container -->
+    <div id="modal-backdrop" class="modal-backdrop hidden">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <button id="modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Equipment Name</h2>
+                <span class="modal-category" id="modal-category">Category</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <button id="prev-img" class="carousel-btn prev" aria-label="Previous Image">&lt;</button>
+                    <img id="modal-img" src="" alt="Equipment Image" class="modal-img">
+                    <button id="next-img" class="carousel-btn next" aria-label="Next Image">&gt;</button>
+                    <div class="carousel-dots" id="carousel-dots"></div>
+                </div>
+                <div class="modal-details" style="display: none;"></div>
+
+                <!-- Lightbox for Full Size Image -->
+                <div id="lightbox" class="lightbox hidden">
+                    <span id="lightbox-close" class="lightbox-close">&times;</span>
+                    <img id="lightbox-img" class="lightbox-content" src="" alt="Full Size">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/919382117096" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">

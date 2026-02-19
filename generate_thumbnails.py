@@ -83,21 +83,38 @@ def find_thumbnail(image_path_from_data):
 
     return None
 
+def load_metadata():
+    if os.path.exists('thumbnail_metadata.json'):
+        try:
+            with open('thumbnail_metadata.json', 'r') as f:
+                return json.load(f)
+        except:
+            return {"products": {}, "categories": {}, "subcategories": {}}
+    return {"products": {}, "categories": {}, "subcategories": {}}
+
 def main():
     if not os.path.exists(DATA_JS_PATH):
         print(f"data.js not")
         return
 
     data = load_data_js()
+    metadata = load_metadata()
+    
     thumbnail_map = {}
     missing_count = 0
     found_count = 0
 
     print("Scanning...")
 
+    # 1. Product Thumbnails
     for key, item in data.items():
         thumb_path = None
-        if 'images' in item and item['images'] and len(item['images']) > 0:
+        
+        # Check Manual Override first
+        if key in metadata.get('products', {}):
+            thumb_path = metadata['products'][key]
+        # Fallback to auto-scan
+        elif 'images' in item and item['images'] and len(item['images']) > 0:
             thumb_path = find_thumbnail(item['images'][0])
         
         if thumb_path:
@@ -105,7 +122,15 @@ def main():
             found_count += 1
         else:
             missing_count += 1
-            print(f"MISSING: {key} | Path: {item.get('images', [''])[0]}")
+            # print(f"MISSING: {key}")
+
+    # 2. Category Thumbnails (Prefix: 'category:')
+    for cat, path in metadata.get('categories', {}).items():
+        thumbnail_map[f"category:{cat}"] = path
+
+    # 3. Subcategory Thumbnails (Prefix: 'subcategory:')
+    for sub, path in metadata.get('subcategories', {}).items():
+        thumbnail_map[f"subcategory:{sub}"] = path
 
     js_content = f"const thumbnailData = {json.dumps(thumbnail_map, indent=4)};\n"
     with open(OUTPUT_JS_PATH, 'w', encoding='utf-8') as f:

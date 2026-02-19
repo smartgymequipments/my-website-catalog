@@ -1,0 +1,39 @@
+{
+    "products": {
+        "landmine": "images/Accessories/landmine/landmine.webp",
+        "low-row": "images/plate loaded equipments/Back Machines/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (1).webp",
+        "dual-lat-pull-down": "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (6).webp",
+        "power-rack": "images/Racks and rigs/Racks/power rack/power-rack-smartgymequipment-chennai-redhills (27).webp",
+        "total-arm-blaster": "images/weight benches and storage/Total arm blaster/total-arm-biceps-blaster-smartgymequipment-chennai-redhills.webp",
+        "cable-cross-over": "images/Multifunctional and functional equipments/Cable cross over/20251031_180320.webp",
+        "split_squat_stand_pin_type": "images/Accessories/Split_squat_stand_pin_type/leg split squat adjustable_result_result.webp",
+        "functional-trainer-with-smith": "images/Multifunctional and functional equipments/functional trainer with smith/functional-trainer-with-smith-machine-smartgymequipment-chennai-redhills (10).webp",
+        "multi-gym-2025": "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (2).webp",
+        "abdominal-exerciser": "images/plate loaded equipments/Abs Machines/Abdominal Exerciser/abdomen-exerciser-machine-smartgymequipment-chennai-redhills  (3).webp",
+        "functional-trainer": "images/Multifunctional and functional equipments/Functional trainer/functional-trainer-with-chest-support-smartgymequipment-chennai-redhills (12).webp",
+        "power-rack-with-smith-machine": "images/Multifunctional and functional equipments/power rack with smith machine/powerrack-with-smith-machine-smartgymequipment-chennai-redhills (10).webp",
+        "smith-machine": "images/Multifunctional and functional equipments/smith machine/half-rack-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills  (10).webp",
+        "drop-bar": "images/Accessories/drop bar/drop-bar-barbell-smartgymequipment-chennai-redhills.webp",
+        "home-multi-gym\uf028": "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (2).webp",
+        "lateral-raise": "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (12).webp"
+    },
+    "categories": {
+        "Accessories": "images/Accessories/Split_squat_stand_pin_type/leg split squat adjustable_result_result.webp",
+        "plate loaded equipments": "images/plate loaded equipments/Back Machines/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (1).webp",
+        "selectorized equipments": "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (12).webp",
+        "Racks and rigs": "images/Racks and rigs/Racks/power rack/power-rack-smartgymequipment-chennai-redhills (27).webp",
+        "weight benches and storage": "images/weight benches and storage/Total arm blaster/total-arm-biceps-blaster-smartgymequipment-chennai-redhills.webp",
+        "Multifunctional and functional equipments": "images/Multifunctional and functional equipments/functional trainer with smith/functional-trainer-with-smith-machine-smartgymequipment-chennai-redhills (19).webp"
+    },
+    "subcategories": {
+        "lat": "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (6).webp",
+        "Racks": "images/Racks and rigs/Racks/power rack/power-rack-smartgymequipment-chennai-redhills (27).webp",
+        "Total arm blaster": "images/weight benches and storage/Total arm blaster/total-arm-biceps-blaster-smartgymequipment-chennai-redhills.webp",
+        "Cable cross over": "images/Multifunctional and functional equipments/Cable cross over/20251031_180320.webp",
+        "Split_squat_stand_pin_type": "images/Accessories/Split_squat_stand_pin_type/leg split squat adjustable_result_result.webp",
+        "Functional trainer": "images/Multifunctional and functional equipments/Functional trainer/functional-trainer-with-chest-support-smartgymequipment-chennai-redhills (9).webp",
+        "power rack with smith machine": "images/Multifunctional and functional equipments/power rack with smith machine/powerrack-with-smith-machine-smartgymequipment-chennai-redhills (2).webp",
+        "smith machine": "images/Multifunctional and functional equipments/smith machine/half-rack-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills  (4).webp",
+        "functional trainer with smith": "images/Multifunctional and functional equipments/functional trainer with smith/functional-trainer-with-smith-machine-smartgymequipment-chennai-redhills (10).webp"
+    }
+}
