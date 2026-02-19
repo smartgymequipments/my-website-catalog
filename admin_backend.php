@@ -193,6 +193,9 @@ function regenerateDataJs($imagesDir, $outputFile) {
                 
                 // Add Date Metadata
                 $dateAdded = $metadata[$key]['created_at'] ?? 0;
+                if (!$dateAdded && is_dir($dirPath)) {
+                    $dateAdded = filemtime($dirPath);
+                }
 
                 // Check for YouTube URL
                 $youtubeUrl = '';
