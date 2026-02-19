@@ -1016,9 +1016,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if on homepage
     if (document.getElementById('category-showcase')) {
         renderCategories();
-        if (typeof renderLatestProducts === 'function') {
-            renderLatestProducts();
-        }
+        // if (typeof renderLatestProducts === 'function') {
+        //     renderLatestProducts();
+        // }
     }
 
     // Check if on Quote page
