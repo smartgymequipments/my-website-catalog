@@ -171,72 +171,56 @@ function fitTextToContainer(element) {
 }
 
 /// --- Latest Products Carousel ---
-const renderLatestProducts = () => {
-    const container = document.getElementById('latest-arrivals-container');
-    const track = document.getElementById('latest-track');
+/// --- Latest Products Grid (Top 4) ---
+const renderLatestProductsGrid = () => {
+    const container = document.getElementById('latest-products-section');
+    const grid = document.getElementById('latest-products-grid');
 
-    if (!container || !track) return;
+    if (!container || !grid) return;
 
     // Convert data object to array
     const products = Object.values(equipmentData);
 
-    // Filter items that have a date_added > 0 (or fallback if all are 0)
-    // For now, if no dates, we might show nothing or random. 
-    // Let's sort by date desc.
-    // Let's sort by date desc, then by name asc for stability
+    // Filter items that have a date_added (or show recent if we have none)
+    // Sort by date desc
     const sorted = products.filter(p => p.date_added).sort((a, b) => (b.date_added - a.date_added) || a.name.localeCompare(b.name));
 
-    // If no "new" products, just show random 5 or nothing. 
-    // User asked for "Newly Added". If none added yet with new system, let's hide or show nothing.
-    // BUT for UI Verification, I should show something.
-    let displayList = sorted.slice(0, 10);
+    // Fallback: If no dates, maybe show random 4? 
+    // For now, adhere to "recently added". If 0, show none.
+    // NOTE: To ensure user sees something during testing if they haven't added new products yet, 
+    // we could fallback to just showing first 4. But "Latest" implies time. 
+    // I will use sorted list.
+
+    // Take top 4
+    const displayList = sorted.slice(0, 4);
 
     if (displayList.length === 0) {
-        // Fallback: If no metadata exists yet, don't show the section.
         container.classList.add('hidden');
         return;
     }
 
     container.classList.remove('hidden');
-    track.innerHTML = displayList.map(p => {
+    grid.innerHTML = displayList.map(p => {
         let img = '';
         if (p.images && p.images.length) {
             const found = p.images.find(i => !/\.(mp4|webm|ogg|mov)$/i.test(i));
-            img = found || p.images[0]; // Fallback to first item
+            img = found || p.images[0];
         }
         if (typeof thumbnailData !== 'undefined' && thumbnailData[p.key]) {
             img = thumbnailData[p.key];
         }
         return `
-            <div class="min-w-[200px] sm:min-w-[240px] bg-[#1a1a1a] border border-white/10 rounded-xl overflow-hidden group cursor-pointer hover:border-yellow-400/50 transition relative" onclick="openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})">
-                 <div class="h-48 overflow-hidden">
-                    <img src="${img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opactiy-90 group-hover:opacity-100">
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl overflow-hidden group cursor-pointer hover:border-yellow-400/50 transition relative shadow-lg hover:shadow-yellow-400/10" onclick="openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})">
+                 <div class="aspect-square overflow-hidden relative">
+                    <img src="${img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-100">
+                    <div class="absolute top-2 right-2 bg-yellow-400 text-black text-[10px] font-bold px-2 py-1 rounded-full shadow-md">NEW</div>
                  </div>
-                 <div class="p-4 h-[80px] flex items-center justify-center text-center">
-                    <h3 class="text-white font-bold text-sm dynamic-text leading-tight">${p.name}</h3>
+                 <div class="p-4 flex items-center justify-center text-center h-[70px]">
+                    <h3 class="text-white font-bold text-sm leading-tight line-clamp-2 group-hover:text-yellow-400 transition">${p.name}</h3>
                  </div>
-                 <div class="absolute top-2 right-2 bg-yellow-400 text-black text-[10px] font-bold px-2 py-1 rounded">NEW</div>
             </div>
         `;
     }).join('');
-
-    // Apply scaling
-    track.querySelectorAll('.dynamic-text').forEach(el => fitTextToContainer(el));
-
-    // Carousel Logic
-    const prevBtn = document.getElementById('latest-prev');
-    const nextBtn = document.getElementById('latest-next');
-    let scrollPos = 0;
-
-    prevBtn.onclick = () => {
-        scrollPos = Math.max(0, scrollPos - 300);
-        track.parentElement.scrollTo({ left: scrollPos, behavior: 'smooth' });
-    };
-
-    nextBtn.onclick = () => {
-        scrollPos = Math.min(track.scrollWidth - track.parentElement.clientWidth, scrollPos + 300);
-        track.parentElement.scrollTo({ left: scrollPos, behavior: 'smooth' });
-    };
 };
 
 // --- RENDERERS ---
@@ -1016,9 +1000,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if on homepage
     if (document.getElementById('category-showcase')) {
         renderCategories();
-        // if (typeof renderLatestProducts === 'function') {
-        //     renderLatestProducts();
-        // }
+        if (typeof renderLatestProductsGrid === 'function') {
+            renderLatestProductsGrid();
+        }
     }
 
     // Check if on Quote page
