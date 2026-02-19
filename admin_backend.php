@@ -449,6 +449,19 @@ if ($action === 'add_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         file_put_contents($productDir . '/youtube.txt', $youtubeUrl);
     }
 
+    // Save Creation Date
+    $meta = loadMetadata();
+    $key = slugify($safeTitle);
+    // Handle potential key collision (though mkdir would fail usually)
+    if (isset($meta[$key])) {
+        $key = $key . '-' . slugify($category);
+    }
+    
+    $meta[$key] = [
+        'created_at' => time()
+    ];
+    saveMetadata($meta);
+
     regenerateDataJs($IMAGES_DIR, $DATA_JS_FILE);
     jsonResponse(['success' => true]);
 }
@@ -587,6 +600,24 @@ if ($action === 'edit_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         // User might clear the field to remove video.
         if (file_exists($ytFile) && isset($_POST['youtube_url'])) { // Only if field was sent
             unlink($ytFile);
+        }
+    }
+
+    // Update Metadata Key if Title Changed
+    if ($absFolder !== $newPath) {
+        $meta = loadMetadata();
+        $oldKey = slugify(basename($originalFolder));
+        
+        $newKey = slugify($safeNewTitle);
+        // Handle collision
+        if (isset($meta[$newKey])) {
+             $newKey = $newKey . '-' . slugify($newCategory);
+        }
+
+        if (isset($meta[$oldKey])) {
+            $meta[$newKey] = $meta[$oldKey]; // Copy data
+            unset($meta[$oldKey]); // Remove old
+            saveMetadata($meta);
         }
     }
 
