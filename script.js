@@ -1000,9 +1000,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if on homepage
     if (document.getElementById('category-showcase')) {
         renderCategories();
-        if (typeof renderLatestProductsGrid === 'function') {
-            renderLatestProductsGrid();
-        }
+        // if (typeof renderLatestProductsGrid === 'function') {
+        //     renderLatestProductsGrid();
+        // }
     }
 
     // Check if on Quote page
