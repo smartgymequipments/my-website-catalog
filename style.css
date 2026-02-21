@@ -179,7 +179,10 @@
     left: 0;
     width: 100%;
     padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+    background: rgba(10, 10, 10, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -540,24 +543,23 @@ body {
 /* Buttons */
 /* Buttons */
 .equip-btn {
-    background: rgba(255, 215, 0, 0.05);
-    /* Yellow Glass Tint */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--primary-color);
     color: var(--primary-color);
 
     padding: 10px;
     padding-right: 110px;
-    /* Space for the "Click to View" hint */
     border-radius: 8px;
-    /* radius-sm manually or var */
     font-family: var(--font-main);
-    font-size: 0.225rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1), inset 0 0 10px rgba(255, 215, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-align: left;
     position: relative;
     overflow: hidden;
@@ -605,11 +607,11 @@ body {
 
 .equip-btn:hover {
     transform: translateY(-5px) scale(1.02);
-    background: rgba(255, 215, 0, 0.15);
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), inset 0 0 20px rgba(255, 215, 0, 0.2);
-    border-color: rgba(255, 215, 0, 0.8);
-    color: #fff;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.4);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 .equip-btn:hover::before {
@@ -851,19 +853,32 @@ body {
 
 .modal-close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    font-size: 2rem;
+    top: 15px;
+    right: 15px;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
     cursor: pointer;
     line-height: 1;
-    transition: color 0.2s;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.4);
     color: var(--primary-color);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 .modal-header {
@@ -1125,19 +1140,33 @@ body {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: all 0.3s;
     cursor: pointer;
     z-index: 2001;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .lightbox-close:hover,
 .lightbox-close:focus {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.4);
     color: var(--primary-color);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
     text-decoration: none;
-    cursor: pointer;
 }
 
 /* Cursor for modal image to indicate zoom capability */
@@ -1239,19 +1268,26 @@ body {
 }
 
 .select-all-btn {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: var(--text-secondary);
-    padding: 5px 10px;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 6px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .select-all-btn:hover {
-    border-color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.8);
     color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 .quote-item {
@@ -1360,22 +1396,29 @@ body {
 }
 
 .btn-primary {
-    background: var(--primary-color);
-    color: #000;
-    border: none;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     padding: 12px 30px;
     border-radius: 30px;
     font-family: var(--font-main);
     font-weight: 700;
     font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:hover {
-    background: var(--primary-hover);
+    background: rgba(0, 0, 0, 0.8);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.4);
+    color: var(--primary-color);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -1394,23 +1437,28 @@ body {
 /* Get Quote Header Button */
 .quote-btn {
     display: inline-block;
-    padding: 5px 12px;
-    /* Reduced padding */
-    background: transparent;
+    padding: 6px 14px;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     border-radius: 20px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     transition: all 0.3s;
     font-size: 0.75rem;
-    /* Reduced font size */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .quote-btn:hover {
-    background: var(--primary-color);
-    color: #000;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--primary-color);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 215, 0, 0.4);
+    transform: translateY(-2px);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 /* --- Contact Form Styles --- */
@@ -1487,26 +1535,31 @@ body {
 
 /* Redesigned Quote Buttons */
 .btn-whatsapp {
-    background: #25D366;
-    color: #fff;
-    border: none;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     padding: 8px 20px;
-    /* Reduced padding */
     border-radius: 30px;
     font-family: var(--font-main);
     font-weight: 700;
     font-size: 0.85rem;
-    /* Reduced font size */
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
     align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-whatsapp:hover {
-    background: #128C7E;
+    background: rgba(0, 0, 0, 0.8);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.4);
+    color: var(--primary-color);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 
