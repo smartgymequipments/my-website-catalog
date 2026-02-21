@@ -201,7 +201,7 @@ const renderLatestProductsCarousel = () => {
 
         return `
             <div class="product-carousel-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>
-                 <img src="${img}" alt="${p.name}" loading="lazy" class="carousel-img">
+                 <img src="${img}" alt="${p.name}" loading="lazy" decoding="async" class="carousel-img">
                  <div class="carousel-arrow-icon">↗</div>
                  <div class="carousel-glass-overlay">
                     <h3 class="carousel-title-glass" title="${p.name}">${p.name}</h3>
@@ -328,7 +328,7 @@ function renderHomePage(organizedData) {
         const displayLabel = label.replace('Equipments', '').replace('and', '&').trim();
 
         card.innerHTML = `
-            <img src="${imgSrc}" alt="${displayLabel}" loading="lazy">
+            <img src="${imgSrc}" alt="${displayLabel}" loading="lazy" decoding="async">
             <div class="card-overlay">
                 <h3 class="dynamic-text">${displayLabel}</h3>
                 <span class="card-arrow">❯</span>
@@ -390,7 +390,7 @@ function renderCategoryPage(organizedData, categoryType) {
         };
 
         card.innerHTML = `
-            <img src="${imgSrc}" alt="${subName}" loading="lazy">
+            <img src="${imgSrc}" alt="${subName}" loading="lazy" decoding="async">
             <div class="card-overlay">
                 <h3 class="dynamic-text">${subName}</h3>
                 <span class="card-arrow">❯</span>
@@ -421,7 +421,7 @@ function renderCategoryPage(organizedData, categoryType) {
         };
 
         card.innerHTML = `
-            <img src="${imgSrc}" alt="${item.name}" loading="lazy">
+            <img src="${imgSrc}" alt="${item.name}" loading="lazy" decoding="async">
             <div class="card-overlay">
                  <h3 class="dynamic-text">${item.name}</h3>
                  <span class="card-arrow">+</span>
@@ -521,7 +521,7 @@ function renderProductsPage(organizedData, categoryType, subCategory) {
 
         // Overlay Style Structure
         card.innerHTML = `
-            <img src="${imgSrc}" alt="${item.name}" loading="lazy" style="object-fit: contain; padding: 20px;">
+            <img src="${imgSrc}" alt="${item.name}" loading="lazy" decoding="async" style="object-fit: contain; padding: 20px;">
             <div class="card-overlay">
                 <h3 class="dynamic-text">${item.name}</h3>
                 <span class="card-arrow">❯</span>
@@ -885,7 +885,7 @@ function renderQuotePage(organizedData) {
 
                 itemRow.innerHTML = `
                     <input type="checkbox" class="quote-checkbox" data-cat="${catName}" data-name="${item.name}" value="${item.key}">
-                    <img src="${imgSrc}" class="quote-img" alt="${item.name}" onclick="openQuoteModal(event, '${item.key.replace(/'/g, "\\'")}')">
+                    <img src="${imgSrc}" class="quote-img" alt="${item.name}" loading="lazy" decoding="async" onclick="openQuoteModal(event, '${item.key.replace(/'/g, "\\'")}')">
                     <div class="quote-info" onclick="toggleRowCheckbox(event)">
                         <span class="quote-name">${item.name}</span>
                         <span class="quote-sub">${subName}</span>

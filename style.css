@@ -151,6 +151,10 @@
     box-shadow: none;
     /* Removed shadow */
     transition: transform 0.3s ease;
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 300px;
 }
 
 .category-card img {
@@ -584,6 +588,10 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
 }
 
 .btn-thumb {
@@ -1715,6 +1723,12 @@ body {
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Hardware Acceleration & Optimization */
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 300px;
 }
 
 .product-carousel-card:hover {
