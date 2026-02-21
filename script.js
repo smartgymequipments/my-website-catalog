@@ -170,38 +170,27 @@ function fitTextToContainer(element) {
     }
 }
 
-/// --- Latest Products Carousel ---
-/// --- Latest Products Grid (Top 4) ---
-const renderLatestProductsGrid = () => {
-    const container = document.getElementById('latest-products-section');
-    const grid = document.getElementById('latest-products-grid');
-
-    if (!container || !grid) return;
+// --- Latest Products Carousel ---
+const renderLatestProductsCarousel = () => {
+    const container = document.getElementById('latest-products-carousel');
+    if (!container) return;
 
     // Convert data object to array
     const products = Object.values(equipmentData);
 
-    // Filter items that have a date_added (or show recent if we have none)
-    // Sort by date desc
-    const sorted = products.filter(p => p.date_added).sort((a, b) => (b.date_added - a.date_added) || a.name.localeCompare(b.name));
+    // Filter items that have a date_added, and sort desc
+    const sorted = products.filter(p => p.date_added).sort((a, b) => b.date_added - a.date_added);
 
-    // Fallback: If no dates, maybe show random 4? 
-    // For now, adhere to "recently added". If 0, show none.
-    // NOTE: To ensure user sees something during testing if they haven't added new products yet, 
-    // we could fallback to just showing first 4. But "Latest" implies time. 
-    // I will use sorted list.
-
-    // Take top 4
-    const displayList = sorted.slice(0, 4);
+    // Take top 10 latest
+    const displayList = sorted.slice(0, 10);
 
     if (displayList.length === 0) {
-        container.classList.add('hidden');
+        document.querySelector('.latest-products-section')?.classList.add('hidden');
         return;
     }
 
-    container.classList.remove('hidden');
-    grid.innerHTML = displayList.map(p => {
-        let img = '';
+    container.innerHTML = displayList.map(p => {
+        let img = 'https://placehold.co/400x300/111/FFF?text=No+Image';
         if (p.images && p.images.length) {
             const found = p.images.find(i => !/\.(mp4|webm|ogg|mov)$/i.test(i));
             img = found || p.images[0];
@@ -210,17 +199,59 @@ const renderLatestProductsGrid = () => {
             img = thumbnailData[p.key];
         }
         return `
-            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl overflow-hidden group cursor-pointer hover:border-yellow-400/50 transition relative shadow-lg hover:shadow-yellow-400/10" onclick="openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})">
-                 <div class="aspect-square overflow-hidden relative">
-                    <img src="${img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-100">
-                    <div class="absolute top-2 right-2 bg-yellow-400 text-black text-[10px] font-bold px-2 py-1 rounded-full shadow-md">NEW</div>
+            <div class="product-carousel-card">
+                 <div class="carousel-img-container" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})' style="cursor:pointer;">
+                    <img src="${img}" alt="${p.name}" loading="lazy">
                  </div>
-                 <div class="p-4 flex items-center justify-center text-center h-[70px]">
-                    <h3 class="text-white font-bold text-sm leading-tight line-clamp-2 group-hover:text-yellow-400 transition">${p.name}</h3>
+                 <div class="carousel-info">
+                    <h3 class="carousel-title" title="${p.name}">${p.name}</h3>
+                    <button class="carousel-btn-view" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>View Details</button>
                  </div>
             </div>
         `;
     }).join('');
+
+    // Attach scroll logic to arrows
+    const prevBtn = document.getElementById('latest-prev');
+    const nextBtn = document.getElementById('latest-next');
+
+    if (prevBtn && nextBtn) {
+        const scrollAmount = 300; // Adjust based on card width
+
+        prevBtn.addEventListener('click', () => {
+            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+
+    // Optional: Auto Scroll (Pause on hover)
+    let autoScrollInterval;
+    const startAutoScroll = () => {
+        autoScrollInterval = setInterval(() => {
+            // If near end, jump to start, else scroll right
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+                container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: 300, behavior: 'smooth' });
+            }
+        }, 3000);
+    };
+
+    const stopAutoScroll = () => {
+        clearInterval(autoScrollInterval);
+    };
+
+    // Start by default
+    startAutoScroll();
+
+    // Pause on hover or touch
+    container.addEventListener('mouseenter', stopAutoScroll);
+    container.addEventListener('mouseleave', startAutoScroll);
+    container.addEventListener('touchstart', stopAutoScroll, { passive: true });
+    container.addEventListener('touchend', startAutoScroll, { passive: true });
 };
 
 // --- RENDERERS ---
@@ -228,6 +259,9 @@ const renderLatestProductsGrid = () => {
 // --- RENDERERS ---
 
 function renderHomePage(organizedData) {
+    // Render Latest Products
+    renderLatestProductsCarousel();
+
     const showcaseContainer = document.getElementById('category-showcase');
     if (!showcaseContainer) return;
 
