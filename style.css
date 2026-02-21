@@ -139,6 +139,8 @@
 .category-card {
     position: relative;
     border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    animation: tileShine 3s infinite;
     overflow: hidden;
     aspect-ratio: 4 / 5;
     /* Matches the vertical card look */
@@ -555,7 +557,8 @@ body {
     background: rgba(10, 10, 10, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--primary-color);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    animation: tileShine 3s infinite;
     color: var(--primary-color);
 
     padding: 10px;
@@ -1699,7 +1702,8 @@ body {
     scroll-snap-align: start;
     background: #000;
     border-radius: var(--radius-md);
-    border: none;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    animation: tileShine 3s infinite;
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -1874,5 +1878,22 @@ body {
     /* Hide arrows on very small screens, rely on swipe */
     .carousel-nav-btn {
         display: none;
+    }
+}
+
+@keyframes tileShine {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+        border-color: rgba(255, 215, 0, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 15px 2px rgba(255, 215, 0, 0.6), inset 0 0 10px 1px rgba(255, 215, 0, 0.2);
+        border-color: rgba(255, 215, 0, 0.9);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+        border-color: rgba(255, 215, 0, 0.1);
     }
 }
