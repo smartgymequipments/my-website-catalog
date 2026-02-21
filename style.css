@@ -1655,6 +1655,8 @@ body {
 /* --- Latest Products Section --- */
 .latest-products-section {
     margin: 40px 0;
+    padding-bottom: 40px;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
 }
 
 .latest-products-section .section-title {
@@ -1690,8 +1692,9 @@ body {
 }
 
 .product-carousel-card {
-    flex: 0 0 calc(20% - 16px);
-    min-width: 200px;
+    /* Reducing size to match smaller category tiles. Previously 20% / 5 cards. Now ~16.6% / 6 cards */
+    flex: 0 0 calc(16.666% - 16px);
+    min-width: 160px;
     aspect-ratio: 4 / 5;
     scroll-snap-align: start;
     background: #000;
@@ -1831,20 +1834,20 @@ body {
 
 @media (max-width: 1200px) {
     .product-carousel-card {
-        flex: 0 0 calc(25% - 15px);
+        flex: 0 0 calc(20% - 15px);
     }
 }
 
 @media (max-width: 1024px) {
     .product-carousel-card {
-        flex: 0 0 calc(33.333% - 15px);
+        flex: 0 0 calc(25% - 15px);
     }
 }
 
 @media (max-width: 768px) {
     .product-carousel-card {
-        flex: 0 0 calc(50% - 10px);
-        min-width: 180px;
+        flex: 0 0 calc(33.333% - 10px);
+        min-width: 140px;
     }
 
     .carousel-nav-btn.prev-btn {
@@ -1858,7 +1861,7 @@ body {
 
 @media (max-width: 480px) {
     .product-carousel-card {
-        flex: 0 0 calc(75% - 10px);
+        flex: 0 0 calc(50% - 10px);
         /* Show peak of next card */
         min-width: unset;
     }
