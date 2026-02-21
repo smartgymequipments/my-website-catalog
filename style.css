@@ -1748,8 +1748,8 @@ body {
 }
 
 .carousel-title-glass {
-    font-size: 1.1rem;
-    color: #fff;
+    font-size: 0.9rem;
+    color: var(--primary-color);
     margin: 0 0 4px 0;
     font-weight: 700;
     display: -webkit-box;
