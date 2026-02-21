@@ -199,13 +199,11 @@ const renderLatestProductsCarousel = () => {
             img = thumbnailData[p.key];
         }
         return `
-            <div class="product-carousel-card">
-                 <div class="carousel-img-container" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})' style="cursor:pointer;">
-                    <img src="${img}" alt="${p.name}" loading="lazy">
-                 </div>
-                 <div class="carousel-info">
-                    <h3 class="carousel-title" title="${p.name}">${p.name}</h3>
-                    <button class="carousel-btn-view" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>View Details</button>
+            <div class="product-carousel-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>
+                 <img src="${img}" alt="${p.name}" loading="lazy" class="carousel-img">
+                 <div class="carousel-overlay">
+                    <h3 class="carousel-title-overlay" title="${p.name}">${p.name}</h3>
+                    <span class="carousel-learn-more">Learn More ❯</span>
                  </div>
             </div>
         `;
