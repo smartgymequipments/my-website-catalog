@@ -178,15 +178,24 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
-    background: rgba(10, 10, 10, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 20px 20px 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     z-index: 2;
+}
+
+.card-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    -webkit-mask-image: linear-gradient(to top, black 30%, transparent 100%);
+    mask-image: linear-gradient(to top, black 30%, transparent 100%);
+    pointer-events: none;
 }
 
 .card-overlay h3 {
@@ -1715,14 +1724,24 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 15px;
-    background: rgba(10, 10, 10, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 15px 15px 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    z-index: 2;
+}
+
+.carousel-glass-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    -webkit-mask-image: linear-gradient(to top, black 30%, transparent 100%);
+    mask-image: linear-gradient(to top, black 30%, transparent 100%);
+    pointer-events: none;
 }
 
 .carousel-title-glass {
