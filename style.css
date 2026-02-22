@@ -1712,11 +1712,9 @@ body {
     aspect-ratio: 4 / 5;
     scroll-snap-align: start;
     border-radius: var(--radius-md);
-    border: 2px solid transparent;
-    background:
-        linear-gradient(#000, #000) padding-box,
-        conic-gradient(from var(--border-angle, 0turn), rgba(255, 215, 0, 0.1) 70%, rgba(255, 215, 0, 1) 100%) border-box;
-    animation: tileRunningBorder 3s linear infinite;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    background: #000;
+    /* Outline animation removed */
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -1732,9 +1730,8 @@ body {
 .product-carousel-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.15);
-    background:
-        linear-gradient(#000, #000) padding-box,
-        conic-gradient(from var(--border-angle, 0turn), rgba(255, 215, 0, 0.4) 70%, rgba(255, 215, 0, 1) 100%) border-box;
+    background: #000;
+    border-color: rgba(255, 215, 0, 0.5);
 }
 
 .product-carousel-card .carousel-img {
