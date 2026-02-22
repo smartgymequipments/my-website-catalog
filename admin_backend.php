@@ -96,7 +96,7 @@ function safe_filename($filename) {
 }
 
 // Convert to WebP Helper
-function convertToWebp($source, $destination, $quality = 85) {
+function convertToWebp($source, $destination, $quality = 100) {
     $info = @getimagesize($source);
     if (!$info) return false;
 
@@ -488,7 +488,7 @@ if ($action === 'add_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
                     $webpFilename = $safeBaseName . '.webp';
                     $destPath = $productDir . '/' . $webpFilename;
 
-                    if (!convertToWebp($tmp, $destPath, 85)) {
+                    if (!convertToWebp($tmp, $destPath, 100)) {
                         // Fallback: move original if conversion fails
                         $filename = safe_filename($name);
                         if (!move_uploaded_file($tmp, $productDir . '/' . $filename)) {
@@ -574,7 +574,7 @@ if ($action === 'add_image' && $_SERVER['REQUEST_METHOD'] === 'POST') {
                     $webpFilename = $safeBaseName . '.webp';
                     $destPath = $absPath . '/' . $webpFilename;
 
-                    if (!convertToWebp($tmp, $destPath, 85)) {
+                    if (!convertToWebp($tmp, $destPath, 100)) {
                         // Fallback: move original if conversion fails
                         $filename = safe_filename($name);
                         if (!move_uploaded_file($tmp, $absPath . '/' . $filename)) {
