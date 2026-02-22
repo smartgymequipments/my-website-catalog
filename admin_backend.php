@@ -95,6 +95,47 @@ function safe_filename($filename) {
     return basename($filename);
 }
 
+// Convert to WebP Helper
+function convertToWebp($source, $destination, $quality = 85) {
+    $info = @getimagesize($source);
+    if (!$info) return false;
+
+    $mime = $info['mime'];
+    $image = null;
+
+    switch ($mime) {
+        case 'image/jpeg':
+            $image = @imagecreatefromjpeg($source);
+            break;
+        case 'image/gif':
+            $image = @imagecreatefromgif($source);
+            break;
+        case 'image/png':
+            $image = @imagecreatefrompng($source);
+            if ($image) {
+                // Preserve transparency
+                imagepalettetotruecolor($image);
+                imagealphablending($image, true);
+                imagesavealpha($image, true);
+            }
+            break;
+        case 'image/webp':
+            // Already webp, just move it later or re-compress
+            $image = @imagecreatefromwebp($source);
+            break;
+        default:
+            return false;
+    }
+
+    if (!$image) return false;
+
+    // Save as WebP
+    $success = imagewebp($image, $destination, $quality);
+    imagedestroy($image);
+
+    return $success;
+}
+
 // Data Generation Logic
 function regenerateThumbnailsJs($data) {
     global $THUMBNAILS_JS_FILE;
@@ -432,9 +473,28 @@ if ($action === 'add_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $tmp = $_FILES['images']['tmp_name'][$i];
             
             if ($name) {
-                $filename = safe_filename($name);
-                if (!move_uploaded_file($tmp, $productDir . '/' . $filename)) {
-                    jsonResponse(['error' => "Failed to move uploaded file: $name"], 500);
+                $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+                
+                // If it's a video, just move it normally
+                if (in_array($ext, ['mp4', 'webm', 'ogg', 'mov'])) {
+                    $filename = safe_filename($name);
+                    if (!move_uploaded_file($tmp, $productDir . '/' . $filename)) {
+                        jsonResponse(['error' => "Failed to move uploaded video: $name"], 500);
+                    }
+                } else {
+                    // Try to convert to WebP
+                    $filenameWithoutExt = pathinfo($name, PATHINFO_FILENAME);
+                    $safeBaseName = safe_filename($filenameWithoutExt);
+                    $webpFilename = $safeBaseName . '.webp';
+                    $destPath = $productDir . '/' . $webpFilename;
+
+                    if (!convertToWebp($tmp, $destPath, 85)) {
+                        // Fallback: move original if conversion fails
+                        $filename = safe_filename($name);
+                        if (!move_uploaded_file($tmp, $productDir . '/' . $filename)) {
+                            jsonResponse(['error' => "Failed to move uploaded file and conversion failed: $name"], 500);
+                        }
+                    }
                 }
             }
         }
@@ -499,9 +559,28 @@ if ($action === 'add_image' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $tmp = $_FILES['images']['tmp_name'][$i];
             
             if ($name) {
-                $filename = safe_filename($name);
-                if (!move_uploaded_file($tmp, $absPath . '/' . $filename)) {
-                    jsonResponse(['error' => "Failed to move uploaded file: $name"], 500);
+                $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+                
+                // If it's a video, just move it normally
+                if (in_array($ext, ['mp4', 'webm', 'ogg', 'mov'])) {
+                    $filename = safe_filename($name);
+                    if (!move_uploaded_file($tmp, $absPath . '/' . $filename)) {
+                        jsonResponse(['error' => "Failed to move uploaded video: $name"], 500);
+                    }
+                } else {
+                    // Try to convert to WebP
+                    $filenameWithoutExt = pathinfo($name, PATHINFO_FILENAME);
+                    $safeBaseName = safe_filename($filenameWithoutExt);
+                    $webpFilename = $safeBaseName . '.webp';
+                    $destPath = $absPath . '/' . $webpFilename;
+
+                    if (!convertToWebp($tmp, $destPath, 85)) {
+                        // Fallback: move original if conversion fails
+                        $filename = safe_filename($name);
+                        if (!move_uploaded_file($tmp, $absPath . '/' . $filename)) {
+                            jsonResponse(['error' => "Failed to move uploaded file and conversion failed: $name"], 500);
+                        }
+                    }
                 }
             }
         }

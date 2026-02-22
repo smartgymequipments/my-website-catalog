@@ -79,13 +79,22 @@ function initHeader(organizedData) {
         }
     });
 
-    // Flatten data for search
+    // Flatten data for search asynchronously to unblock main thread
     let allProducts = [];
-    Object.values(organizedData).forEach(cats => {
-        Object.values(cats).forEach(subList => {
-            subList.forEach(item => allProducts.push(item));
+    setTimeout(() => {
+        window.requestIdleCallback = window.requestIdleCallback || function (cb) { setTimeout(cb, 1); };
+        window.requestIdleCallback(() => {
+            Object.values(organizedData).forEach(cats => {
+                Object.values(cats).forEach(subList => {
+                    subList.forEach(item => {
+                        // Pre-calculate searchable string to save CPU on keypress
+                        item._searchText = `${item.name} ${item.category} ${item.subcategory}`.toLowerCase();
+                        allProducts.push(item);
+                    });
+                });
+            });
         });
-    });
+    }, 0);
 
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
@@ -100,11 +109,8 @@ function initHeader(organizedData) {
         const tokens = query.split(/\s+/).filter(t => t.length > 0);
 
         const matches = allProducts.filter(p => {
-            // Create a searchable string for each item
-            const searchableText = `${p.name} ${p.category} ${p.subcategory}`.toLowerCase();
-
             // Check if ALL tokens are present in the searchable text
-            return tokens.every(token => searchableText.includes(token));
+            return tokens.every(token => p._searchText.includes(token));
         }).slice(0, 10); // Limit to 10
 
         if (matches.length > 0) {
@@ -139,121 +145,98 @@ window.openModalFromSearch = function (item) {
     document.getElementById('search-input').value = '';
 };
 
-// --- Dynamic Text Scaling Helper ---
-function fitTextToContainer(element) {
-    if (!element) return;
-
-    // Strict Uniform Sizes (Small to ensure image visibility)
-    const isMobile = window.innerWidth < 768;
-    let size = isMobile ? 0.65 : 0.75; // rem
-
-    element.style.fontSize = `${size}rem`;
-    element.style.lineHeight = '1.3';
-    element.style.whiteSpace = 'normal';
-
-    const parent = element.parentElement;
-    if (!parent) return;
-
-    // Constraints
-    const minSize = 0.5; // rem
-    const step = 0.05;
-
-    // Iteratively shrink if overflowing
-    let safety = 0;
-    while (
-        (element.scrollHeight > parent.clientHeight || element.scrollWidth > parent.clientWidth) &&
-        size > minSize && safety < 20
-    ) {
-        size -= step;
-        element.style.fontSize = `${size}rem`;
-        safety++;
-    }
-}
+// --- Dynamic Text Scaling Helper Removed ---
+// Replaced by native CSS calculations in style.css to prevent Layout Thrashing and CLS delays
 
 // --- Latest Products Carousel ---
 const renderLatestProductsCarousel = () => {
     const container = document.getElementById('latest-products-carousel');
     if (!container) return;
 
-    // Convert data object to array
-    const products = Object.values(equipmentData);
+    // Async rendering to unblock main thread
+    setTimeout(() => {
+        window.requestIdleCallback = window.requestIdleCallback || function (cb) { setTimeout(cb, 1); };
+        window.requestIdleCallback(() => {
+            // Convert data object to array
+            const products = Object.values(equipmentData);
 
-    // Filter items that have a date_added, and sort desc
-    const sorted = products.filter(p => p.date_added).sort((a, b) => b.date_added - a.date_added);
+            // Filter items that have a date_added, and sort desc
+            const sorted = products.filter(p => p.date_added).sort((a, b) => b.date_added - a.date_added);
 
-    // Take top 10 latest
-    const displayList = sorted.slice(0, 10);
+            // Take top 10 latest
+            const displayList = sorted.slice(0, 10);
 
-    if (displayList.length === 0) {
-        document.querySelector('.latest-products-section')?.classList.add('hidden');
-        return;
-    }
-
-    container.innerHTML = displayList.map(p => {
-        let img = 'https://placehold.co/400x300/111/FFF?text=No+Image';
-        if (p.images && p.images.length) {
-            const found = p.images.find(i => !/\.(mp4|webm|ogg|mov)$/i.test(i));
-            img = found || p.images[0];
-        }
-        if (typeof thumbnailData !== 'undefined' && thumbnailData[p.key]) {
-            img = thumbnailData[p.key];
-        }
-
-        return `
-            <div class="product-carousel-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>
-                 <img src="${img}" alt="${p.name}" loading="lazy" decoding="async" class="carousel-img">
-                 <div class="carousel-arrow-icon">↗</div>
-                 <div class="carousel-glass-overlay">
-                    <h3 class="carousel-title-glass" title="${p.name}">${p.name}</h3>
-                 </div>
-            </div>
-        `;
-    }).join('');
-
-    // Attach scroll logic to arrows
-    const prevBtn = document.getElementById('latest-prev');
-    const nextBtn = document.getElementById('latest-next');
-
-    if (prevBtn && nextBtn) {
-        const scrollAmount = 300; // Adjust based on card width
-
-        prevBtn.addEventListener('click', () => {
-            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        });
-
-        nextBtn.addEventListener('click', () => {
-            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        });
-    }
-
-    // Optional: Auto Scroll (Pause on hover)
-    let autoScrollInterval;
-    const startAutoScroll = () => {
-        autoScrollInterval = setInterval(() => {
-            // If near end, jump to start, else scroll right
-            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
-                container.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                container.scrollBy({ left: 300, behavior: 'smooth' });
+            if (displayList.length === 0) {
+                document.querySelector('.latest-products-section')?.classList.add('hidden');
+                return;
             }
-        }, 3000);
-    };
 
-    const stopAutoScroll = () => {
-        clearInterval(autoScrollInterval);
-    };
+            container.innerHTML = displayList.map((p, idx) => {
+                let img = 'https://placehold.co/400x300/111/FFF?text=No+Image';
+                if (p.images && p.images.length) {
+                    const found = p.images.find(i => !/\.(mp4|webm|ogg|mov)$/i.test(i));
+                    img = found || p.images[0];
+                }
+                if (typeof thumbnailData !== 'undefined' && thumbnailData[p.key]) {
+                    img = thumbnailData[p.key];
+                }
 
-    // Start by default
-    startAutoScroll();
+                const loadingAttr = idx < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
+                return `
+                    <div class="product-carousel-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>
+                         <img src="${img}" alt="${p.name}" ${loadingAttr} decoding="async" class="carousel-img">
+                         <div class="carousel-arrow-icon">↗</div>
+                         <div class="carousel-glass-overlay">
+                            <h3 class="carousel-title-glass" title="${p.name}">${p.name}</h3>
+                         </div>
+                    </div>
+                `;
+            }).join('');
 
-    // Pause on hover or touch
-    container.addEventListener('mouseenter', stopAutoScroll);
-    container.addEventListener('mouseleave', startAutoScroll);
-    container.addEventListener('touchstart', stopAutoScroll, { passive: true });
-    container.addEventListener('touchend', startAutoScroll, { passive: true });
+            // Attach scroll logic to arrows
+            const prevBtn = document.getElementById('latest-prev');
+            const nextBtn = document.getElementById('latest-next');
+
+            if (prevBtn && nextBtn) {
+                const scrollAmount = 300; // Adjust based on card width
+
+                prevBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+
+            // Optional: Auto Scroll (Pause on hover)
+            let autoScrollInterval;
+            const startAutoScroll = () => {
+                autoScrollInterval = setInterval(() => {
+                    // If near end, jump to start, else scroll right
+                    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+                        container.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        container.scrollBy({ left: 300, behavior: 'smooth' });
+                    }
+                }, 3000);
+            };
+
+            const stopAutoScroll = () => {
+                clearInterval(autoScrollInterval);
+            };
+
+            // Start by default
+            startAutoScroll();
+
+            // Pause on hover or touch
+            container.addEventListener('mouseenter', stopAutoScroll);
+            container.addEventListener('mouseleave', startAutoScroll);
+            container.addEventListener('touchstart', stopAutoScroll, { passive: true });
+            container.addEventListener('touchend', startAutoScroll, { passive: true });
+        });
+    }, 0);
 };
-
-// --- RENDERERS ---
 
 // --- RENDERERS ---
 
@@ -277,7 +260,7 @@ function renderHomePage(organizedData) {
 
     const findKey = (search) => Object.keys(organizedData).find(k => k.toLowerCase() === search.toLowerCase());
 
-    desiredCategories.forEach(label => {
+    desiredCategories.forEach((label, idx) => {
         const realKey = findKey(label);
 
         let imgSrc = 'https://placehold.co/600x800/1e293b/FFF?text=No+Image';
@@ -326,9 +309,9 @@ function renderHomePage(organizedData) {
         };
 
         const displayLabel = label.replace('Equipments', '').replace('and', '&').trim();
-
+        const loadingAttr = idx < 3 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
         card.innerHTML = `
-            <img src="${imgSrc}" alt="${displayLabel}" loading="lazy" decoding="async">
+            <img src="${imgSrc}" alt="${displayLabel}" ${loadingAttr} decoding="async">
             <div class="card-overlay">
                 <h3 class="dynamic-text">${displayLabel}</h3>
                 <span class="card-arrow">❯</span>
@@ -337,10 +320,7 @@ function renderHomePage(organizedData) {
         showcaseContainer.appendChild(card);
     });
 
-    // Apply scaling
-    requestAnimationFrame(() => {
-        showcaseContainer.querySelectorAll('.dynamic-text').forEach(el => fitTextToContainer(el));
-    });
+    // Scaling handled by CSS now
 }
 
 function renderCategoryPage(organizedData, categoryType) {
@@ -365,7 +345,7 @@ function renderCategoryPage(organizedData, categoryType) {
         generalItems = subcats['General'];
     }
 
-    sortedSubKeys.forEach(subName => {
+    sortedSubKeys.forEach((subName, idx) => {
         if (subName === 'General') return; // Skip General folder rendering
 
         const items = subcats[subName];
@@ -389,8 +369,9 @@ function renderCategoryPage(organizedData, categoryType) {
             window.location.href = `products.html?type=${encodeURIComponent(categoryType)}&sub=${encodeURIComponent(subName)}`;
         };
 
+        const loadingAttr = idx < 6 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
         card.innerHTML = `
-            <img src="${imgSrc}" alt="${subName}" loading="lazy" decoding="async">
+            <img src="${imgSrc}" alt="${subName}" ${loadingAttr} decoding="async">
             <div class="card-overlay">
                 <h3 class="dynamic-text">${subName}</h3>
                 <span class="card-arrow">❯</span>
@@ -400,7 +381,7 @@ function renderCategoryPage(organizedData, categoryType) {
     });
 
     // Render "General" items directly as products
-    generalItems.forEach(item => {
+    generalItems.forEach((item, idx) => {
         const card = document.createElement('div');
         // Use category-card style but it opens modal
         card.className = 'category-card';
@@ -420,8 +401,9 @@ function renderCategoryPage(organizedData, categoryType) {
             openModal(item);
         };
 
+        const loadingAttr = idx < 6 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
         card.innerHTML = `
-            <img src="${imgSrc}" alt="${item.name}" loading="lazy" decoding="async">
+            <img src="${imgSrc}" alt="${item.name}" ${loadingAttr} decoding="async">
             <div class="card-overlay">
                  <h3 class="dynamic-text">${item.name}</h3>
                  <span class="card-arrow">+</span>
@@ -430,10 +412,7 @@ function renderCategoryPage(organizedData, categoryType) {
         grid.appendChild(card);
     });
 
-    // Apply scaling
-    requestAnimationFrame(() => {
-        grid.querySelectorAll('.dynamic-text').forEach(el => fitTextToContainer(el));
-    });
+    // Scaling handled by CSS now
 }
 
 function renderProductsPage(organizedData, categoryType, subCategory) {
@@ -485,7 +464,7 @@ function renderProductsPage(organizedData, categoryType, subCategory) {
     }
 
     // UPDATED: Using 'category-card' class to match home/category page style exactly
-    items.forEach(item => {
+    items.forEach((item, idx) => {
         const card = document.createElement('div');
         // REUSE existing styling
         card.className = 'category-card';
@@ -511,17 +490,16 @@ function renderProductsPage(organizedData, categoryType, subCategory) {
             if (/\.(mp4|webm|ogg|mov)$/i.test(imgSrc)) {
                 // It's a video and we are in a grid. 
                 // Let's use a placeholder or try to render video??
-                // Render video tag in grid might be heavy but let's try strict object-fit 
                 // Actually the user wants to see the equipment. 
-                // Let's rely on the fact they said "upload videos too ALONG with images".
             }
         }
 
         card.onclick = () => openModal(item);
 
+        const loadingAttr = idx < 6 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
         // Overlay Style Structure
         card.innerHTML = `
-            <img src="${imgSrc}" alt="${item.name}" loading="lazy" decoding="async" style="object-fit: contain; padding: 20px;">
+            <img src="${imgSrc}" alt="${item.name}" ${loadingAttr} decoding="async" style="object-fit: contain; padding: 20px;">
             <div class="card-overlay">
                 <h3 class="dynamic-text">${item.name}</h3>
                 <span class="card-arrow">❯</span>
@@ -531,10 +509,7 @@ function renderProductsPage(organizedData, categoryType, subCategory) {
         grid.appendChild(card);
     });
 
-    // Apply scaling
-    requestAnimationFrame(() => {
-        grid.querySelectorAll('.dynamic-text').forEach(el => fitTextToContainer(el));
-    });
+    // Scaling handled by CSS now
 }
 
 // --- SHARED MODAL LOGIC ---

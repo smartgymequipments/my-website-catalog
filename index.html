@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipment Management Dashboard</title>
     <meta name="description" content="Premium dashboard for viewing and managing gym equipment specifications.">
+    <link rel="preload" href="style.css" as="style">
+    <!-- Preload heavy JS payloads to stop them from blocking the render thread -->
+    <link rel="preload" href="data.js?v=<?php echo time(); ?>" as="script">
+    <link rel="preload" href="thumbnails.js" as="script">
+    <link rel="preconnect" href="https://placehold.co" crossorigin>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -139,11 +139,9 @@
 .category-card {
     position: relative;
     border-radius: var(--radius-md);
-    border: 2px solid transparent;
-    background:
-        linear-gradient(#000, #000) padding-box,
-        conic-gradient(from var(--border-angle, 0turn), rgba(255, 215, 0, 0.1) 70%, rgba(255, 215, 0, 1) 100%) border-box;
-    animation: tileRunningBorder 3s linear infinite;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    background: #000;
+    /* Outline animation removed */
     overflow: hidden;
     aspect-ratio: 4 / 5;
     /* Matches the vertical card look */
@@ -164,15 +162,17 @@
     /* Ensures full equipment is visible */
     transition: transform 0.5s ease;
     opacity: 0.9;
+    /* Explicit dimensions to prevent CLS */
+    aspect-ratio: 4/5;
+    background-color: transparent;
 }
 
 @media (hover: hover) {
     .category-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.2);
-        background:
-            linear-gradient(#000, #000) padding-box,
-            conic-gradient(from var(--border-angle, 0turn), rgba(255, 215, 0, 0.4) 70%, rgba(255, 215, 0, 1) 100%) border-box;
+        background: #000;
+        border-color: rgba(255, 215, 0, 0.5);
     }
 
     .category-card:hover img {
@@ -209,7 +209,8 @@
 .card-overlay h3 {
     font-family: var(--font-main);
     color: var(--primary-color);
-    font-size: 1.2rem;
+    /* Replaces JS fitTextToContainer: fluid typography */
+    font-size: clamp(0.75rem, 5vw, 1.2rem);
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.2;
@@ -245,7 +246,7 @@
     }
 
     .card-overlay h3 {
-        font-size: 0.9rem;
+        font-size: clamp(0.6rem, 4vw, 0.9rem);
     }
 
     .card-overlay {
@@ -560,13 +561,11 @@ body {
 /* Buttons */
 /* Buttons */
 .equip-btn {
-    background:
-        linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.6)) padding-box,
-        conic-gradient(from var(--border-angle, 0turn), rgba(255, 215, 0, 0.1) 70%, rgba(255, 215, 0, 1) 100%) border-box;
+    background: rgba(10, 10, 10, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 2px solid transparent;
-    animation: tileRunningBorder 3s linear infinite;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    /* Outline animation removed */
     color: var(--primary-color);
 
     padding: 10px;
@@ -631,9 +630,8 @@ body {
 
 .equip-btn:hover {
     transform: translateY(-5px) scale(1.02);
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) padding-box,
-        conic-gradient(from var(--border-angle, 0turn), rgba(255, 215, 0, 0.4) 70%, rgba(255, 215, 0, 1) 100%) border-box;
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 215, 0, 0.5);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.4);
     color: var(--primary-color);
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
