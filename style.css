@@ -405,9 +405,8 @@ body {
 }
 
 
-/* Hero Section Styles (Replaces Old Header Content) */
 .hero-section {
-    padding: 60px 0 40px;
+    padding: 40px 0 10px;
     text-align: center;
     background: radial-gradient(circle at top center, #1a1a1a 0%, transparent 70%);
 }
@@ -450,7 +449,7 @@ body {
 
 @media (max-width: 768px) {
     .hero-section {
-        padding: 40px 0;
+        padding: 20px 0 10px;
     }
 
     .hero-section h1 {
@@ -1668,7 +1667,7 @@ body {
 
 /* --- Latest Products Section --- */
 .latest-products-section {
-    margin: 40px 0;
+    margin: 10px 0 40px 0;
     padding-bottom: 40px;
     border-bottom: 2px solid rgba(255, 215, 0, 0.2);
 }
