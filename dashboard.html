@@ -148,6 +148,26 @@
                             <input type="file" name="images[]" required multiple accept="image/*,video/*"
                                 class="block w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-bold file:bg-yellow-400 file:text-black hover:file:bg-yellow-300 pointer-events-none-file">
                         </div>
+
+                        <div class="mt-4 border-t border-gray-700 pt-4">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="text-sm font-bold text-yellow-400">Product Specifications</h4>
+                                <button type="button" onclick="openManageSpecsModal()"
+                                    class="text-xs bg-gray-800 hover:bg-gray-700 text-white py-1 px-2 rounded border border-gray-600 transition flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg> Manage Fields
+                                </button>
+                            </div>
+                            <div id="add-specs-container" class="space-y-3">
+                                <p class="text-xs text-gray-500">Loading active specifications...</p>
+                            </div>
+                        </div>
+
                         <div class="mt-8 flex gap-3">
                             <button type="submit"
                                 class="flex-1 justify-center rounded-md border border-transparent shadow-sm px-4 py-3 bg-yellow-400 text-base font-bold text-black hover:bg-yellow-300 focus:outline-none sm:text-sm transition">Save
@@ -240,6 +260,25 @@
                                 class="block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
                         </div>
 
+                        <div class="mt-4 border-t border-gray-700 pt-4">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="text-sm font-bold text-yellow-400">Product Specifications</h4>
+                                <button type="button" onclick="openManageSpecsModal()"
+                                    class="text-xs bg-gray-800 hover:bg-gray-700 text-white py-1 px-2 rounded border border-gray-600 transition flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg> Manage Fields
+                                </button>
+                            </div>
+                            <div id="edit-specs-container" class="space-y-3">
+                                <p class="text-xs text-gray-500">Loading specifications...</p>
+                            </div>
+                        </div>
+
                         <div class="mt-8 flex gap-3">
                             <button type="submit"
                                 class="flex-1 justify-center rounded-md border border-transparent shadow-sm px-4 py-3 bg-yellow-400 text-base font-bold text-black hover:bg-yellow-300 focus:outline-none sm:text-sm transition">Save
@@ -275,6 +314,44 @@
                             Forever</button>
                         <button onclick="closeDeleteModal()"
                             class="flex-1 justify-center rounded-md border border-gray-600 shadow-sm px-4 py-3 bg-transparent text-base font-medium text-gray-300 hover:bg-white/10 focus:outline-none sm:text-sm transition">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Specifications Modal -->
+    <div id="manage-specs-modal" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title-specs"
+        role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-black bg-opacity-90 transition-opacity backdrop-blur-sm" aria-hidden="true"
+                onclick="closeManageSpecsModal()"></div>
+
+            <div
+                class="inline-block align-middle glass rounded-xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full border border-white/10">
+                <div class="px-6 py-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl leading-6 font-bold text-yellow-400" id="modal-title-specs">Global
+                            Specifications</h3>
+                        <button onclick="closeManageSpecsModal()" class="text-gray-400 hover:text-white">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <form id="add-spec-form" class="flex gap-2 mb-6 border-b border-gray-700 pb-6">
+                        <input type="text" id="new-spec-name" required
+                            placeholder="New specification name (e.g. Dimensions)"
+                            class="flex-1 py-2 px-3 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm">
+                        <button type="submit"
+                            class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-lg transition text-sm">Add</button>
+                    </form>
+
+                    <div class="max-h-[40vh] overflow-y-auto pr-2 custom-scrollbar" id="global-specs-list">
+                        <!-- Loaded via JS -->
+                        <div class="text-center text-gray-400 text-sm">Loading specifications...</div>
                     </div>
                 </div>
             </div>

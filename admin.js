@@ -204,12 +204,14 @@ async function fetchSubcategories(context, categoryOverride = null) {
 // --- ADD MODAL ---
 function openAddModal() {
     document.getElementById('add-modal').classList.remove('hidden');
+    renderSpecsInputs('add-specs-container', null, true);
 }
 
 function closeAddModal() {
     document.getElementById('add-modal').classList.add('hidden');
     document.getElementById('add-form').reset();
     document.getElementById('add-subcategory').innerHTML = '<option value="General">General</option>';
+    document.getElementById('add-specs-container').innerHTML = '<p class="text-xs text-gray-500">Loading active specifications...</p>';
 }
 
 async function handleAddProduct(e) {
@@ -229,6 +231,11 @@ async function handleAddProduct(e) {
         });
 
         if (res.ok) {
+            const data = await res.json();
+
+            // Save Product Specifications
+            await saveProductSpecs(data.key, 'add-specs-container');
+
             closeAddModal();
             loadProducts();
         } else {
@@ -265,6 +272,9 @@ function openEditModal(product) {
 
     // Set YouTube URL
     document.getElementById('edit-youtube-url').value = product.youtube || '';
+
+    // Load specs inputs and existing values
+    renderSpecsInputs('edit-specs-container', product.key, true);
 
     fetchThumbnailMetadata().then(() => {
         renderImageGallery(product.images);
@@ -500,6 +510,11 @@ async function handleEditProduct(e) {
         });
 
         if (res.ok) {
+            const data = await res.json();
+
+            // Save Product Specifications
+            await saveProductSpecs(data.key, 'edit-specs-container');
+
             closeEditModal();
             loadProducts();
         } else {
@@ -557,4 +572,226 @@ async function confirmDelete() {
 async function logout() {
     await fetch('admin_backend.php?action=logout');
     window.location.href = 'portal-access-99.php';
+}
+
+// ==========================================
+// SPECIFICATIONS LOGIC
+// ==========================================
+
+let currentFormActiveSpecs = new Set();
+let currentFormSpecValues = {};
+
+function openManageSpecsModal() {
+    document.getElementById('manage-specs-modal').classList.remove('hidden');
+    loadGlobalSpecs();
+}
+
+function closeManageSpecsModal() {
+    document.getElementById('manage-specs-modal').classList.add('hidden');
+
+    // Refresh the forms if they are currently open
+    if (!document.getElementById('add-modal').classList.contains('hidden')) {
+        renderSpecsInputs('add-specs-container');
+    } else if (!document.getElementById('edit-modal').classList.contains('hidden')) {
+        const pKey = currentEditProduct ? currentEditProduct.key : null;
+        renderSpecsInputs('edit-specs-container', pKey);
+    }
+}
+
+async function loadGlobalSpecs() {
+    const list = document.getElementById('global-specs-list');
+    list.innerHTML = '<div class="text-center text-gray-400 text-sm">Loading specifications...</div>';
+    try {
+        const res = await fetch('specifications_api.php?action=list_all');
+        const json = await res.json();
+        if (json.success) {
+            if (json.data.length === 0) {
+                list.innerHTML = '<div class="text-center text-gray-500 text-sm py-4">No global specifications defined yet.</div>';
+                return;
+            }
+            list.innerHTML = json.data.map(spec => {
+                const isChecked = currentFormActiveSpecs.has(spec.id);
+                return `
+                <div class="flex items-center justify-between p-3 border-b border-gray-700 hover:bg-white/5 transition group">
+                    <span class="text-sm font-bold text-white break-words w-1/2">${spec.name}</span>
+                    <div class="flex items-center gap-3">
+                        <button onclick="editGlobalSpec(${spec.id}, '${spec.name.replace(/'/g, "\\'")}')" class="text-blue-400 hover:text-blue-300 text-xs font-bold opacity-0 group-hover:opacity-100 transition">Edit</button>
+                        <button onclick="deleteGlobalSpec(${spec.id}, '${spec.name.replace(/'/g, "\\'")}')" class="text-red-400 hover:text-red-300 text-xs font-bold opacity-0 group-hover:opacity-100 transition">Delete</button>
+                        <label class="flex items-center cursor-pointer ml-2" title="Toggle this specification for the current product">
+                            <div class="relative">
+                                <input type="checkbox" class="sr-only peer" ${isChecked ? 'checked' : ''} onchange="toggleFormSpec(${spec.id}, this.checked)">
+                                <div class="block bg-gray-600 w-10 h-6 rounded-full transition-colors peer-checked:bg-green-500"></div>
+                                <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition transform peer-checked:translate-x-4"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            `}).join('');
+        } else {
+            list.innerHTML = `<div class="text-red-500 text-sm">${json.error || 'Failed to load.'}</div>`;
+        }
+    } catch (e) {
+        list.innerHTML = '<div class="text-red-500 text-sm">Network Error</div>';
+    }
+}
+
+document.getElementById('add-spec-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('new-spec-name');
+    const specName = input.value;
+    const btn = e.target.querySelector('button');
+    btn.disabled = true;
+
+    try {
+        const res = await fetch('specifications_api.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'add_global_spec', spec_name: specName })
+        });
+        const json = await res.json();
+        if (json.success) {
+            input.value = '';
+            loadGlobalSpecs();
+        } else {
+            alert(json.error || 'Failed to add specification');
+        }
+    } catch (err) {
+        alert('Network Error');
+    } finally {
+        btn.disabled = false;
+    }
+});
+
+function toggleFormSpec(id, isChecked) {
+    if (isChecked) {
+        currentFormActiveSpecs.add(id);
+    } else {
+        currentFormActiveSpecs.delete(id);
+    }
+}
+
+async function editGlobalSpec(id, currentName) {
+    const newName = prompt("Edit Specification Name:", currentName);
+    if (!newName || newName.trim() === "" || newName === currentName) return;
+
+    try {
+        const res = await fetch('specifications_api.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'edit_global_spec', spec_id: id, spec_name: newName.trim() })
+        });
+        const json = await res.json();
+        if (json.success) {
+            loadGlobalSpecs();
+        } else {
+            alert(json.error || 'Failed to edit specification');
+        }
+    } catch (err) {
+        alert('Network Error');
+    }
+}
+
+async function deleteGlobalSpec(id, currentName) {
+    if (!confirm(`Are you sure you want to delete the "${currentName}" specification? This will remove it from all products forever.`)) return;
+
+    try {
+        const res = await fetch('specifications_api.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'delete_global_spec', spec_id: id })
+        });
+        const json = await res.json();
+        if (json.success) {
+            loadGlobalSpecs();
+        } else {
+            alert(json.error || 'Failed to delete specification');
+        }
+    } catch (err) {
+        alert('Network Error');
+    }
+}
+
+async function renderSpecsInputs(containerId, productKey = null, isInitialLoad = false) {
+    const container = document.getElementById(containerId);
+
+    // Preserve current unsubmitted values
+    if (!isInitialLoad) {
+        container.querySelectorAll('.product-spec-input').forEach(input => {
+            currentFormSpecValues[input.getAttribute('data-spec-id')] = input.value;
+        });
+    }
+
+    container.innerHTML = '<p class="text-xs text-gray-500">Loading valid specifications...</p>';
+
+    try {
+        // Fetch all specs, not just 'active' (since active is now form-specific)
+        const paramsRes = await fetch('specifications_api.php?action=list_all');
+        const paramsJson = await paramsRes.json();
+        if (!paramsJson.success || paramsJson.data.length === 0) {
+            container.innerHTML = '<p class="text-xs text-gray-500">No specifications defined. Add some via "Global Specs".</p>';
+            return;
+        }
+
+        if (isInitialLoad) {
+            currentFormActiveSpecs.clear();
+            currentFormSpecValues = {};
+            if (productKey) {
+                const valRes = await fetch(`specifications_api.php?action=get_product_specs&product_key=${encodeURIComponent(productKey)}`);
+                const valJson = await valRes.json();
+                if (valJson.success) {
+                    for (const [id, val] of Object.entries(valJson.data)) {
+                        currentFormActiveSpecs.add(Number(id));
+                        currentFormSpecValues[id] = val;
+                    }
+                }
+            }
+        }
+
+        const activeParams = paramsJson.data.filter(s => currentFormActiveSpecs.has(s.id));
+
+        if (activeParams.length === 0) {
+            container.innerHTML = '<p class="text-xs text-gray-500 mb-2">No specifications selected for this product.</p>';
+            return;
+        }
+
+        container.innerHTML = activeParams.map(spec => {
+            const val = currentFormSpecValues[spec.id] || '';
+            return `
+                <div>
+                    <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">${spec.name}</label>
+                    <input type="text" data-spec-id="${spec.id}" value="${val.replace(/"/g, '&quot;')}"
+                        placeholder="Enter value..."
+                        class="product-spec-input block w-full py-2 px-3 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 sm:text-sm">
+                </div>
+            `;
+        }).join('');
+    } catch (e) {
+        container.innerHTML = '<p class="text-xs text-red-500">Failed to load specifications.</p>';
+    }
+}
+
+async function saveProductSpecs(productKey, containerId) {
+    const container = document.getElementById(containerId);
+    const inputs = container.querySelectorAll('.product-spec-input');
+    const specsData = {};
+
+    inputs.forEach(input => {
+        const specId = input.getAttribute('data-spec-id');
+        const val = input.value.trim();
+        if (val) specsData[specId] = val;
+    });
+
+    try {
+        await fetch('specifications_api.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                action: 'save_product_specs',
+                product_key: productKey,
+                specs: specsData
+            })
+        });
+    } catch (e) {
+        console.error("Failed to save product specifications", e);
+    }
 }

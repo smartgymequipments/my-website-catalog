@@ -390,5 +390,186 @@ def php_shim():
 def login_page_alias():
     return login_page()
 
+# --- Specifications API Python Shim (JSON File Based) ---
+SPECS_FILE_PATH = os.path.join(BASE_DIR, 'specifications.json')
+
+def load_specs_data():
+    if not os.path.exists(SPECS_FILE_PATH):
+        return {"global_specs": [], "product_specs": {}, "next_id": 1}
+    try:
+        with open(SPECS_FILE_PATH, 'r') as f:
+            return json.load(f)
+    except Exception:
+        return {"global_specs": [], "product_specs": {}, "next_id": 1}
+
+def save_specs_data(data):
+    with open(SPECS_FILE_PATH, 'w') as f:
+        json.dump(data, f, indent=4)
+
+@app.route('/specifications_api.php', methods=['GET', 'POST'])
+def specs_api_shim():
+    if request.method == 'GET':
+        action = request.args.get('action')
+    else:
+        if request.is_json:
+            data = request.json
+            action = data.get('action')
+        else:
+            action = request.form.get('action')
+
+    specs_data = load_specs_data()
+
+    # 1. GET ALL SPECIFICATIONS
+    if action == 'list_all' and request.method == 'GET':
+        sorted_specs = sorted(specs_data.get('global_specs', []), key=lambda x: x['name'].lower())
+        return jsonify({'success': True, 'data': sorted_specs})
+
+    # 2. GET ACTIVE SPECIFICATIONS
+    elif action == 'list_active' and request.method == 'GET':
+        active_specs = [s for s in specs_data.get('global_specs', []) if s.get('is_active') == 1]
+        sorted_specs = sorted(active_specs, key=lambda x: x['name'].lower())
+        return jsonify({'success': True, 'data': sorted_specs})
+
+    # 3. GET PRODUCT SPECIFICATIONS
+    elif action == 'get_product_specs' and request.method == 'GET':
+        product_key = request.args.get('product_key', '')
+        if not product_key:
+            return jsonify({'success': False, 'error': 'Product key required.'})
+        
+        product_specs = specs_data.get('product_specs', {}).get(product_key, {})
+        return jsonify({'success': True, 'data': product_specs})
+
+    # 4. ADD GLOBAL SPECIFICATION
+    elif action == 'add_global_spec' and request.method == 'POST':
+        data = request.json if request.is_json else request.form
+        spec_name = data.get('spec_name', '').strip()
+        
+        if spec_name:
+            # Check for duplicate
+            for spec in specs_data.get('global_specs', []):
+                if spec['name'].lower() == spec_name.lower():
+                    return jsonify({'success': False, 'error': 'Specification already exists.'})
+            
+            new_id = specs_data.get('next_id', 1)
+            specs_data['global_specs'].append({
+                "id": new_id,
+                "name": spec_name,
+                "is_active": 1
+            })
+            specs_data['next_id'] = new_id + 1
+            save_specs_data(specs_data)
+            return jsonify({'success': True, 'message': 'Specification added successfully.'})
+        else:
+            return jsonify({'success': False, 'error': 'Specification name is required.'})
+
+    # 5. TOGGLE GLOBAL SPECIFICATION
+    elif action == 'toggle_global_spec' and request.method == 'POST':
+        data = request.json if request.is_json else request.form
+        spec_id = int(data.get('spec_id', 0))
+        is_active = int(data.get('is_active', 0))
+        
+        if spec_id > 0:
+            found = False
+            for spec in specs_data.get('global_specs', []):
+                if spec['id'] == spec_id:
+                    spec['is_active'] = is_active
+                    found = True
+                    break
+            
+            if found:
+                save_specs_data(specs_data)
+                return jsonify({'success': True, 'message': 'Specification status updated.'})
+            else:
+                return jsonify({'success': False, 'error': 'Specification not found.'})
+        else:
+            return jsonify({'success': False, 'error': 'Invalid specification ID.'})
+
+    # EDIT GLOBAL SPECIFICATION
+    elif action == 'edit_global_spec' and request.method == 'POST':
+        data = request.json if request.is_json else request.form
+        spec_id = int(data.get('spec_id', 0))
+        spec_name = data.get('spec_name', '').strip()
+        
+        if spec_id > 0 and spec_name:
+            # Check for name collision
+            for spec in specs_data.get('global_specs', []):
+                if spec['name'].lower() == spec_name.lower() and spec['id'] != spec_id:
+                    return jsonify({'success': False, 'error': 'Another specification with this name already exists.'})
+
+            found = False
+            for spec in specs_data.get('global_specs', []):
+                if spec['id'] == spec_id:
+                    spec['name'] = spec_name
+                    found = True
+                    break
+            
+            if found:
+                save_specs_data(specs_data)
+                return jsonify({'success': True, 'message': 'Specification updated successfully.'})
+            else:
+                return jsonify({'success': False, 'error': 'Specification not found.'})
+        else:
+            return jsonify({'success': False, 'error': 'Invalid specification ID or name.'})
+
+    # DELETE GLOBAL SPECIFICATION
+    elif action == 'delete_global_spec' and request.method == 'POST':
+        data = request.json if request.is_json else request.form
+        spec_id = int(data.get('spec_id', 0))
+        
+        if spec_id > 0:
+            original_len = len(specs_data.get('global_specs', []))
+            specs_data['global_specs'] = [s for s in specs_data.get('global_specs', []) if s['id'] != spec_id]
+            
+            if len(specs_data['global_specs']) < original_len:
+                # Remove this spec from all product specs
+                if 'product_specs' in specs_data:
+                    for pkey, specs in list(specs_data['product_specs'].items()):
+                        # Dictionary keys are strings
+                        str_spec_id = str(spec_id)
+                        if str_spec_id in specs:
+                            del specs[str_spec_id]
+                            # Clean up empty specs dicts
+                            if not specs:
+                                del specs_data['product_specs'][pkey]
+
+                save_specs_data(specs_data)
+                return jsonify({'success': True, 'message': 'Specification deleted successfully.'})
+            else:
+                return jsonify({'success': False, 'error': 'Specification not found.'})
+        else:
+            return jsonify({'success': False, 'error': 'Invalid specification ID.'})
+
+    # 6. SAVE PRODUCT SPECIFICATIONS
+    elif action == 'save_product_specs' and request.method == 'POST':
+        data = request.json if request.is_json else request.form
+        product_key = data.get('product_key', '')
+        specs_array = data.get('specs', {})
+
+        if not product_key:
+            return jsonify({'success': False, 'error': 'Product key is required.'})
+
+        if 'product_specs' not in specs_data:
+            specs_data['product_specs'] = {}
+            
+        # Clean array to only non-empty strings
+        cleaned_specs = {}
+        if isinstance(specs_array, dict):
+            for spec_id, spec_val in specs_array.items():
+                val = str(spec_val).strip()
+                if val:
+                    cleaned_specs[str(spec_id)] = val
+        
+        specs_data['product_specs'][product_key] = cleaned_specs
+        save_specs_data(specs_data)
+        
+        # Also let's optionally trigger generate_data.py if it ever needed it, 
+        # but our specifications are loaded client-side independently right now.
+        
+        return jsonify({'success': True, 'message': 'Product specifications saved.'})
+
+    else:
+        return jsonify({'error': 'Invalid action'}), 400
+
 if __name__ == '__main__':
     app.run(port=8000, debug=True)
+

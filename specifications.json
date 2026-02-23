@@ -1,0 +1,11 @@
+{
+    "global_specs": [
+        {
+            "id": 2,
+            "name": "Dimensions",
+            "is_active": 0
+        }
+    ],
+    "product_specs": {},
+    "next_id": 3
+}

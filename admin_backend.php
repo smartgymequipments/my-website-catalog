@@ -526,7 +526,7 @@ if ($action === 'add_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     saveMetadata($meta);
 
     regenerateDataJs($IMAGES_DIR, $DATA_JS_FILE);
-    jsonResponse(['success' => true]);
+    jsonResponse(['success' => true, 'key' => $key]);
 }
 
 if ($action === 'add_image' && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -686,9 +686,10 @@ if ($action === 'edit_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Update Metadata Key if Title Changed
+    $finalKey = slugify(basename($originalFolder)); // default if no change
     if ($absFolder !== $newPath) {
         $meta = loadMetadata();
-        $oldKey = slugify(basename($originalFolder));
+        $oldKey = $finalKey;
         
         $newKey = slugify($safeNewTitle);
         // Handle collision
@@ -701,10 +702,11 @@ if ($action === 'edit_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             unset($meta[$oldKey]); // Remove old
             saveMetadata($meta);
         }
+        $finalKey = $newKey;
     }
 
     regenerateDataJs($IMAGES_DIR, $DATA_JS_FILE);
-    jsonResponse(['success' => true]);
+    jsonResponse(['success' => true, 'key' => $finalKey]);
 }
 
 if ($action === 'get_thumbnail_metadata') {
