@@ -1,41 +1,65 @@
 <?php
 // specifications_api.php
-// Handles Database Connections and Global Specifications Management
+// Handles Global Specifications Management via local specifications.json file
 
-$db_host = 'localhost';
-$db_user = 'root'; // Change your database username
-$db_pass = '';     // Change your database password
-$db_name = 'gym_catalog'; // Change your database name
-
-// Send JSON headers for all responses
 header('Content-Type: application/json');
 
-try {
-    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8mb4", $db_user, $db_pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo json_encode(['error' => 'Database connection failed. Please ensure the specifications_schema.sql has been imported.']);
-    exit;
-}
+$specs_file = __DIR__ . '/specifications.json';
 
-$action = $_GET['action'] ?? ($_POST['action'] ?? '');
-
-// 1. GET ALL SPECIFICATIONS (For Manage Modal)
-if ($action === 'list_all' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    try {
-        $stmt = $pdo->query("SELECT * FROM specifications ORDER BY name ASC");
-        echo json_encode(['success' => true, 'data' => $stmt->fetchAll()]);
-    } catch (PDOException $e) {
-        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+function load_specs_data($file) {
+    if (!file_exists($file)) {
+        return ["global_specs" => [], "product_specs" => [], "next_id" => 1];
     }
+    $content = file_get_contents($file);
+    if (!$content) {
+        return ["global_specs" => [], "product_specs" => [], "next_id" => 1];
+    }
+    return json_decode($content, true) ?: ["global_specs" => [], "product_specs" => [], "next_id" => 1];
+}
+
+function save_specs_data($file, $data) {
+    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
+}
+
+$action = $_GET['action'] ?? '';
+$input = json_decode(file_get_contents('php://input'), true);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($input) {
+        $action = $input['action'] ?? $action;
+    } else {
+        $action = $_POST['action'] ?? $action;
+        $input = $_POST;
+    }
+}
+
+$specs_data = load_specs_data($specs_file);
+
+// Helper function to sort correctly
+function sort_specs(&$array) {
+    usort($array, function($a, $b) {
+        return strcasecmp($a['name'], $b['name']);
+    });
+}
+
+// 1. GET ALL SPECIFICATIONS
+if ($action === 'list_all' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+    $global_specs = $specs_data['global_specs'] ?? [];
+    sort_specs($global_specs);
+    echo json_encode(['success' => true, 'data' => $global_specs]);
     exit;
 }
 
-// 2. GET ACTIVE SPECIFICATIONS (For Add/Edit Product Modal)
+// 2. GET ACTIVE SPECIFICATIONS
 if ($action === 'list_active' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = $pdo->query("SELECT * FROM specifications WHERE is_active = 1 ORDER BY name ASC");
-    echo json_encode(['success' => true, 'data' => $stmt->fetchAll()]);
+    $global_specs = $specs_data['global_specs'] ?? [];
+    $active_specs = array_filter($global_specs, function($s) {
+        return isset($s['is_active']) && $s['is_active'] == 1;
+    });
+    // array_filter preserves keys, re-index
+    $active_specs = array_values($active_specs);
+    sort_specs($active_specs);
+    echo json_encode(['success' => true, 'data' => $active_specs]);
     exit;
 }
 
@@ -47,37 +71,35 @@ if ($action === 'get_product_specs' && $_SERVER['REQUEST_METHOD'] === 'GET') {
         exit;
     }
     
-    $stmt = $pdo->prepare("SELECT specification_id, specification_value FROM product_specification_values WHERE product_key = :key");
-    $stmt->execute(['key' => $productKey]);
-    $results = $stmt->fetchAll();
-    
-    // Map to simple key-value pair: { "spec_id": "value" }
-    $mapped = [];
-    foreach ($results as $row) {
-        $mapped[$row['specification_id']] = $row['specification_value'];
-    }
-    
-    echo json_encode(['success' => true, 'data' => $mapped]);
+    $product_specs = $specs_data['product_specs'][$productKey] ?? [];
+    echo json_encode(['success' => true, 'data' => $product_specs ?: new stdClass()]);
     exit;
 }
 
 // 4. ADD GLOBAL SPECIFICATION
 if ($action === 'add_global_spec' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
     $specName = trim($input['spec_name'] ?? '');
     
     if (!empty($specName)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO specifications (name, is_active) VALUES (:name, 1)");
-            $stmt->execute(['name' => $specName]);
-            echo json_encode(['success' => true, 'message' => 'Specification added successfully.']);
-        } catch (PDOException $e) {
-            if ($e->getCode() == 23000) {
+        if (!isset($specs_data['global_specs'])) $specs_data['global_specs'] = [];
+        
+        foreach ($specs_data['global_specs'] as $spec) {
+            if (strcasecmp($spec['name'], $specName) === 0) {
                 echo json_encode(['success' => false, 'error' => 'Specification already exists.']);
-            } else {
-                echo json_encode(['success' => false, 'error' => 'Database error: ' . $e->getMessage()]);
+                exit;
             }
         }
+        
+        $new_id = $specs_data['next_id'] ?? 1;
+        $specs_data['global_specs'][] = [
+            "id" => $new_id,
+            "name" => $specName,
+            "is_active" => 1
+        ];
+        $specs_data['next_id'] = $new_id + 1;
+        
+        save_specs_data($specs_file, $specs_data);
+        echo json_encode(['success' => true, 'message' => 'Specification added successfully.']);
     } else {
         echo json_encode(['success' => false, 'error' => 'Specification name is required.']);
     }
@@ -86,30 +108,112 @@ if ($action === 'add_global_spec' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // 5. TOGGLE GLOBAL SPECIFICATION
 if ($action === 'toggle_global_spec' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
     $specId = (int)($input['spec_id'] ?? 0);
     $isActive = (int)($input['is_active'] ?? 0);
     
     if ($specId > 0) {
-        $stmt = $pdo->prepare("UPDATE specifications SET is_active = :is_active WHERE id = :id");
-        $stmt->execute(['is_active' => $isActive, 'id' => $specId]);
-        echo json_encode(['success' => true, 'message' => 'Specification status updated.']);
+        $found = false;
+        if (isset($specs_data['global_specs'])) {
+            foreach ($specs_data['global_specs'] as &$spec) {
+                if ($spec['id'] == $specId) {
+                    $spec['is_active'] = $isActive;
+                    $found = true;
+                    break;
+                }
+            }
+        }
+        
+        if ($found) {
+            save_specs_data($specs_file, $specs_data);
+            echo json_encode(['success' => true, 'message' => 'Specification status updated.']);
+        } else {
+            echo json_encode(['success' => false, 'error' => 'Specification not found.']);
+        }
     } else {
         echo json_encode(['success' => false, 'error' => 'Invalid specification ID.']);
     }
     exit;
 }
 
-// 6. SAVE PRODUCT SPECIFICATIONS
-if ($action === 'save_product_specs' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Determine input format (JSON or FormData)
-    $input = json_decode(file_get_contents('php://input'), true);
-    if (!$input) {
-        $input = $_POST;
-    }
+// 6. EDIT GLOBAL SPECIFICATION
+if ($action === 'edit_global_spec' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $specId = (int)($input['spec_id'] ?? 0);
+    $specName = trim($input['spec_name'] ?? '');
     
+    if ($specId > 0 && !empty($specName)) {
+        if (isset($specs_data['global_specs'])) {
+            // Check for name collision
+            foreach ($specs_data['global_specs'] as $spec) {
+                if (strcasecmp($spec['name'], $specName) === 0 && $spec['id'] != $specId) {
+                    echo json_encode(['success' => false, 'error' => 'Another specification with this name already exists.']);
+                    exit;
+                }
+            }
+
+            $found = false;
+            foreach ($specs_data['global_specs'] as &$spec) {
+                if ($spec['id'] == $specId) {
+                    $spec['name'] = $specName;
+                    $found = true;
+                    break;
+                }
+            }
+            if ($found) {
+                save_specs_data($specs_file, $specs_data);
+                echo json_encode(['success' => true, 'message' => 'Specification updated successfully.']);
+                exit;
+            }
+        }
+        echo json_encode(['success' => false, 'error' => 'Specification not found.']);
+    } else {
+        echo json_encode(['success' => false, 'error' => 'Invalid specification ID or name.']);
+    }
+    exit;
+}
+
+// 7. DELETE GLOBAL SPECIFICATION
+if ($action === 'delete_global_spec' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $specId = (int)($input['spec_id'] ?? 0);
+    
+    if ($specId > 0) {
+        if (isset($specs_data['global_specs'])) {
+            $original_len = count($specs_data['global_specs']);
+            $specs_data['global_specs'] = array_filter($specs_data['global_specs'], function($s) use ($specId) {
+                return $s['id'] != $specId;
+            });
+            
+            // array_filter preserves keys, re-index
+            $specs_data['global_specs'] = array_values($specs_data['global_specs']);
+            
+            if (count($specs_data['global_specs']) < $original_len) {
+                // Remove this spec from all product specs
+                if (isset($specs_data['product_specs'])) {
+                    $specIdStr = (string)$specId;
+                    foreach ($specs_data['product_specs'] as $pkey => &$specs) {
+                        if (array_key_exists($specIdStr, $specs)) {
+                            unset($specs[$specIdStr]);
+                            if (empty($specs)) {
+                                unset($specs_data['product_specs'][$pkey]);
+                            }
+                        }
+                    }
+                }
+
+                save_specs_data($specs_file, $specs_data);
+                echo json_encode(['success' => true, 'message' => 'Specification deleted successfully.']);
+                exit;
+            }
+        }
+        echo json_encode(['success' => false, 'error' => 'Specification not found.']);
+    } else {
+        echo json_encode(['success' => false, 'error' => 'Invalid specification ID.']);
+    }
+    exit;
+}
+
+// 8. SAVE PRODUCT SPECIFICATIONS
+if ($action === 'save_product_specs' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $productKey = $input['product_key'] ?? '';
-    // Expected format: {"1": "Value for spec 1", "2": "Value for spec 2"}
     $specsArray = $input['specs'] ?? []; 
     
     if (empty($productKey)) {
@@ -117,38 +221,31 @@ if ($action === 'save_product_specs' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
     
-    try {
-        $pdo->beginTransaction();
-
-        $stmtDelete = $pdo->prepare("DELETE FROM product_specification_values WHERE product_key = :key");
-        $stmtDelete->execute(['key' => $productKey]);
-
-        if (!empty($specsArray) && is_array($specsArray)) {
-            $stmtInsert = $pdo->prepare("
-                INSERT INTO product_specification_values (product_key, specification_id, specification_value) 
-                VALUES (:product_key, :specification_id, :specification_value)
-            ");
-
-            foreach ($specsArray as $specId => $specValue) {
-                $value = trim($specValue);
-                if (!empty($value)) {
-                    $stmtInsert->execute([
-                        'product_key' => $productKey,
-                        'specification_id' => (int)$specId,
-                        'specification_value' => $value
-                    ]);
-                }
+    if (!isset($specs_data['product_specs'])) {
+        $specs_data['product_specs'] = [];
+    }
+    
+    $cleaned_specs = [];
+    if (is_array($specsArray)) {
+        foreach ($specsArray as $specId => $specValue) {
+            $value = trim((string)$specValue);
+            if ($value !== '') {
+                $cleaned_specs[(string)$specId] = $value;
             }
         }
-
-        $pdo->commit();
-        echo json_encode(['success' => true, 'message' => 'Product specifications saved.']);
-    } catch (PDOException $e) {
-        $pdo->rollBack();
-        echo json_encode(['success' => false, 'error' => 'Failed to save product specifications: ' . $e->getMessage()]);
     }
+    
+    $specs_data['product_specs'][$productKey] = $cleaned_specs;
+    
+    // Clean up empty objects
+    if (empty($cleaned_specs)) {
+        unset($specs_data['product_specs'][$productKey]);
+    }
+    
+    save_specs_data($specs_file, $specs_data);
+    echo json_encode(['success' => true, 'message' => 'Product specifications saved.']);
     exit;
 }
 
-echo json_encode(['error' => 'Invalid action']);
+echo json_encode(['error' => 'Invalid action ' . htmlspecialchars($action)]);
 exit;
