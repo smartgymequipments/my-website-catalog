@@ -782,7 +782,7 @@ async function saveProductSpecs(productKey, containerId) {
     });
 
     try {
-        await fetch('specifications_api.php', {
+        const res = await fetch('specifications_api.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -791,7 +791,13 @@ async function saveProductSpecs(productKey, containerId) {
                 specs: specsData
             })
         });
+        const json = await res.json();
+        if (!json.success) {
+            console.error("Failed to save product specifications: " + json.error);
+            alert("Warning: Product saved, but specifications failed to save.");
+        }
     } catch (e) {
-        console.error("Failed to save product specifications", e);
+        console.error("Network error saving product specifications", e);
+        alert("Warning: Network error while saving specifications.");
     }
 }
