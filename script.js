@@ -612,6 +612,53 @@ function openModal(item) {
     modalTitle.textContent = item.name;
     modalCategory.textContent = item.category;
 
+    // ----- Fetch and Render Specifications -----
+    const modalDetails = document.querySelector('.modal-details');
+    if (modalDetails) {
+        modalDetails.style.display = 'block';
+        modalDetails.innerHTML = '<p style="color:#aaa; font-size: 14px; text-align:center; padding: 10px;">Loading specifications...</p>';
+
+        // Fetch specs asynchronously
+        Promise.all([
+            fetch('specifications_api.php?action=list_all').then(r => r.json()),
+            fetch(`specifications_api.php?action=get_product_specs&product_key=${encodeURIComponent(item.key)}`).then(r => r.json())
+        ]).then(([allSpecsRes, productSpecsRes]) => {
+            if (allSpecsRes.success && productSpecsRes.success) {
+                const globalSpecs = allSpecsRes.data;
+                const productValues = productSpecsRes.data;
+
+                // Filter to only specs that have a value for this product
+                const activeSpecs = globalSpecs.filter(spec => productValues[spec.id]);
+
+                if (activeSpecs.length > 0) {
+                    let html = '<div class="specifications-container" style="margin-top: 20px; border-top: 1px solid #334155; padding-top: 15px;">';
+                    html += '<h3 style="color: #fff; font-size: 16px; margin-bottom: 10px; font-weight: 600;">Specifications</h3>';
+                    html += '<div style="display: flex; flex-direction: column; gap: 8px;">';
+
+                    activeSpecs.forEach(spec => {
+                        html += `
+                            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #1e293b; padding-bottom: 5px;">
+                                <span style="color: #94a3b8; font-size: 13px;">${spec.name}</span>
+                                <span style="color: #f8fafc; font-size: 13px; font-weight: 500; text-align: right;">${productValues[spec.id]}</span>
+                            </div>
+                        `;
+                    });
+
+                    html += '</div></div>';
+                    modalDetails.innerHTML = html;
+                } else {
+                    modalDetails.innerHTML = ''; // No specs to show
+                }
+            } else {
+                modalDetails.innerHTML = '';
+            }
+        }).catch(err => {
+            console.error("Failed to load specifications", err);
+            modalDetails.innerHTML = '';
+        });
+    }
+    // -------------------------------------------
+
     // Prioritize Videos: Sort so video files come first
     // Check if there is a YouTube link
     let mediaList = (item.images && item.images.length > 0)
