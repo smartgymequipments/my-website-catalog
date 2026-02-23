@@ -606,11 +606,43 @@ function openModal(item) {
     const modalBackdrop = document.getElementById('modal-backdrop');
     const modalTitle = document.getElementById('modal-title');
     const modalCategory = document.getElementById('modal-category');
+    const modalDetails = document.querySelector('.modal-details');
 
     if (!modalBackdrop) return;
 
     modalTitle.textContent = item.name;
     modalCategory.textContent = item.category;
+
+    // Handle Dynamic Fields
+    if (modalDetails) {
+        if (typeof dynamicFields !== 'undefined' && dynamicFields.length > 0) {
+            const activeGlobalFields = dynamicFields.filter(f => f.active);
+            let fieldsHtml = '';
+
+            activeGlobalFields.forEach(f => {
+                const pField = item.fields ? item.fields[f.id] : null;
+                if (pField && pField.active && pField.value.trim() !== '') {
+                    fieldsHtml += `
+                        <div style="margin-bottom: 0.75rem;">
+                            <h4 style="font-size: 0.875rem; font-weight: bold; color: #facc15; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">${f.name}</h4>
+                            <p style="font-size: 0.875rem; color: #e5e7eb; white-space: pre-wrap; margin: 0; line-height: 1.4;">${pField.value}</p>
+                        </div>
+                    `;
+                }
+            });
+
+            if (fieldsHtml) {
+                modalDetails.innerHTML = `<div style="padding: 1rem; background-color: rgba(17, 24, 39, 0.8); border-top: 1px solid #374151; margin-top: 1rem; text-align: left; max-height: 200px; overflow-y: auto; border-radius: 0 0 0.5rem 0.5rem;">${fieldsHtml}</div>`;
+                modalDetails.style.display = 'block';
+            } else {
+                modalDetails.style.display = 'none';
+                modalDetails.innerHTML = '';
+            }
+        } else {
+            modalDetails.style.display = 'none';
+            modalDetails.innerHTML = '';
+        }
+    }
 
     // Prioritize Videos: Sort so video files come first
     // Check if there is a YouTube link

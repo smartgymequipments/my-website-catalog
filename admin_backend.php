@@ -9,6 +9,7 @@ $THUMBNAIL_METADATA_FILE = __DIR__ . '/thumbnail_metadata.json';
 $IMAGES_DIR = __DIR__ . '/images';
 $DATA_JS_FILE = __DIR__ . '/data.js';
 $THUMBNAILS_JS_FILE = __DIR__ . '/thumbnails.js';
+$FIELDS_CONFIG_FILE = __DIR__ . '/fields_config.json';
 
 // Default Config if missing
 $DEFAULT_CONFIG = [
@@ -75,6 +76,21 @@ function loadThumbnailMetadata() {
 function saveThumbnailMetadata($meta) {
     global $THUMBNAIL_METADATA_FILE;
     file_put_contents($THUMBNAIL_METADATA_FILE, json_encode($meta, JSON_PRETTY_PRINT));
+}
+
+// Helper: Load Fields Config
+function loadFieldsConfig() {
+    global $FIELDS_CONFIG_FILE;
+    if (file_exists($FIELDS_CONFIG_FILE)) {
+        return json_decode(file_get_contents($FIELDS_CONFIG_FILE), true);
+    }
+    return [];
+}
+
+// Helper: Save Fields Config
+function saveFieldsConfig($fields) {
+    global $FIELDS_CONFIG_FILE;
+    file_put_contents($FIELDS_CONFIG_FILE, json_encode($fields, JSON_PRETTY_PRINT));
 }
 
 // Response Helper
@@ -251,7 +267,8 @@ function regenerateDataJs($imagesDir, $outputFile) {
                     'subcategory' => $subcategory,
                     'images' => $webImages,
                     'youtube' => $youtubeUrl,
-                    'date_added' => $dateAdded
+                    'date_added' => $dateAdded,
+                    'fields' => $metadata[$key]['fields'] ?? []
                 ];
             }
         }
@@ -414,6 +431,18 @@ if ($action === 'list_products') {
     jsonResponse($products);
 }
 
+if ($action === 'get_fields') {
+    jsonResponse(loadFieldsConfig());
+}
+
+if ($action === 'save_fields' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $input = json_decode(file_get_contents('php://input'), true);
+    if (!isset($input['fields']) || !is_array($input['fields'])) jsonResponse(['error' => 'Invalid data'], 400);
+    saveFieldsConfig($input['fields']);
+    regenerateDataJs($IMAGES_DIR, $DATA_JS_FILE);
+    jsonResponse(['success' => true]);
+}
+
 if ($action === 'subcategories') {
     // ...
     $cat = $_GET['category'] ?? '';
@@ -520,8 +549,12 @@ if ($action === 'add_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         $key = $key . '-' . slugify($category);
     }
     
+    // Extract dynamic fields
+    $dynamicFields = json_decode($_POST['fields'] ?? '{}', true);
+
     $meta[$key] = [
-        'created_at' => time()
+        'created_at' => time(),
+        'fields' => $dynamicFields
     ];
     saveMetadata($meta);
 
@@ -685,12 +718,15 @@ if ($action === 'edit_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Extract dynamic fields
+    $dynamicFields = json_decode($_POST['fields'] ?? '{}', true);
+
     // Update Metadata Key if Title Changed
+    $meta = loadMetadata();
+    $oldKey = slugify(basename($originalFolder));
+    $newKey = slugify($safeNewTitle);
+    
     if ($absFolder !== $newPath) {
-        $meta = loadMetadata();
-        $oldKey = slugify(basename($originalFolder));
-        
-        $newKey = slugify($safeNewTitle);
         // Handle collision
         if (isset($meta[$newKey])) {
              $newKey = $newKey . '-' . slugify($newCategory);
@@ -698,7 +734,31 @@ if ($action === 'edit_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (isset($meta[$oldKey])) {
             $meta[$newKey] = $meta[$oldKey]; // Copy data
+            $meta[$newKey]['fields'] = $dynamicFields;
             unset($meta[$oldKey]); // Remove old
+            saveMetadata($meta);
+        } else {
+            $meta[$newKey] = [
+                'created_at' => time(),
+                'fields' => $dynamicFields
+            ];
+            saveMetadata($meta);
+        }
+    } else {
+        // If it wasn't renamed, we find the core key.
+        // It might have a category suffix if there was a collision before, let's look for it
+        if (!isset($meta[$oldKey])) {
+            $oldKey = $oldKey . '-' . slugify($newCategory);
+        }
+        
+        if (isset($meta[$oldKey])) {
+            $meta[$oldKey]['fields'] = $dynamicFields;
+            saveMetadata($meta);
+        } else {
+            $meta[$oldKey] = [
+                'created_at' => time(),
+                'fields' => $dynamicFields
+            ];
             saveMetadata($meta);
         }
     }
