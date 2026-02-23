@@ -8,14 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Global state
 let allProducts = [];
-let allFields = [];
 
 async function loadProducts() {
     const list = document.getElementById('product-list');
     list.innerHTML = '<div class="col-span-full text-center text-gray-400 py-10">Loading products...</div>';
-
-    // Also background load fields if not loaded
-    if (allFields.length === 0) await loadFields();
 
     try {
         const res = await fetch('admin_backend.php?action=list_products');
@@ -205,133 +201,9 @@ async function fetchSubcategories(context, categoryOverride = null) {
 }
 
 
-// --- DYNAMIC FIELDS HELPERS ---
-async function loadFields() {
-    try {
-        const res = await fetch('admin_backend.php?action=get_fields');
-        if (res.ok) {
-            allFields = await res.json();
-        }
-    } catch (e) { console.error('Failed to load fields:', e); }
-}
-
-function generateDynamicFieldsHTML(productFields = null) {
-    const activeFields = allFields.filter(f => f.active);
-    if (activeFields.length === 0) return '';
-
-    return activeFields.map(f => {
-        const pField = productFields ? productFields[f.id] : null;
-        const val = pField ? pField.value : '';
-        const isActive = pField && typeof pField.active !== 'undefined' ? pField.active : true;
-
-        return `
-            <div class="dynamic-field-row" data-id="${f.id}">
-                <div class="flex justify-between items-center mb-1">
-                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider">${f.name}</label>
-                    <label class="flex items-center gap-2 cursor-pointer text-xs text-gray-500 hover:text-yellow-400">
-                        <input type="checkbox" class="field-active-toggle rounded border-gray-600 bg-gray-700 text-yellow-400 focus:ring-yellow-400" ${isActive ? 'checked' : ''}>
-                        <span>Show on Product Page</span>
-                    </label>
-                </div>
-                <input type="text" class="field-value-input block w-full py-3 px-4 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 sm:text-sm" value="${val.replace(/"/g, '&quot;')}">
-            </div>
-        `;
-    }).join('');
-}
-
-function getDynamicFieldsData(containerId) {
-    const container = document.getElementById(containerId);
-    const rows = container.querySelectorAll('.dynamic-field-row');
-    const data = {};
-    rows.forEach(row => {
-        const id = row.getAttribute('data-id');
-        const isActive = row.querySelector('.field-active-toggle').checked;
-        const value = row.querySelector('.field-value-input').value.trim();
-        data[id] = { value, active: isActive };
-    });
-    return data;
-}
-
-// --- FIELDS MANAGEMENT MODAL ---
-function openManageFieldsModal() {
-    renderFieldsList();
-    document.getElementById('fields-modal').classList.remove('hidden');
-}
-
-function closeManageFieldsModal() {
-    document.getElementById('fields-modal').classList.add('hidden');
-}
-
-function renderFieldsList() {
-    const list = document.getElementById('fields-list');
-    if (allFields.length === 0) {
-        list.innerHTML = '<div class="text-center text-gray-500 py-4">No fields added yet.</div>';
-        return;
-    }
-
-    list.innerHTML = allFields.map((f, i) => `
-        <div class="flex items-center justify-between bg-black p-3 rounded border border-gray-700">
-            <span class="text-white text-sm font-bold flex-1">${f.name}</span>
-            <div class="flex items-center gap-3">
-                <label class="flex items-center cursor-pointer" title="Toggle Field Globally">
-                    <div class="relative">
-                        <input type="checkbox" class="sr-only" ${f.active ? 'checked' : ''} onchange="toggleFieldActive(${i}, this.checked)">
-                        <div class="block ${f.active ? 'bg-yellow-400' : 'bg-gray-600'} w-10 h-6 rounded-full transition"></div>
-                        <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition transform ${f.active ? 'translate-x-4' : ''}"></div>
-                    </div>
-                </label>
-                <button onclick="deleteField(${i})" class="text-red-500 hover:text-red-400 p-1 bg-gray-800 rounded transition" title="Delete Field">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    `).join('');
-}
-
-async function saveFieldsToServer() {
-    try {
-        await fetch('admin_backend.php?action=save_fields', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ fields: allFields })
-        });
-    } catch (e) { console.error('Failed to save fields', e); }
-}
-
-async function addNewField() {
-    const input = document.getElementById('new-field-name');
-    const name = input.value.trim();
-    if (!name) return;
-
-    const id = 'field_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
-    allFields.push({ id, name, active: true });
-
-    input.value = '';
-    renderFieldsList();
-    await saveFieldsToServer();
-}
-
-async function toggleFieldActive(index, isActive) {
-    allFields[index].active = isActive;
-    renderFieldsList();
-    await saveFieldsToServer();
-}
-
-async function deleteField(index) {
-    if (!confirm('Are you sure you want to delete this field from ALL products?')) return;
-    allFields.splice(index, 1);
-    renderFieldsList();
-    await saveFieldsToServer();
-}
-
 // --- ADD MODAL ---
 function openAddModal() {
     document.getElementById('add-modal').classList.remove('hidden');
-
-    const container = document.getElementById('add-dynamic-fields');
-    if (container) container.innerHTML = generateDynamicFieldsHTML();
 }
 
 function closeAddModal() {
@@ -349,10 +221,6 @@ async function handleAddProduct(e) {
 
     try {
         const formData = new FormData(e.target);
-
-        // Append dynamic fields
-        const dynamicData = getDynamicFieldsData('add-dynamic-fields');
-        formData.append('fields', JSON.stringify(dynamicData));
 
         // PHP Backend Call
         const res = await fetch('admin_backend.php?action=add_product', {
@@ -397,10 +265,6 @@ function openEditModal(product) {
 
     // Set YouTube URL
     document.getElementById('edit-youtube-url').value = product.youtube || '';
-
-    // Render Dynamic Fields
-    const container = document.getElementById('edit-dynamic-fields');
-    if (container) container.innerHTML = generateDynamicFieldsHTML(product.fields);
 
     fetchThumbnailMetadata().then(() => {
         renderImageGallery(product.images);
@@ -628,10 +492,6 @@ async function handleEditProduct(e) {
 
     try {
         const formData = new FormData(e.target);
-
-        // Append dynamic fields
-        const dynamicData = getDynamicFieldsData('edit-dynamic-fields');
-        formData.append('fields', JSON.stringify(dynamicData));
 
         // PHP Backend Call
         const res = await fetch('admin_backend.php?action=edit_product', {
