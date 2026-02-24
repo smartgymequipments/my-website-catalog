@@ -368,6 +368,96 @@ def regenerate_data_js():
     os.system('python generate_data.py')
     os.system('python generate_thumbnails.py')
 
+import uuid
+
+def load_product_metadata():
+    meta_path = os.path.join(BASE_DIR, 'product_metadata.json')
+    if not os.path.exists(meta_path):
+        return {}
+    try:
+        with open(meta_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except:
+        return {}
+
+def save_product_metadata(meta):
+    meta_path = os.path.join(BASE_DIR, 'product_metadata.json')
+    with open(meta_path, 'w', encoding='utf-8') as f:
+        json.dump(meta, f, indent=4)
+
+@app.route('/api/variant/save', methods=['POST'])
+@login_required
+def save_variant():
+    data = request.json
+    product_key = data.get('product_key')
+    variant_id = data.get('variant_id')
+    variant_name = data.get('variant_name')
+    images = data.get('images', [])
+    
+    if not product_key or not variant_name or not images:
+        return jsonify({'error': 'Missing required variant data'}), 400
+        
+    meta = load_product_metadata()
+    
+    if product_key not in meta:
+        meta[product_key] = {}
+        
+    if 'variants' not in meta[product_key]:
+        meta[product_key]['variants'] = []
+        
+    if not variant_id:
+        variant_id = 'var_' + uuid.uuid4().hex[:8]
+        meta[product_key]['variants'].append({
+            'id': variant_id,
+            'name': variant_name,
+            'images': images
+        })
+    else:
+        updated = False
+        for v in meta[product_key]['variants']:
+            if v.get('id') == variant_id:
+                v['name'] = variant_name
+                v['images'] = images
+                updated = True
+                break
+        if not updated:
+            return jsonify({'error': 'Variant not found'}), 404
+            
+    save_product_metadata(meta)
+    regenerate_data_js()
+    return jsonify({'success': True, 'variant_id': variant_id})
+
+@app.route('/api/variant/get', methods=['GET'])
+@login_required
+def get_variants():
+    product_key = request.args.get('product_key')
+    if not product_key:
+        return jsonify({'error': 'Product key required'}), 400
+        
+    meta = load_product_metadata()
+    variants = meta.get(product_key, {}).get('variants', [])
+    return jsonify({'success': True, 'data': variants})
+
+@app.route('/api/variant/delete', methods=['POST'])
+@login_required
+def delete_variant():
+    data = request.json
+    product_key = data.get('product_key')
+    variant_id = data.get('variant_id')
+    
+    if not product_key or not variant_id:
+        return jsonify({'error': 'Product key and variant ID required'}), 400
+        
+    meta = load_product_metadata()
+    if product_key in meta and 'variants' in meta[product_key]:
+        meta[product_key]['variants'] = [v for v in meta[product_key]['variants'] if v.get('id') != variant_id]
+        save_product_metadata(meta)
+        regenerate_data_js()
+        return jsonify({'success': True})
+        
+    return jsonify({'error': 'Variant not found'}), 404
+
+
 # --- PHP Shim Route ---
 @app.route('/admin_backend.php', methods=['GET', 'POST'])
 def php_shim():
@@ -383,6 +473,12 @@ def php_shim():
     if action == 'delete_product': return delete_product()
     if action == 'set_thumbnail': return set_thumbnail()
     if action == 'image_upload': return add_product_image() # Alias just in case
+    
+    # Variant routes
+    if action == 'save_variant': return save_variant()
+    if action == 'get_variants': return get_variants()
+    if action == 'delete_variant': return delete_variant()
+    
     return jsonify({'error': 'Invalid action'}), 400
 
 # Alias for the PHP file explicit access

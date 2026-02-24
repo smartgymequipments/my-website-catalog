@@ -253,9 +253,11 @@ async function handleAddProduct(e) {
 // --- EDIT MODAL ---
 let currentEditProduct = null;
 let currentThumbnailMetadata = null;
+let currentEditProductOriginalKey = null;
 
 function openEditModal(product) {
     currentEditProduct = product;
+    currentEditProductOriginalKey = product.key;
     const modal = document.getElementById('edit-modal');
     modal.classList.remove('hidden');
 
@@ -279,6 +281,9 @@ function openEditModal(product) {
     fetchThumbnailMetadata().then(() => {
         renderImageGallery(product.images);
     });
+
+    // Load available variants for this product
+    loadVariants(product.key);
 }
 
 // --- THUMBNAIL LOGIC ---
@@ -487,10 +492,191 @@ async function deleteImage(imagePath) {
     }
 }
 
+let currentProductVariants = [];
+
 function closeEditModal() {
     document.getElementById('edit-modal').classList.add('hidden');
     document.getElementById('edit-form').reset();
     currentEditProduct = null;
+    currentEditProductOriginalKey = null;
+    currentProductVariants = [];
+}
+
+// --- VARIANT MODAL LOGIC ---
+function openAddVariantModal() {
+    document.getElementById('variant-modal').classList.remove('hidden');
+    document.getElementById('variant-form').reset();
+    document.getElementById('variant-id').value = '';
+    document.getElementById('variant-product-key').value = currentEditProductOriginalKey;
+
+    // Render image selection list
+    renderVariantImageSelection();
+}
+
+function openEditVariantModal(variantId) {
+    const variant = currentProductVariants.find(v => v.id === variantId);
+    if (!variant) return;
+
+    document.getElementById('variant-modal').classList.remove('hidden');
+    document.getElementById('variant-id').value = variant.id;
+    document.getElementById('variant-name').value = variant.name;
+    document.getElementById('variant-product-key').value = currentEditProductOriginalKey;
+
+    renderVariantImageSelection(variant.images);
+}
+
+function closeVariantModal() {
+    document.getElementById('variant-modal').classList.add('hidden');
+    document.getElementById('variant-form').reset();
+}
+
+function renderVariantImageSelection(selectedImages = []) {
+    const list = document.getElementById('variant-image-selection-list');
+    list.innerHTML = '';
+
+    if (!currentEditProduct || !currentEditProduct.images || currentEditProduct.images.length === 0) {
+        list.innerHTML = '<p class="text-xs text-gray-400 col-span-full">No images available for this product yet. Upload images first to associate them with a variant.</p>';
+        return;
+    }
+
+    currentEditProduct.images.forEach(img => {
+        const isSelected = selectedImages.includes(img);
+        const div = document.createElement('div');
+        div.className = `relative aspect-square rounded overflow-hidden border-2 cursor-pointer transition-all ${isSelected ? 'border-yellow-400 opacity-100' : 'border-transparent opacity-60 hover:opacity-100'}`;
+
+        div.onclick = function () {
+            const checkbox = this.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            this.className = `relative aspect-square rounded overflow-hidden border-2 cursor-pointer transition-all ${checkbox.checked ? 'border-yellow-400 opacity-100' : 'border-transparent opacity-60 hover:opacity-100'}`;
+        };
+
+        div.innerHTML = `
+            ${img.match(/\.(mp4|webm|ogg|mov)$/i)
+                ? `<video src="${img}" class="h-full w-full object-cover pointer-events-none"></video>`
+                : `<img src="${img}" class="h-full w-full object-cover pointer-events-none">`
+            }
+            <div class="absolute top-1 right-1 bg-black/50 rounded pointer-events-none">
+                <input type="checkbox" value="${img}" class="variant-image-checkbox m-1 accent-yellow-400" ${isSelected ? 'checked' : ''}>
+            </div>
+        `;
+        list.appendChild(div);
+    });
+}
+
+async function handleVariantSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Saving...';
+    btn.disabled = true;
+
+    try {
+        const productKey = document.getElementById('variant-product-key').value;
+        const variantId = document.getElementById('variant-id').value;
+        const variantName = document.getElementById('variant-name').value.trim();
+
+        const selectedImages = Array.from(document.querySelectorAll('.variant-image-checkbox:checked')).map(cb => cb.value);
+
+        if (selectedImages.length === 0) {
+            alert("Please select at least one image for this variant.");
+            return;
+        }
+
+        const res = await fetch('admin_backend.php?action=save_variant', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                product_key: productKey,
+                variant_id: variantId,
+                variant_name: variantName,
+                images: selectedImages
+            })
+        });
+
+        const json = await res.json();
+        if (json.success) {
+            closeVariantModal();
+            loadVariants(productKey); // Refresh variants list
+        } else {
+            alert(json.error || 'Failed to save variant');
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Network error saving variant');
+    } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+    }
+}
+
+document.getElementById('variant-form').addEventListener('submit', handleVariantSubmit);
+
+async function loadVariants(productKey) {
+    const list = document.getElementById('edit-variants-container');
+    list.innerHTML = '<p class="text-xs text-gray-500">Loading variants...</p>';
+
+    if (!productKey) {
+        list.innerHTML = '<p class="text-xs text-yellow-500">Save product first to add variants.</p>';
+        return;
+    }
+
+    try {
+        const res = await fetch(`admin_backend.php?action=get_variants&product_key=${encodeURIComponent(productKey)}`);
+        const json = await res.json();
+
+        if (json.success) {
+            currentProductVariants = json.data || [];
+
+            if (currentProductVariants.length === 0) {
+                list.innerHTML = '<p class="text-xs text-gray-500 mb-2">No variants created for this product.</p>';
+                return;
+            }
+
+            list.innerHTML = currentProductVariants.map(v => {
+                const thumb = v.images && v.images.length > 0 ? v.images[0] : '';
+                return `
+                    <div class="flex items-center justify-between p-3 mb-2 rounded-lg bg-black/40 border border-yellow-400/20 hover:border-yellow-400/50 transition group shadow-sm">
+                        <div class="flex items-center gap-3">
+                            <div class="h-10 w-10 bg-black rounded overflow-hidden">
+                                ${thumb.match(/\.(mp4|webm|ogg|mov)$/i)
+                        ? `<video src="${thumb}" class="h-full w-full object-cover"></video>`
+                        : `<img src="${thumb}" class="h-full w-full object-cover">`
+                    }
+                            </div>
+                            <span class="text-sm font-bold text-yellow-50">${v.name}</span>
+                            <span class="text-[10px] text-gray-500 bg-gray-800 px-2 py-0.5 rounded">${v.images.length} images</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button type="button" onclick="openEditVariantModal('${v.id}')" class="text-blue-400 hover:text-blue-300 text-xs font-bold px-2 py-1">Edit</button>
+                            <button type="button" onclick="deleteVariant('${productKey}', '${v.id}', '${v.name.replace(/'/g, "\\'")}')" class="text-red-400 hover:text-red-300 text-xs font-bold px-2 py-1">Delete</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+    } catch (e) {
+        list.innerHTML = '<p class="text-xs text-red-500">Failed to load variants.</p>';
+    }
+}
+
+async function deleteVariant(productKey, variantId, variantName) {
+    if (!confirm(`Are you sure you want to delete the variant "${variantName}"?`)) return;
+
+    try {
+        const res = await fetch('admin_backend.php?action=delete_variant', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ product_key: productKey, variant_id: variantId })
+        });
+        const json = await res.json();
+        if (json.success) {
+            loadVariants(productKey);
+        } else {
+            alert(json.error || 'Failed to delete variant');
+        }
+    } catch (e) {
+        alert('Network Error');
+    }
 }
 
 async function handleEditProduct(e) {
@@ -609,24 +795,30 @@ async function loadGlobalSpecs() {
                 list.innerHTML = '<div class="text-center text-gray-500 text-sm py-4">No global specifications defined yet.</div>';
                 return;
             }
-            list.innerHTML = json.data.map(spec => {
+            const listHtml = json.data.map(spec => {
                 const isChecked = currentFormActiveSpecs.has(spec.id);
                 return `
-                <div class="flex items-center justify-between p-3 border-b border-gray-700 hover:bg-white/5 transition group">
-                    <span class="text-sm font-bold text-white break-words w-1/2">${spec.name}</span>
+                <div class="flex items-center justify-between p-3 mb-2 rounded-lg bg-black/40 border border-yellow-400/20 hover:border-yellow-400/50 transition group shadow-sm">
+                    <span class="text-sm font-bold text-yellow-50 break-words w-1/2">${spec.name}</span>
                     <div class="flex items-center gap-3">
                         <button onclick="editGlobalSpec(${spec.id}, '${spec.name.replace(/'/g, "\\'")}')" class="text-blue-400 hover:text-blue-300 text-xs font-bold opacity-0 group-hover:opacity-100 transition">Edit</button>
                         <button onclick="deleteGlobalSpec(${spec.id}, '${spec.name.replace(/'/g, "\\'")}')" class="text-red-400 hover:text-red-300 text-xs font-bold opacity-0 group-hover:opacity-100 transition">Delete</button>
                         <label class="flex items-center cursor-pointer ml-2" title="Toggle this specification for the current product">
                             <div class="relative">
                                 <input type="checkbox" class="sr-only peer" ${isChecked ? 'checked' : ''} onchange="toggleFormSpec(${spec.id}, this.checked)">
-                                <div class="block bg-gray-600 w-10 h-6 rounded-full transition-colors peer-checked:bg-green-500"></div>
-                                <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition transform peer-checked:translate-x-4"></div>
+                                <div class="block bg-gray-700 w-10 h-6 rounded-full transition-colors peer-checked:bg-yellow-400 shadow-inner"></div>
+                                <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition transform peer-checked:translate-x-4 shadow"></div>
                             </div>
                         </label>
                     </div>
                 </div>
             `}).join('');
+
+            list.innerHTML = `
+                <div style="padding: 10px; border-radius: 12px; background: rgba(255, 215, 0, 0.05); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 215, 0, 0.3); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) inset;">
+                    ${listHtml}
+                </div>
+            `;
         } else {
             list.innerHTML = `<div class="text-red-500 text-sm">${json.error || 'Failed to load.'}</div>`;
         }
@@ -667,6 +859,15 @@ function toggleFormSpec(id, isChecked) {
         currentFormActiveSpecs.add(id);
     } else {
         currentFormActiveSpecs.delete(id);
+    }
+
+    // Determine which form (add or edit) is open to re-render the inputs dynamically
+    const isAddModalOpen = !document.getElementById('add-modal').classList.contains('hidden');
+    if (isAddModalOpen) {
+        renderSpecsInputs('add-specs-container', null, false);
+    } else {
+        const productKey = currentEditProduct ? currentEditProduct.key : null;
+        renderSpecsInputs('edit-specs-container', productKey, false);
     }
 }
 
@@ -754,17 +955,23 @@ async function renderSpecsInputs(containerId, productKey = null, isInitialLoad =
             return;
         }
 
-        container.innerHTML = activeParams.map(spec => {
+        const fieldsHtml = activeParams.map(spec => {
             const val = currentFormSpecValues[spec.id] || '';
             return `
-                <div>
-                    <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">${spec.name}</label>
+                <div class="mb-3 last:mb-0">
+                    <label class="block text-[10px] font-bold text-yellow-400 uppercase tracking-wider mb-1">${spec.name}</label>
                     <input type="text" data-spec-id="${spec.id}" value="${val.replace(/"/g, '&quot;')}"
                         placeholder="Enter value..."
-                        class="product-spec-input block w-full py-2 px-3 rounded bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 sm:text-sm">
+                        class="product-spec-input block w-full py-2 px-3 rounded-lg bg-black/40 text-yellow-50 border border-yellow-400/30 focus:outline-none focus:border-yellow-400 focus:bg-black/60 sm:text-sm transition-all shadow-inner">
                 </div>
             `;
         }).join('');
+
+        container.innerHTML = `
+            <div style="padding: 15px; border-radius: 12px; background: rgba(255, 215, 0, 0.05); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 215, 0, 0.3); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) inset;">
+                ${fieldsHtml}
+            </div>
+        `;
     } catch (e) {
         container.innerHTML = '<p class="text-xs text-red-500">Failed to load specifications.</p>';
     }
@@ -780,6 +987,8 @@ async function saveProductSpecs(productKey, containerId) {
         const val = input.value.trim();
         if (val) specsData[specId] = val;
     });
+
+    console.log("Saving specs for ", productKey, specsData, " from container ", containerId, " inputs count: ", inputs.length);
 
     try {
         const res = await fetch('specifications_api.php', {

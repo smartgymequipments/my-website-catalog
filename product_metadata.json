@@ -1,1 +1,14 @@
-{}
+{
+    "cable-cross-over": {
+        "variants": [
+            {
+                "id": "var_f06368d6",
+                "name": "Test Variant",
+                "images": [
+                    "images/Multifunctional and functional equipments/Cable cross over/20251031_180320.webp",
+                    "images/Multifunctional and functional equipments/Cable cross over/20251031_180328.webp"
+                ]
+            }
+        ]
+    }
+}

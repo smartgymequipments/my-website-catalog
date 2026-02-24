@@ -21,6 +21,16 @@ if os.path.exists(descriptions_file):
     except Exception as e:
         print(f"Warning: Could not load {descriptions_file}: {e}")
 
+# Load product metadata (variants, etc.)
+metadata_file = 'product_metadata.json'
+product_metadata = {}
+if os.path.exists(metadata_file):
+    try:
+        with open(metadata_file, 'r', encoding='utf-8') as f:
+            product_metadata = json.load(f)
+    except Exception as e:
+        print(f"Warning: Could not load {metadata_file}: {e}")
+
 # Categories (Directories in images/)
 if os.path.exists(images_path):
     categories = [d for d in os.listdir(images_path) if os.path.isdir(os.path.join(images_path, d))]
@@ -74,13 +84,16 @@ if os.path.exists(images_path):
                 if key in existing_descriptions:
                     desc = existing_descriptions[key].get('description', '')
                     specs = existing_descriptions[key].get('specs', {})
+                    
+                variants = product_metadata.get(key, {}).get('variants', [])
 
                 data[key] = {
                     'name': equipment_name,
                     'category': category,
                     'subcategory': subcategory,
                     'images': sorted(img_paths),
-                    'date_added': max([os.path.getmtime(os.path.join(root, img)) for img in local_images]) if local_images else 0
+                    'date_added': max([os.path.getmtime(os.path.join(root, img)) for img in local_images]) if local_images else 0,
+                    'variants': variants
                 }
 
 # Write to data.js

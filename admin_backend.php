@@ -244,6 +244,9 @@ function regenerateDataJs($imagesDir, $outputFile) {
                 if (file_exists($ytFile)) {
                     $youtubeUrl = trim(file_get_contents($ytFile));
                 }
+                
+                // Add variants
+                $variants = $metadata[$key]['variants'] ?? [];
 
                 $data[$key] = [
                     'name' => $equipmentName,
@@ -251,7 +254,8 @@ function regenerateDataJs($imagesDir, $outputFile) {
                     'subcategory' => $subcategory,
                     'images' => $webImages,
                     'youtube' => $youtubeUrl,
-                    'date_added' => $dateAdded
+                    'date_added' => $dateAdded,
+                    'variants' => $variants
                 ];
             }
         }
@@ -740,4 +744,93 @@ if ($action === 'set_thumbnail' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     jsonResponse(['success' => true]);
 }
 
-jsonResponse(['error' => 'Invalid action'], 400);
+// --- PRODUCT VARIANTS LOGIC ---
+
+if ($action === 'save_variant' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $input = json_decode(file_get_contents('php://input'), true);
+    $productKey = $input['product_key'] ?? '';
+    $variantId = $input['variant_id'] ?? '';
+    $variantName = $input['variant_name'] ?? '';
+    $images = $input['images'] ?? [];
+    
+    if (!$productKey || !$variantName || empty($images)) {
+        jsonResponse(['error' => 'Missing required variant data'], 400);
+    }
+    
+    $meta = loadMetadata();
+    
+    // Ensure product metadata exists
+    if (!isset($meta[$productKey])) {
+        $meta[$productKey] = ['created_at' => time()];
+    }
+    
+    // Ensure variants array exists for product
+    if (!isset($meta[$productKey]['variants'])) {
+        $meta[$productKey]['variants'] = [];
+    }
+    
+    if (!$variantId) {
+        // Create new variant
+        $variantId = 'var_' . substr(md5(uniqid(rand(), true)), 0, 8);
+        $meta[$productKey]['variants'][] = [
+            'id' => $variantId,
+            'name' => $variantName,
+            'images' => $images
+        ];
+    } else {
+        // Update existing variant
+        $updated = false;
+        foreach ($meta[$productKey]['variants'] as &$variant) {
+            if ($variant['id'] === $variantId) {
+                $variant['name'] = $variantName;
+                $variant['images'] = $images;
+                $updated = true;
+                break;
+            }
+        }
+        if (!$updated) {
+            jsonResponse(['error' => 'Variant not found'], 404);
+        }
+    }
+    
+    saveMetadata($meta);
+    regenerateDataJs($IMAGES_DIR, $DATA_JS_FILE);
+    jsonResponse(['success' => true, 'variant_id' => $variantId]);
+}
+
+if ($action === 'get_variants') {
+    $productKey = $_GET['product_key'] ?? '';
+    if (!$productKey) {
+        jsonResponse(['error' => 'Product key required'], 400);
+    }
+    
+    $meta = loadMetadata();
+    $variants = $meta[$productKey]['variants'] ?? [];
+    
+    jsonResponse(['success' => true, 'data' => $variants]);
+}
+
+if ($action === 'delete_variant' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $input = json_decode(file_get_contents('php://input'), true);
+    $productKey = $input['product_key'] ?? '';
+    $variantId = $input['variant_id'] ?? '';
+    
+    if (!$productKey || !$variantId) {
+        jsonResponse(['error' => 'Product key and variant ID required'], 400);
+    }
+    
+    $meta = loadMetadata();
+    if (isset($meta[$productKey]['variants'])) {
+        $meta[$productKey]['variants'] = array_values(array_filter($meta[$productKey]['variants'], function($v) use ($variantId) {
+            return $v['id'] !== $variantId;
+        }));
+        
+        saveMetadata($meta);
+        regenerateDataJs($IMAGES_DIR, $DATA_JS_FILE);
+        jsonResponse(['success' => true]);
+    }
+    
+    jsonResponse(['error' => 'Variant not found'], 404);
+}
+
+jsonResponse(['error' => 'Invalid action', 'action' => $action, 'method' => $_SERVER['REQUEST_METHOD'] ?? 'UNKNOWN'], 400);

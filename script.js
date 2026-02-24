@@ -631,15 +631,16 @@ function openModal(item) {
                 const activeSpecs = globalSpecs.filter(spec => productValues[spec.id]);
 
                 if (activeSpecs.length > 0) {
-                    let html = '<div class="specifications-container" style="margin-top: 20px; border-top: 1px solid #334155; padding-top: 15px;">';
-                    html += '<h3 style="color: #fff; font-size: 16px; margin-bottom: 10px; font-weight: 600;">Specifications</h3>';
+                    // Golden Glassmorphism styling matching the product tile's size
+                    let html = '<div class="specifications-container" style="margin-top: 20px; padding: 15px; border-radius: 12px; background: rgba(255, 215, 0, 0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 215, 0, 0.3); width: 100%; box-sizing: border-box; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">';
+                    html += '<h3 style="color: #FFD700; font-size: 16px; margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; text-align: center;">Specifications</h3>';
                     html += '<div style="display: flex; flex-direction: column; gap: 8px;">';
 
                     activeSpecs.forEach(spec => {
                         html += `
-                            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #1e293b; padding-bottom: 5px;">
-                                <span style="color: #94a3b8; font-size: 13px;">${spec.name}</span>
-                                <span style="color: #f8fafc; font-size: 13px; font-weight: 500; text-align: right;">${productValues[spec.id]}</span>
+                            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 215, 0, 0.2); padding-bottom: 6px;">
+                                <span style="color: rgba(255, 215, 0, 0.9); font-size: 13px; font-weight: 500;">${spec.name}</span>
+                                <span style="color: #FFD700; font-size: 13px; font-weight: 600; text-align: right;">${productValues[spec.id]}</span>
                             </div>
                         `;
                     });
@@ -658,35 +659,88 @@ function openModal(item) {
         });
     }
     // -------------------------------------------
+    // PRODUCT VARIANTS LOGIC
+    // -------------------------------------------
+    const modalVariantsContainer = document.getElementById('modal-variants');
+    if (modalVariantsContainer) {
+        modalVariantsContainer.innerHTML = '';
+        if (item.variants && item.variants.length > 0) {
+            modalVariantsContainer.style.display = 'block';
+            let html = '<h4 style="color: #FFD700; font-size: 14px; margin-bottom: 8px; font-weight: 600;">Variants</h4>';
+            html += '<div style="display: flex; gap: 10px; flex-wrap: wrap;">';
 
-    // Prioritize Videos: Sort so video files come first
-    // Check if there is a YouTube link
-    let mediaList = (item.images && item.images.length > 0)
-        ? [...item.images]
-        : [];
-
-    if (item.youtube) {
-        mediaList.unshift(item.youtube);
+            item.variants.forEach(variant => {
+                const thumb = variant.images && variant.images.length > 0 ? variant.images[0] : '';
+                html += `
+                    <div class="variant-tile" data-variant-id="${variant.id}" onclick='selectVariant(this, ${JSON.stringify(variant).replace(/'/g, "&#39;")}, ${JSON.stringify(item).replace(/'/g, "&#39;")})' style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 4px; transition: border-color 0.2s, background-color 0.2s; background: rgba(0,0,0,0.3); width: 60px; text-align: center;">
+                        <div style="width: 48px; height: 48px; border-radius: 4px; overflow: hidden; margin: 0 auto 4px auto; background: #000;">
+                            ${thumb.match(/\.(mp4|webm|ogg|mov)$/i)
+                        ? `<video src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;" muted></video>`
+                        : `<img src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;">`
+                    }
+                        </div>
+                        <div style="font-size: 10px; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${variant.name}">${variant.name}</div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            modalVariantsContainer.innerHTML = html;
+        } else {
+            modalVariantsContainer.style.display = 'none';
+        }
     }
 
-    if (mediaList.length === 0) mediaList = ['https://placehold.co/600x400?text=No+Image'];
+    function getRankedMediaList(prod) {
+        let list = (prod.images && prod.images.length > 0) ? [...prod.images] : [];
+        if (prod.youtube) list.unshift(prod.youtube);
+        if (list.length === 0) list = ['https://placehold.co/600x400?text=No+Image'];
+        list.sort((a, b) => {
+            const isYtA = a.includes('youtube.com') || a.includes('youtu.be');
+            const isYtB = b.includes('youtube.com') || b.includes('youtu.be');
+            if (isYtA && !isYtB) return -1;
+            if (!isYtA && isYtB) return 1;
+            const isVideoA = /\.(mp4|webm|ogg|mov)$/i.test(a);
+            const isVideoB = /\.(mp4|webm|ogg|mov)$/i.test(b);
+            return (isVideoA === isVideoB) ? 0 : isVideoA ? -1 : 1;
+        });
+        return list;
+    }
 
-    // Sort: Local Videos first (after YouTube which is already unshifted to 0)
-    // Actually, if we unshift YouTube, it's at index 0.
-    // Now just sort the rest? No, existing images might be mixed.
-    // Let's keep YouTube at top, then local videos, then images.
+    window.selectVariant = function (element, variant, product) {
+        // Remove highlight from all tiles
+        const tiles = document.querySelectorAll('.variant-tile');
+        tiles.forEach(t => {
+            t.style.borderColor = 'transparent';
+            t.style.background = 'rgba(0,0,0,0.3)';
+        });
 
-    mediaList.sort((a, b) => {
-        // YouTube always first
-        const isYtA = a.includes('youtube.com') || a.includes('youtu.be');
-        const isYtB = b.includes('youtube.com') || b.includes('youtu.be');
-        if (isYtA && !isYtB) return -1;
-        if (!isYtA && isYtB) return 1;
+        // Add highlight to selected
+        element.style.borderColor = '#FFD700';
+        element.style.background = 'rgba(255,215,0,0.1)';
 
-        const isVideoA = /\.(mp4|webm|ogg|mov)$/i.test(a);
-        const isVideoB = /\.(mp4|webm|ogg|mov)$/i.test(b);
-        return (isVideoA === isVideoB) ? 0 : isVideoA ? -1 : 1;
-    });
+        // Update carousel images
+        currentImages = variant.images && variant.images.length > 0 ? variant.images : ['https://placehold.co/600x400?text=No+Variant+Image'];
+        currentIndex = 0;
+        updateCarousel();
+    };
+
+    // Default: prioritize YouTube then Videos then Images
+    let mediaList = getRankedMediaList(item);
+
+    // Filter by variant if one should be pre-selected (user asked for first available)
+    let selectedVariantId = null;
+    if (item.variants && item.variants.length > 0) {
+        selectedVariantId = item.variants[0].id;
+        mediaList = item.variants[0].images;
+
+        // Highlight the first variant tile
+        setTimeout(() => {
+            if (modalVariantsContainer) {
+                const firstTile = modalVariantsContainer.querySelector('.variant-tile');
+                if (firstTile) firstTile.style.borderColor = '#FFD700';
+            }
+        }, 50);
+    }
 
     currentImages = mediaList;
     currentIndex = 0;
