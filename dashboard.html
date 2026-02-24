@@ -42,9 +42,12 @@
                         <span class="font-bold text-xl text-yellow-400 tracking-wide">Admin Portal</span>
                     </div>
                 </div>
-                <div class="flex items-center">
+                <div class="flex items-center gap-2">
+                    <button onclick="openChangePasswordModal()"
+                        class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition">Change
+                        Password</button>
                     <button onclick="logout()"
-                        class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition">Logout</button>
+                        class="bg-red-900/40 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium border border-red-500/30 transition">Logout</button>
                 </div>
             </div>
         </div>
@@ -429,6 +432,61 @@
                         <!-- Loaded via JS -->
                         <div class="text-center text-gray-400 text-sm">Loading specifications...</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="password-modal" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title"
+        role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-black bg-opacity-90 transition-opacity backdrop-blur-sm" aria-hidden="true"
+                onclick="closeChangePasswordModal()"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div
+                class="inline-block align-bottom glass rounded-xl text-left overflow-hidden shadow-[0_0_40px_rgba(255,215,0,0.15)] border border-yellow-400/20 transform transition-all sm:my-8 sm:align-middle sm:max-w-md w-full">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-yellow-400" id="modal-title">Change Password</h3>
+                        <button onclick="closeChangePasswordModal()" class="text-gray-400 hover:text-white transition">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <form id="password-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-300 mb-2">Current Password</label>
+                            <input type="password" id="current_password" required
+                                class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition placeholder-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-300 mb-2">New Password</label>
+                            <input type="password" id="new_password" required minlength="6"
+                                class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition placeholder-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-300 mb-2">Confirm New Password</label>
+                            <input type="password" id="confirm_password" required minlength="6"
+                                class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition placeholder-gray-600">
+                        </div>
+                        <p id="password-error" class="text-red-500 text-sm hidden font-bold mt-2"></p>
+                    </form>
+                </div>
+                <div class="bg-black/80 px-4 py-4 sm:px-6 sm:flex sm:flex-row-reverse border-t border-gray-800">
+                    <button type="button" onclick="submitChangePassword()"
+                        class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-6 py-2 bg-yellow-400 text-base font-bold text-black hover:bg-yellow-300 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm transition">
+                        Update Password
+                    </button>
+                    <button type="button" onclick="closeChangePasswordModal()"
+                        class="mt-3 w-full inline-flex justify-center rounded-lg border border-gray-700 shadow-sm px-6 py-2 bg-black text-base font-bold text-gray-300 hover:bg-gray-900 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm transition">
+                        Cancel
+                    </button>
                 </div>
             </div>
         </div>

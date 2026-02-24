@@ -1037,7 +1037,19 @@ body {
         margin-bottom: 5px;
     }
 
+    /* Force product variants visibility acting as full width row */
+    .modal-variants {
+        display: block !important;
+        width: 100% !important;
+        order: 2;
+        /* Ensure it appears directly under the image */
+        margin-top: 15px;
+    }
 
+    .modal-details {
+        order: 3;
+        width: 100%;
+    }
 }
 
 /* Carousel Controls */

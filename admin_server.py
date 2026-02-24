@@ -4,6 +4,8 @@ import re
 from flask import Flask, request, jsonify, session, redirect, send_from_directory, url_for
 from functools import wraps
 from werkzeug.utils import secure_filename
+from werkzeug.security import check_password_hash, generate_password_hash
+import mysql.connector
 import shutil
 
 app = Flask(__name__, static_folder='.', static_url_path='')
@@ -115,16 +117,88 @@ def login_page():
 def dashboard():
     return send_from_directory('.', 'dashboard.html')
 
+# --- Database Connection ---
+def get_db_connection():
+    return mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",      
+        database="specifications_db" 
+    )
+
 # --- API ---
 
 @app.route('/api/login', methods=['POST'])
 def api_login():
     data = request.json
-    # Hardcoded credentials as requested/planned
-    if data.get('username') == 'admin' and data.get('password') == 'password123':
-        session['logged_in'] = True
-        return jsonify({'success': True})
-    return jsonify({'success': False}), 401
+    username = data.get('username')
+    password = data.get('password')
+    
+    if not username or not password:
+        return jsonify({'success': False, 'error': 'Missing credentials'}), 400
+
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT id, password_hash FROM admin_users WHERE username = %s LIMIT 1", (username,))
+        user = cursor.fetchone()
+        
+        if user and check_password_hash(user['password_hash'], password):
+            session['logged_in'] = True
+            session['username'] = username
+            
+            # Update last login
+            cursor.execute("UPDATE admin_users SET last_login = CURRENT_TIMESTAMP WHERE id = %s", (user['id'],))
+            conn.commit()
+            
+            return jsonify({'success': True})
+    except Exception as e:
+        print(f"Login error: {e}")
+    finally:
+        if 'cursor' in locals():
+            cursor.close()
+        if 'conn' in locals():
+            conn.close()
+            
+    return jsonify({'success': False, 'error': 'Invalid credentials'}), 401
+
+@app.route('/api/change_password', methods=['POST'])
+@login_required
+def api_change_password():
+    data = request.json
+    current_pass = data.get('current_password')
+    new_pass = data.get('new_password')
+    username = session.get('username', 'admin') # fallback to 'admin' if not set
+    
+    if not current_pass or not new_pass:
+        return jsonify({'success': False, 'error': 'Missing fields'}), 400
+        
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT id, password_hash FROM admin_users WHERE username = %s LIMIT 1", (username,))
+        user = cursor.fetchone()
+        
+        if user and check_password_hash(user['password_hash'], current_pass):
+            # Hash new password and update
+            new_hash = generate_password_hash(new_pass)
+            cursor.execute("UPDATE admin_users SET password_hash = %s WHERE id = %s", (new_hash, user['id']))
+            conn.commit()
+            
+            # Log user out so they have to log in with new password
+            session.pop('logged_in', None)
+            session.pop('username', None)
+            return jsonify({'success': True})
+        else:
+            return jsonify({'success': False, 'error': 'Incorrect current password'}), 401
+    except Exception as e:
+        print(f"Change password error: {e}")
+        return jsonify({'success': False, 'error': 'Database error occurred'}), 500
+    finally:
+        if 'cursor' in locals():
+            cursor.close()
+        if 'conn' in locals():
+            conn.close()
 
 @app.route('/api/logout', methods=['POST'])
 def api_logout():

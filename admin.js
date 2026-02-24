@@ -1010,3 +1010,71 @@ async function saveProductSpecs(productKey, containerId) {
         alert("Warning: Network error while saving specifications.");
     }
 }
+
+// --- Change Password Logic ---
+function openChangePasswordModal() {
+    const modal = document.getElementById('password-modal');
+    if (modal) {
+        document.getElementById('password-form').reset();
+        document.getElementById('password-error').classList.add('hidden');
+        modal.classList.remove('hidden');
+    }
+}
+
+function closeChangePasswordModal() {
+    const modal = document.getElementById('password-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
+}
+
+async function submitChangePassword() {
+    const currentPass = document.getElementById('current_password').value;
+    const newPass = document.getElementById('new_password').value;
+    const confirmPass = document.getElementById('confirm_password').value;
+    const errorEl = document.getElementById('password-error');
+
+    errorEl.classList.add('hidden');
+
+    if (!currentPass || !newPass || !confirmPass) {
+        errorEl.textContent = "All fields are required.";
+        errorEl.classList.remove('hidden');
+        return;
+    }
+
+    if (newPass.length < 6) {
+        errorEl.textContent = "New password must be at least 6 characters.";
+        errorEl.classList.remove('hidden');
+        return;
+    }
+
+    if (newPass !== confirmPass) {
+        errorEl.textContent = "New passwords do not match.";
+        errorEl.classList.remove('hidden');
+        return;
+    }
+
+    try {
+        const res = await fetch('/api/change_password', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                current_password: currentPass,
+                new_password: newPass
+            })
+        });
+
+        const json = await res.json();
+
+        if (json.success) {
+            alert("Password successfully changed! Please log in again.");
+            window.location.href = '/portal-access-99';
+        } else {
+            errorEl.textContent = json.error || "Failed to change password.";
+            errorEl.classList.remove('hidden');
+        }
+    } catch (err) {
+        errorEl.textContent = "Network Error occurred.";
+        errorEl.classList.remove('hidden');
+    }
+}
