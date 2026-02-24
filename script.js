@@ -672,14 +672,14 @@ function openModal(item) {
             item.variants.forEach(variant => {
                 const thumb = variant.images && variant.images.length > 0 ? variant.images[0] : '';
                 html += `
-                    <div class="variant-tile" data-variant-id="${variant.id}" onclick='selectVariant(this, ${JSON.stringify(variant).replace(/'/g, "&#39;")}, ${JSON.stringify(item).replace(/'/g, "&#39;")})' style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 4px; transition: border-color 0.2s, background-color 0.2s; background: rgba(0,0,0,0.3); width: 60px; text-align: center;">
-                        <div style="width: 48px; height: 48px; border-radius: 4px; overflow: hidden; margin: 0 auto 4px auto; background: #000;">
+                    <div class="variant-tile" data-variant-id="${variant.id}" onclick='selectVariant(this, ${JSON.stringify(variant).replace(/'/g, "&#39;")}, ${JSON.stringify(item).replace(/'/g, "&#39;")})' style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 4px; transition: border-color 0.2s, background-color 0.2s; background: rgba(0,0,0,0.3); width: 80px; text-align: center;">
+                        <div style="width: 64px; height: 64px; border-radius: 4px; overflow: hidden; margin: 0 auto 4px auto; background: #000;">
                             ${thumb.match(/\.(mp4|webm|ogg|mov)$/i)
                         ? `<video src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;" muted></video>`
                         : `<img src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;">`
                     }
                         </div>
-                        <div style="font-size: 10px; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${variant.name}">${variant.name}</div>
+                        <div style="font-size: 14px; font-weight: bold; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${variant.name}">${variant.name}</div>
                     </div>
                 `;
             });

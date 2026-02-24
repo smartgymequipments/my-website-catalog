@@ -210,7 +210,8 @@
     font-family: var(--font-main);
     color: var(--primary-color);
     /* Replaces JS fitTextToContainer: fluid typography */
-    font-size: clamp(0.75rem, 5vw, 1.2rem);
+    font-size: clamp(0.375rem, 2.5vw, 0.6rem);
+    /* Reduced to 50% size */
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.2;
@@ -246,7 +247,7 @@
     }
 
     .card-overlay h3 {
-        font-size: clamp(0.6rem, 4vw, 0.9rem);
+        font-size: clamp(0.3rem, 2vw, 0.45rem);
     }
 
     .card-overlay {
