@@ -228,6 +228,68 @@ const renderLatestProductsCarousel = () => {
                     container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 };
             }
+
+            // Implement Swipe and Drag functionality for the Carousel
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            container.addEventListener('mousedown', (e) => {
+                isDown = true;
+                container.style.cursor = 'grabbing';
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+                // Prevent interfering with clicks if dragging
+                e.preventDefault();
+            });
+
+            container.addEventListener('mouseleave', () => {
+                isDown = false;
+                container.style.cursor = 'default';
+            });
+
+            container.addEventListener('mouseup', () => {
+                isDown = false;
+                container.style.cursor = 'default';
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 2; // Scroll-fast multiplier
+                container.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch events for Mobile Swiping
+            container.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            }, { passive: true });
+
+            container.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - container.offsetLeft;
+                const walk = (x - startX) * 2;
+                container.scrollLeft = scrollLeft - walk;
+            }, { passive: true });
+
+            // Prevent firing click event on child cards if we were dragging
+            const cards = container.querySelectorAll('.carousel-card');
+            cards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    if (isDown) { // Prevent click intercept while active mouse drag
+                        e.stopPropagation();
+                        e.preventDefault();
+                    }
+                });
+            });
+
         });
     }, 0);
 };
