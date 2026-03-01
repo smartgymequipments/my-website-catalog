@@ -194,7 +194,7 @@ const renderLatestProductsCarousel = () => {
 
                 const loadingAttr = idx < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
                 return `
-                    <div class="category-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})' style="flex: 0 0 85%; max-width: 320px; scroll-snap-align: start;">
+                    <div class="category-card carousel-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})' style="scroll-snap-align: start;">
                          <img src="${img}" alt="${p.name}" ${loadingAttr} decoding="async">
                          <div class="card-overlay">
                             <h3 class="dynamic-text" title="${p.name}">${p.name}</h3>

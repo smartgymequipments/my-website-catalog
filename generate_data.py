@@ -86,6 +86,9 @@ if os.path.exists(images_path):
                     specs = existing_descriptions[key].get('specs', {})
                     
                 variants = product_metadata.get(key, {}).get('variants', [])
+                
+                # Fetch show_in_latest flag (defaults to True if not exist for backwards compatibility)
+                show_in_latest = product_metadata.get(key, {}).get('show_in_latest', True)
 
                 data[key] = {
                     'name': equipment_name,
@@ -93,7 +96,8 @@ if os.path.exists(images_path):
                     'subcategory': subcategory,
                     'images': sorted(img_paths),
                     'date_added': max([os.path.getmtime(os.path.join(root, img)) for img in local_images]) if local_images else 0,
-                    'variants': variants
+                    'variants': variants,
+                    'show_in_latest': show_in_latest
                 }
 
 # Write to data.js

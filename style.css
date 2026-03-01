@@ -1828,6 +1828,31 @@ body {
     display: none;
 }
 
+/* Card sizing specifically for Latest Arrivals Carousel */
+.carousel-card {
+    flex: 0 0 calc(33.333% - 1rem);
+    max-width: 320px;
+}
+
+@media (max-width: 1024px) {
+    .carousel-card {
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        gap: 10px;
+        /* Match the 10px gap of category-showcase on mobile */
+        padding: 0.5rem 0;
+    }
+
+    .carousel-card {
+        flex: 0 0 calc(50% - 5px);
+        /* Exactly matches 2-column category grid size */
+    }
+}
+
 .carousel-nav-btn {
     position: absolute;
     z-index: 10;

@@ -7,6 +7,10 @@ from werkzeug.utils import secure_filename
 from werkzeug.security import check_password_hash, generate_password_hash
 import mysql.connector
 import shutil
+import sys
+import subprocess
+import glob
+import time
 
 app = Flask(__name__, static_folder='.', static_url_path='')
 
@@ -305,6 +309,15 @@ def add_product():
     filename = safe_filename(file.filename)
     file.save(os.path.join(product_dir, filename))
     
+    # Save metadata including show_in_latest flag
+    show_in_latest = request.form.get('show_in_latest') == 'true'
+    key = slugify(title)
+    meta = load_product_metadata()
+    if key not in meta:
+        meta[key] = {}
+    meta[key]['show_in_latest'] = show_in_latest
+    save_product_metadata(meta)
+    
     regenerate_data_js()
     return jsonify({'success': True})
 
@@ -331,6 +344,27 @@ def edit_product():
         new_path = os.path.join(parent_dir, new_safe)
         os.rename(abs_folder, new_path)
         final_folder = new_path
+        
+    # Save metadata including show_in_latest flag
+    show_in_latest = request.form.get('show_in_latest') == 'true'
+    # Use final title for the key
+    final_title = new_title if new_title else current_name
+    key = slugify(final_title)
+    meta = load_product_metadata()
+    if key not in meta:
+        meta[key] = {}
+    meta[key]['show_in_latest'] = show_in_latest
+    
+    # If title changed, we should ideally migrate the metadata key
+    if new_title and new_safe != current_safe:
+        old_key = slugify(current_name)
+        if old_key in meta and old_key != key:
+            meta[key] = meta[old_key]
+            del meta[old_key]
+            # Ensure the new flag is updated in the migrated entry too
+            meta[key]['show_in_latest'] = show_in_latest
+
+    save_product_metadata(meta)
         
     regenerate_data_js()
     return jsonify({'success': True, 'new_folder_path': os.path.relpath(final_folder, BASE_DIR).replace(os.sep, '/')})
@@ -435,12 +469,27 @@ def set_thumbnail():
 
 # --- Utils ---
 
+def bust_html_caches():
+    html_files = glob.glob(os.path.join(BASE_DIR, '*.html'))
+    timestamp = str(int(time.time()))
+    for file_path in html_files:
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+                
+            content = re.sub(r'(data\.js\?v=)[0-9a-zA-Z\.]+', r'\g<1>' + timestamp, content)
+            content = re.sub(r'(thumbnails\.js\?v=)[0-9a-zA-Z\.]+', r'\g<1>' + timestamp, content)
+            
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+        except Exception as e:
+            print(f"Error busting cache for {file_path}: {e}")
+
 def regenerate_data_js():
-    # Only run data generation if needed (e.g. products changed)
-    # But here we mostly need thumbnail generation
-    # Let's run both to be safe
-    os.system('python generate_data.py')
-    os.system('python generate_thumbnails.py')
+    # Execute generation scripts using the current python interpreter
+    subprocess.call([sys.executable, 'generate_data.py'], cwd=BASE_DIR)
+    subprocess.call([sys.executable, 'generate_thumbnails.py'], cwd=BASE_DIR)
+    bust_html_caches()
 
 import uuid
 

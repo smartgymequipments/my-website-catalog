@@ -7,7 +7,8 @@ const equipmentData = {
             "images/Accessories/drop bar/drop-bar-barbell-smartgymequipment-chennai-redhills.webp"
         ],
         "date_added": 1769438636.663301,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "landmine": {
         "name": "landmine",
@@ -17,7 +18,8 @@ const equipmentData = {
             "images/Accessories/landmine/landmine.webp"
         ],
         "date_added": 1769438685.9515786,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "split_squat_stand_pin_type": {
         "name": "Split_squat_stand_pin_type",
@@ -27,7 +29,8 @@ const equipmentData = {
             "images/Accessories/Split_squat_stand_pin_type/leg split squat adjustable_result_result.webp"
         ],
         "date_added": 1769439006.6161525,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "standing-lateral-raise": {
         "name": "standing lateral raise",
@@ -37,7 +40,8 @@ const equipmentData = {
             "images/Accessories/standing lateral raise/standing lateral raise-plate-loaded-top-smart-gym-equipment.webp"
         ],
         "date_added": 1769439948.9143376,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "t-bar": {
         "name": "t bar",
@@ -47,7 +51,8 @@ const equipmentData = {
             "images/Accessories/t bar/t-bar-top-smart-gym-equipment-chennai-redhills.webp"
         ],
         "date_added": 1769439949.0500858,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "cable-cross-over": {
         "name": "Cable cross over",
@@ -110,7 +115,8 @@ const equipmentData = {
                     "images/Multifunctional and functional equipments/Cable cross over/20251031_180328.webp"
                 ]
             }
-        ]
+        ],
+        "show_in_latest": true
     },
     "functional-trainer": {
         "name": "Functional trainer",
@@ -139,7 +145,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Functional trainer/functional-trainer-with-chest-support-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769446937.3556633,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "functional-trainer-with-smith": {
         "name": "functional trainer with smith",
@@ -172,7 +179,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/functional trainer with smith/functional-trainer-with-smith-machine-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769438668.7347913,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "5-station-multi-gym": {
         "name": "5 station multi gym",
@@ -182,7 +190,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/5 station multi gym/multigym-jungle-gym-smartgymequipment-chennai-redhills.webp"
         ],
         "date_added": 1769446964.9530716,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "hexagon-type": {
         "name": "Hexagon type",
@@ -200,7 +209,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Hexagon type/8-station-hexagon-multigym-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769438384.9872935,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "home-multi-gym\uf028": {
         "name": "Home multi gym\uf028",
@@ -218,7 +228,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Home multi gym\uf028/homegym-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769438671.8585687,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "it-company-model-1": {
         "name": "IT company model 1",
@@ -231,7 +242,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT company model 1/multi-gym-htc-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
         ],
         "date_added": 1769439605.7174108,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "it-company-model-2": {
         "name": "IT Company model 2",
@@ -243,7 +255,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/IT Company model 2/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
         ],
         "date_added": 1769439020.7820742,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "multi-gym-2025": {
         "name": "multi gym 2025",
@@ -261,7 +274,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/multi gym 2025/multi-gym-8-station-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769450479.8251157,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "new-model": {
         "name": "New model",
@@ -303,7 +317,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/New model/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439028.4675546,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "type-(i)": {
         "name": "Type (i)",
@@ -322,7 +337,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (i)/multi gym or jungle gym-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769439022.7110224,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "type-(ii)": {
         "name": "Type (ii)",
@@ -347,7 +363,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (ii)/multigym-jungle-gym-8-station-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439607.7853413,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "type-(iii)": {
         "name": "Type (iii)",
@@ -360,7 +377,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type (iii)/multigym-8-station-jungle-gym-smartgymequipment-chennai-redhills  (4).webp"
         ],
         "date_added": 1769439025.6418629,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "type-4-station": {
         "name": "Type 4 station",
@@ -374,7 +392,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type 4 station/4-station-multigym-jungle-gym-smartgymequipment-chennai-redhills (5).webp"
         ],
         "date_added": 1769438383.7868338,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "type-arch": {
         "name": "Type arch",
@@ -389,7 +408,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type arch/multigym-5-station-smartgymequipment-chennai-redhills (6).webp"
         ],
         "date_added": 1769439023.2204652,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "type-l": {
         "name": "Type L",
@@ -402,7 +422,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/Multigym or Jungle Gym/Type L/multigym-pink-jungle-gym-smartgymequipment-chennai-redhills (4).webp"
         ],
         "date_added": 1769439609.3140118,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "power-rack-with-smith-machine": {
         "name": "power rack with smith machine",
@@ -421,7 +442,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/power rack with smith machine/powerrack-with-smith-machine-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439903.8000264,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "smith-machine": {
         "name": "smith machine",
@@ -454,7 +476,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/smith machine/smith-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769439943.5548532,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "smith-machine-with-squat-rack": {
         "name": "smith machine with squat rack",
@@ -467,7 +490,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/smith machine with squat rack/smith machine with squat rack-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
         ],
         "date_added": 1769439939.939579,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "triangular-multipurpose-cross-over": {
         "name": "triangular multipurpose cross over",
@@ -480,7 +504,8 @@ const equipmentData = {
             "images/Multifunctional and functional equipments/triangular multipurpose cross over/three-station-triangular-multipurpose-machine-smartgymequipment-chennai-redhills  (4).webp"
         ],
         "date_added": 1769439949.5442593,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "abdominal-exerciser": {
         "name": "Abdominal Exerciser",
@@ -494,7 +519,8 @@ const equipmentData = {
             "images/plate loaded equipments/Abs Machines/Abdominal Exerciser/abdomen-exerciser-machine-smartgymequipment-chennai-redhills  (5).webp"
         ],
         "date_added": 1769438387.9812448,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "alternate-seated-biceps-curl": {
         "name": "alternate seated biceps curl",
@@ -526,7 +552,8 @@ const equipmentData = {
             "images/plate loaded equipments/Arm Machines/alternate seated biceps curl/plateloaded-isolateral-prechur-curl-machine-smartgymequipment-chennai-redhills  (9).webp"
         ],
         "date_added": 1769439873.3534818,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "plate-loaded-tricep-push-down-machine": {
         "name": "Plate loaded tricep push down machine",
@@ -537,7 +564,8 @@ const equipmentData = {
             "images/plate loaded equipments/Arm Machines/Plate loaded tricep push down machine/triceps-pushdown-machine-plateloaded-smartgymequipment-chennai-redhills  (2).webp"
         ],
         "date_added": 1769450566.131637,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "prechur-curl": {
         "name": "Prechur curl",
@@ -556,7 +584,8 @@ const equipmentData = {
             "images/plate loaded equipments/Arm Machines/Prechur curl/prechur-curl-machinetop-smart-gym-equipment-india-chennai-redhills (2).webp"
         ],
         "date_added": 1769439907.275959,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "seated-plate-loaded-triceps-extension": {
         "name": "Seated plate loaded triceps extension",
@@ -569,7 +598,8 @@ const equipmentData = {
             "images/plate loaded equipments/Arm Machines/Seated plate loaded triceps extension/plateloaded-seated-triceps-extension-smartgymequipment-chennai-redhills (4).webp"
         ],
         "date_added": 1769439889.5887294,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "triceps-dips": {
         "name": "triceps dips",
@@ -583,7 +613,8 @@ const equipmentData = {
             "images/plate loaded equipments/Arm Machines/triceps dips/plateloaded-seated-triceps-dips-machine-smartgymequipment-chennai-redhills  (5).webp"
         ],
         "date_added": 1769439889.241116,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "compound-row-machine": {
         "name": "compound row machine",
@@ -598,7 +629,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/compound row machine/plateloaded-compound-row-machine-smartgymequipment-chennai-redhills  (6).webp"
         ],
         "date_added": 1769439862.4396365,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "isolatral-row": {
         "name": "isolatral row",
@@ -622,7 +654,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/isolatral row/plateloaded-rowing-machine-smartgymequipment-chennai-redhills  (9).webp"
         ],
         "date_added": 1769439885.5871503,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "latpull-down": {
         "name": "latpull down",
@@ -641,7 +674,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/latpull down/plateloaded-latpulldown-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439875.8521442,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "latpull-down-with-chest-press": {
         "name": "latpull down with chest press",
@@ -661,7 +695,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/latpull down with chest press/latpulldown-with-chestpress-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769438694.0842807,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "liner-row-machine": {
         "name": "liner row machine",
@@ -676,7 +711,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/liner row machine/plateloadede-liner-row-machine-smartgymequipment-chennai-redhills (6).webp"
         ],
         "date_added": 1769450662.3141954,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "liner-t-bar-row": {
         "name": "liner t-bar row",
@@ -687,7 +723,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/liner t-bar row/liner-t-bar-row-machine.webp"
         ],
         "date_added": 1769439010.574379,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "low-row": {
         "name": "low row",
@@ -699,7 +736,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/low row/plateloaded-low-row-machine-smartgymequipment-chennai-redhills (3).webp"
         ],
         "date_added": 1769439878.1746447,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "plate-loaded-high-pull-down-machine": {
         "name": "Plate loaded high pull down machine",
@@ -712,7 +750,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/Plate loaded high pull down machine/plateloaded-high-pull-down-machine-smartgymequipment-chennai-redhills  (4).webp"
         ],
         "date_added": 1769439864.890133,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "reverse-hyper-extension": {
         "name": "reverse hyper extension",
@@ -725,7 +764,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/reverse hyper extension/reverse-hyper-extension-plateloaded-smartgymequipment-chennai-redhills  (4).webp"
         ],
         "date_added": 1769439907.8797553,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "reverse-latpull-down-machine": {
         "name": "reverse latpull down machine",
@@ -741,7 +781,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/reverse latpull down machine/plateloaded-reverse-latpull-down-machine-smartgymequipment-chennai-redhills (8).webp"
         ],
         "date_added": 1769439883.2759354,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "standing-t-bar-row": {
         "name": "standing t bar row",
@@ -752,7 +793,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/standing t bar row/plateloaded-standing-tbar-row-machine-smartgymequipment-chennai-redhills (2).webp"
         ],
         "date_added": 1769439889.7872722,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "t-bar-row": {
         "name": "t bar row",
@@ -776,7 +818,8 @@ const equipmentData = {
             "images/plate loaded equipments/Back Machines/t bar row/plateloaded-tbar-row-machine-chest-supported-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439895.630885,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "incline-chest-flies": {
         "name": "incline chest flies",
@@ -790,7 +833,8 @@ const equipmentData = {
             "images/plate loaded equipments/Chest Machines/incline chest flies/plate loaded chest flys-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
         ],
         "date_added": 1769450596.8537717,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "incline-chest-press": {
         "name": "incline chest press",
@@ -817,7 +861,8 @@ const equipmentData = {
             "images/plate loaded equipments/Chest Machines/incline chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769450617.6363378,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "isolatral-seated-chest-press": {
         "name": "isolatral seated chest press",
@@ -842,7 +887,8 @@ const equipmentData = {
             "images/plate loaded equipments/Chest Machines/isolatral seated chest press/incline isolateral chest press plate loaded-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769438683.2164187,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "multi-press": {
         "name": "multi press",
@@ -869,7 +915,8 @@ const equipmentData = {
             "images/plate loaded equipments/Chest Machines/multi press/multi chest press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769439018.1919255,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "45-degree-leg-press": {
         "name": "45 degree leg press",
@@ -898,7 +945,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/45 degree leg press/legpress-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769439009.8122396,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "assisted-glute-ham-raise": {
         "name": "Assisted glute ham raise",
@@ -908,7 +956,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/Assisted glute ham raise/assisted glute ham-top-smart-gym-equipment-india-tamilnadu-chennai-redhills.webp"
         ],
         "date_added": 1769438603.694464,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "belt-squat": {
         "name": "belt squat",
@@ -923,7 +972,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/belt squat/belt squat-machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (7).webp"
         ],
         "date_added": 1769438611.526949,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "hacksquat": {
         "name": "hacksquat",
@@ -935,7 +985,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/hacksquat/plate loaded hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (3).webp"
         ],
         "date_added": 1769439648.687924,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "leg-curl-and-leg-extension": {
         "name": "leg curl and leg extension",
@@ -948,7 +999,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/leg curl and leg extension/plate loaded leg extension and leg curl machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
         ],
         "date_added": 1769439650.4695153,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "leg-press-leverage-type": {
         "name": "leg press leverage type",
@@ -962,7 +1014,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/leg press leverage type/legpress-leverage-type-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (5).webp"
         ],
         "date_added": 1769439007.5170095,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "leg-press-with-hack-squat": {
         "name": "leg press with hack squat",
@@ -1011,7 +1064,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/leg press with hack squat/plate loaded leg press with hack squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769449761.9740787,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "pendulum-squat": {
         "name": "pendulum squat",
@@ -1029,7 +1083,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/pendulum squat/plateloaded-pendulum-squat-machine-chest-supported-smartgymequipment-chennai-redhills (3).webp"
         ],
         "date_added": 1769439878.3084548,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "power-squat-(or)-v-squat": {
         "name": "power squat (or) v squat",
@@ -1066,7 +1121,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/power squat (or) v squat/plate loaded power squat or v - squat machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769439772.4485235,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "seated-calf-raise": {
         "name": "seated calf raise",
@@ -1092,7 +1148,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/seated calf raise/plate loaded seated calf raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769449590.4233403,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "seated-calf-raise-with-tibia-raise": {
         "name": "Seated calf raise with tibia raise",
@@ -1104,7 +1161,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/Seated calf raise with tibia raise/plateloaded-seated-calf-raise-with-tibia-raise-machine-smartgymequipment (3).webp"
         ],
         "date_added": 1769449799.5044193,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "swing-squat": {
         "name": "swing squat",
@@ -1114,7 +1172,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/swing squat/plateloaded-swing-squat-machine-smartgymequipment.webp"
         ],
         "date_added": 1769449814.4280546,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "vertical-leg-press": {
         "name": "vertical leg press",
@@ -1125,7 +1184,8 @@ const equipmentData = {
             "images/plate loaded equipments/Leg Machines/vertical leg press/plate loaded vertical legpress machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (2).webp"
         ],
         "date_added": 1769439861.8737066,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "rear-delt-flies-machine": {
         "name": "rear delt flies machine",
@@ -1138,7 +1198,8 @@ const equipmentData = {
             "images/plate loaded equipments/Shoulder Machines/rear delt flies machine/plateloaded-rear-delt-flies-machine-smartgymequipment-chennai-redhills (4).webp"
         ],
         "date_added": 1769449451.3273153,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "seated-lateral-raise": {
         "name": "seated lateral raise",
@@ -1151,7 +1212,8 @@ const equipmentData = {
             "images/plate loaded equipments/Shoulder Machines/seated lateral raise/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (4).webp"
         ],
         "date_added": 1769439648.9757144,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "seated-shoulder-press-with-lateral-raise-machine": {
         "name": "Seated shoulder press with lateral raise machine",
@@ -1163,7 +1225,8 @@ const equipmentData = {
             "images/plate loaded equipments/Shoulder Machines/Seated shoulder press with lateral raise machine/shoulder-press-machine-with-lateral-raise-machine-top-smart-gym-equipment-india-chennai-redhills (3).webp"
         ],
         "date_added": 1769439930.907134,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "shoulder-press": {
         "name": "Shoulder press",
@@ -1210,7 +1273,8 @@ const equipmentData = {
             "images/plate loaded equipments/Shoulder Machines/Shoulder press/plate loaded shoulder press machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769439853.004961,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "shrug-machine-with-deadlift": {
         "name": "Shrug machine with deadlift",
@@ -1244,7 +1308,8 @@ const equipmentData = {
             "images/plate loaded equipments/Shoulder Machines/Shrug machine with deadlift/plate loaded shrug machine with deadlift machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills (9).webp"
         ],
         "date_added": 1769450776.1777813,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "standing-lateral-raise-machine": {
         "name": "Standing lateral raise machine",
@@ -1254,7 +1319,8 @@ const equipmentData = {
             "images/plate loaded equipments/Shoulder Machines/Standing lateral raise machine/plate loaded lateral raise machine-top-smart-gym-equipment-india-tamilnadu-chennai-redhills.webp"
         ],
         "date_added": 1769439649.1688037,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "half-rack": {
         "name": "half rack",
@@ -1269,7 +1335,8 @@ const equipmentData = {
             "images/Racks and rigs/Racks/half rack/half-rack-machine-smartgymequipment-chennai-redhills (6).webp"
         ],
         "date_added": 1769438670.207811,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "power-rack": {
         "name": "power rack",
@@ -1303,7 +1370,8 @@ const equipmentData = {
             "images/Racks and rigs/Racks/power rack/power-rack-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439899.8988872,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "power-rack-with-smith-machine-racks-and-rigs": {
         "name": "power rack with smith machine",
@@ -1324,7 +1392,8 @@ const equipmentData = {
             "images/Racks and rigs/Racks/power rack with smith machine/smith with power rack (2).webp"
         ],
         "date_added": 1769450816.2973392,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "squat-rack\uf028": {
         "name": "squat rack\uf028",
@@ -1351,7 +1420,8 @@ const equipmentData = {
             "images/Racks and rigs/Racks/squat rack\uf028/squat-rack-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439948.805875,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "crossfit-cage": {
         "name": "crossfit cage",
@@ -1377,7 +1447,8 @@ const equipmentData = {
             "images/Racks and rigs/Rigs/crossfit cage/crossfit-cage-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769438635.8674245,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "biceps-prechur-curl": {
         "name": "Biceps prechur curl",
@@ -1395,7 +1466,8 @@ const equipmentData = {
             "images/selectorized equipments/Arm Machines/Biceps prechur curl/prechur-curl-machine-smartgymequipment-chennai-redhills  (9).webp"
         ],
         "date_added": 1769439907.093787,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "forearm-machine": {
         "name": "forearm machine",
@@ -1422,7 +1494,8 @@ const equipmentData = {
             "images/selectorized equipments/Arm Machines/forearm machine/forearm-machine-top-smart-gym-equipment-india-chennai-redhills.webp"
         ],
         "date_added": 1769438655.6763158,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "assisted-chin-ups-and-dips": {
         "name": "assisted chin ups and dips",
@@ -1459,7 +1532,8 @@ const equipmentData = {
             "images/selectorized equipments/Back Machines/assisted chin ups and dips/assisted-chin-ups-with-dips-machine-top-smart-gym-equipment-india-chennai-redhills (9).webp"
         ],
         "date_added": 1769438610.7698178,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "dual-lat-pull-down": {
         "name": "dual lat pull down",
@@ -1474,7 +1548,8 @@ const equipmentData = {
             "images/selectorized equipments/Back Machines/dual lat pull down/selectorized-latpulldown-with-dual-pulley-machine-chennai-redhills  (6).webp"
         ],
         "date_added": 1769439913.111756,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "latpull-and-row": {
         "name": "latpull and row",
@@ -1546,7 +1621,8 @@ const equipmentData = {
             "images/selectorized equipments/Back Machines/latpull and row/selectorized-pinloaded-latpulldown-with-rowing-machine-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769451238.0771425,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "rowing": {
         "name": "rowing",
@@ -1563,7 +1639,8 @@ const equipmentData = {
             "images/selectorized equipments/Back Machines/rowing/selectorized-pinloaded-rowing-machine-smartgymequipment-chennai-redhills (8).webp"
         ],
         "date_added": 1769439928.8329675,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "chest-press": {
         "name": "Chest press",
@@ -1576,7 +1653,8 @@ const equipmentData = {
             "images/selectorized equipments/Chest Machines/Chest press/selectorized-seated-chest-press-machine-pinloaded-smartgymequipment-chennai-redhills  (4).webp"
         ],
         "date_added": 1769439929.1652722,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "multi-press-selectorized-equipments": {
         "name": "Multi press",
@@ -1601,7 +1679,8 @@ const equipmentData = {
             "images/selectorized equipments/Chest Machines/Multi press/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (7).webp"
         ],
         "date_added": 1769439910.9971664,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "peck-fly-with-rear-delt": {
         "name": "peck fly with rear delt",
@@ -1661,7 +1740,8 @@ const equipmentData = {
             "images/selectorized equipments/Chest Machines/peck fly with rear delt/peckfly-with-rear-delt-machine-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439645.7785556,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "adductor---abductor": {
         "name": "Adductor - abductor",
@@ -1684,7 +1764,8 @@ const equipmentData = {
             "images/selectorized equipments/Leg Machines/Adductor - abductor/selectorized-abductor-and-adductor-machine-smartgymequipment-chennai-redhills (9)_result.webp"
         ],
         "date_added": 1769439912.492916,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "leg-curl-and-leg-extension-(-seated---prone-)": {
         "name": "leg curl and leg extension ( Seated - prone )",
@@ -1739,7 +1820,8 @@ const equipmentData = {
             "images/selectorized equipments/Leg Machines/leg curl and leg extension ( Seated - prone )/top-seated-prone-legcurl-legextension-machine-smartgymequipment-chennai-redhills  (9).webp"
         ],
         "date_added": 1769439960.055984,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "seated-leg-curl-and-leg-extension": {
         "name": "seated leg curl and leg extension",
@@ -1760,7 +1842,8 @@ const equipmentData = {
             "images/selectorized equipments/Leg Machines/seated leg curl and leg extension/selectorized-seated-legcurl-with-legextension-machine-pinloaded-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769451287.337542,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "lateral-raise": {
         "name": "lateral raise",
@@ -1799,7 +1882,8 @@ const equipmentData = {
             "images/selectorized equipments/Shoulder Machines/lateral raise/lateral-raise-selecorised-pinloaded-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769438692.5369537,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "shoulder-press-machine": {
         "name": "Shoulder press machine",
@@ -1811,7 +1895,8 @@ const equipmentData = {
             "images/selectorized equipments/Shoulder Machines/Shoulder press machine/selectorised-multi-press-machine-pinloaded-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439910.2299204,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "adjustable-abdomen-bench-2.0": {
         "name": "Adjustable abdomen bench 2.0",
@@ -1823,7 +1908,8 @@ const equipmentData = {
             "images/weight benches and storage/Adjustable abdomen bench 2.0/adjustable abdomen bench v2.0 new 2026 (3).webp"
         ],
         "date_added": 1769451567.0905185,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "adjustable-abdominal-board": {
         "name": "Adjustable abdominal board",
@@ -1840,7 +1926,8 @@ const equipmentData = {
             "images/weight benches and storage/Adjustable abdominal board/adjustable-abdomen-board-new-2026.webp"
         ],
         "date_added": 1769438591.3980856,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "bench-pull": {
         "name": "bench pull",
@@ -1850,7 +1937,8 @@ const equipmentData = {
             "images/weight benches and storage/bench pull/bench-pull-machine-smartgymequipment-chennai-redhills.webp"
         ],
         "date_added": 1769438611.715639,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "bi---tri-bench": {
         "name": "Bi - tri bench",
@@ -1861,7 +1949,8 @@ const equipmentData = {
             "images/weight benches and storage/Bi - tri bench/bicep-tricep-bench-smartgymequipment-chennai-redhills (2).webp"
         ],
         "date_added": 1769451662.799884,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "completely-adjustable-olympic-fid-bench-press": {
         "name": "Completely adjustable olympic fid bench press",
@@ -1871,7 +1960,8 @@ const equipmentData = {
             "images/weight benches and storage/Completely adjustable olympic fid bench press/complete-adjustable-olympic-fid-bench-press.webp"
         ],
         "date_added": 1769438623.1916502,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "dumbell-rack-mini": {
         "name": "Dumbell rack mini",
@@ -1882,7 +1972,8 @@ const equipmentData = {
             "images/weight benches and storage/Dumbell rack mini/mini-dumbell-rackl- 2026.webp"
         ],
         "date_added": 1769439010.7803967,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "fid-bench": {
         "name": "FID bench",
@@ -1918,7 +2009,8 @@ const equipmentData = {
             "images/weight benches and storage/FID bench/flat-incline-decline-bench-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769438648.3811848,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "flat-bench": {
         "name": "flat bench",
@@ -1933,7 +2025,8 @@ const equipmentData = {
             "images/weight benches and storage/flat bench/flat-bench-smartgymequipment-chennai-redhills (6).webp"
         ],
         "date_added": 1769438638.639744,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "hyper-extension": {
         "name": "hyper extension",
@@ -1956,7 +2049,8 @@ const equipmentData = {
             "images/weight benches and storage/hyper extension/hyper-extension-new-2026.webp"
         ],
         "date_added": 1769438676.3783426,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "incline-bench": {
         "name": "Incline bench",
@@ -1967,7 +2061,8 @@ const equipmentData = {
             "images/weight benches and storage/Incline bench/incline-bench-smartgymequipment-chennai-redhills (2).webp"
         ],
         "date_added": 1769438685.20143,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "olympic-decline-bench": {
         "name": "olympic decline bench",
@@ -1983,7 +2078,8 @@ const equipmentData = {
             "images/weight benches and storage/olympic decline bench/olympic-decline-benchpress-smartgymequipment-chennai-redhills (7).webp"
         ],
         "date_added": 1769439611.6671708,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "olympic-fid-bench": {
         "name": "olympic FID bench",
@@ -2057,7 +2153,8 @@ const equipmentData = {
             "images/weight benches and storage/olympic FID bench/olympic-fid-benchpress-machine-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439626.7234755,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "olympic-flat-bench": {
         "name": "olympic flat bench",
@@ -2087,7 +2184,8 @@ const equipmentData = {
             "images/weight benches and storage/olympic flat bench/olympic-flat-bench-press-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439631.676372,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "olympic-incline-bench": {
         "name": "olympic incline bench",
@@ -2101,7 +2199,8 @@ const equipmentData = {
             "images/weight benches and storage/olympic incline bench/olympic-incline-benchpress-machine-smartgymequipment-chennai-redhills (6).webp"
         ],
         "date_added": 1769439632.30265,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "olympic-rod-stand": {
         "name": "Olympic rod stand",
@@ -2113,7 +2212,8 @@ const equipmentData = {
             "images/weight benches and storage/Olympic rod stand/olympic-barbell-stand-rod-smartgymequipment-chennai-redhills .webp"
         ],
         "date_added": 1769439610.759154,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "plate-stand": {
         "name": "plate stand",
@@ -2131,7 +2231,8 @@ const equipmentData = {
             "images/weight benches and storage/plate stand/olympic-weight-plate-stand-smartgymequipment-chennai-redhills (8).webp"
         ],
         "date_added": 1769439635.1327446,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "prechur-curl-manual": {
         "name": "prechur curl manual",
@@ -2148,7 +2249,8 @@ const equipmentData = {
             "images/weight benches and storage/prechur curl manual/prechur-curl-bench-machine-smartgymequipment-chennai-redhills (8).webp"
         ],
         "date_added": 1769439906.00516,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "seal-row": {
         "name": "Seal row",
@@ -2159,7 +2261,8 @@ const equipmentData = {
             "images/weight benches and storage/Seal row/seal-row-bench-machine-smartgymequipment-chennai-redhills (2).webp"
         ],
         "date_added": 1769439908.1307757,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "sissy-squat": {
         "name": "sissy squat",
@@ -2171,7 +2274,8 @@ const equipmentData = {
             "images/weight benches and storage/sissy squat/sissy-squat-machine-smartgymequipment-chennai-redhills (3).webp"
         ],
         "date_added": 1769439932.7668056,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "sitting-standing-twister": {
         "name": "sitting standing twister",
@@ -2200,7 +2304,8 @@ const equipmentData = {
             "images/weight benches and storage/sitting standing twister/sitting-standing-twister-smartgymequipment-chennai-redhills (39).webp"
         ],
         "date_added": 1769439935.8374038,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "sled": {
         "name": "sled",
@@ -2215,7 +2320,8 @@ const equipmentData = {
             "images/weight benches and storage/sled/sled-smartgymequipment-chennai-redhills (6).webp"
         ],
         "date_added": 1769451773.5196538,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "three-tier-dumbbell-rack": {
         "name": "three tier dumbbell rack",
@@ -2226,7 +2332,8 @@ const equipmentData = {
             "images/weight benches and storage/three tier dumbbell rack/three-tier-dumbell-rackl-smartgymequipment-chennai-redhills (2).webp"
         ],
         "date_added": 1769439950.4967754,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "total-arm-blaster": {
         "name": "Total arm blaster",
@@ -2236,7 +2343,8 @@ const equipmentData = {
             "images/weight benches and storage/Total arm blaster/total-arm-biceps-blaster-smartgymequipment-chennai-redhills.webp"
         ],
         "date_added": 1769451791.313125,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "twister": {
         "name": "twister",
@@ -2249,7 +2357,8 @@ const equipmentData = {
             "images/weight benches and storage/twister/twister-smartgymequipment-chennai-redhills (2).webp"
         ],
         "date_added": 1769439963.1185863,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "two-tier-dumbbell-rack": {
         "name": "two tier dumbbell rack",
@@ -2285,7 +2394,8 @@ const equipmentData = {
             "images/weight benches and storage/two tier dumbbell rack/two-tier-dumbell-rack-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439969.8442883,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "utility-stool": {
         "name": "utility stool",
@@ -2305,7 +2415,8 @@ const equipmentData = {
             "images/weight benches and storage/utility stool/utility-multipurpose-stool-smartgymequipment-chennai-redhills .webp"
         ],
         "date_added": 1769439974.3272064,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "vertical-knee-raise": {
         "name": "vertical knee raise",
@@ -2328,7 +2439,8 @@ const equipmentData = {
             "images/weight benches and storage/vertical knee raise/vertical-knee-raise-smartgymequipment-chennai-redhills (9).webp"
         ],
         "date_added": 1769439978.2185855,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "vertical-knee-raise-with-chin-ups": {
         "name": "vertical knee raise with chin ups",
@@ -2338,7 +2450,8 @@ const equipmentData = {
             "images/weight benches and storage/vertical knee raise with chin ups/vertical-knee-raise-with-chin-ups-smartgymequipment-chennai-redhills.webp"
         ],
         "date_added": 1769439978.4403172,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     },
     "weight-lifting-platform": {
         "name": "weight lifting platform",
@@ -2349,6 +2462,7 @@ const equipmentData = {
             "images/weight benches and storage/weight lifting platform/weightlifting-platform-smartgymequipment-chennai-redhills (2).webp"
         ],
         "date_added": 1769451830.8976178,
-        "variants": []
+        "variants": [],
+        "show_in_latest": true
     }
 };
