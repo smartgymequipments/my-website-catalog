@@ -650,27 +650,28 @@ function openModal(item) {
     const modalVariantsContainer = document.getElementById('modal-variants');
     if (modalVariantsContainer) {
         modalVariantsContainer.innerHTML = '';
-        if (item.variants && item.variants.length > 0) {
+        const itemVariants = item.variants || [];
+        const itemImages = item.images || [];
+
+        if (itemVariants.length > 0 || itemImages.length > 0) {
             modalVariantsContainer.style.display = 'block';
             let html = '';
 
             let assignedImages = new Set();
-            item.variants.forEach(v => {
+            itemVariants.forEach(v => {
                 if (v.images) v.images.forEach(img => assignedImages.add(img));
             });
 
             let unassignedImages = [];
-            if (item.images) {
-                item.images.forEach(img => {
-                    if (!assignedImages.has(img)) {
-                        unassignedImages.push(img);
-                    }
-                });
-            }
+            itemImages.forEach(img => {
+                if (!assignedImages.has(img)) {
+                    unassignedImages.push(img);
+                }
+            });
 
             // Group variants by category
             const groupedVariants = {};
-            item.variants.forEach(v => {
+            itemVariants.forEach(v => {
                 const cat = (v.category && v.category.trim() !== '') ? v.category.trim() : 'Other variants';
                 if (!groupedVariants[cat]) groupedVariants[cat] = [];
                 groupedVariants[cat].push(v);
@@ -701,7 +702,8 @@ function openModal(item) {
                             ? `<video src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;" muted></video>`
                             : `<img src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;">`
                         }
-                            <div style="font-size: 11px; font-weight: 600; color: #ccc; white-space: normal; line-height: 1.2; word-break: break-word; padding-top: 2px;" title="${variant.name}">${variant.name}</div>
+                            </div>
+                            <div style="font-size: 14px; font-weight: bold; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${variant.name}">${variant.name}</div>
                         </div>
                     `;
                 });
