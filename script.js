@@ -50,6 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (path.endsWith('quote.html')) {
         renderQuotePage(organizedData);
     }
+
+    // Handle direct link to product
+    const productKey = urlParams.get('product');
+    if (productKey && equipmentData[productKey]) {
+        setTimeout(() => {
+            openModal({ key: productKey, ...equipmentData[productKey] });
+        }, 100);
+    }
 });
 
 function initHeader(organizedData) {
@@ -520,6 +528,10 @@ function initModal() {
         setTimeout(() => modalBackdrop.classList.add('hidden'), 300);
         document.body.style.overflow = '';
         currentImages = []; // Clear
+
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.delete('product');
+        window.history.replaceState({}, '', newUrl);
     };
 
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
@@ -597,6 +609,10 @@ function openModal(item) {
 
     modalTitle.textContent = item.name;
     modalCategory.textContent = item.category;
+
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set('product', item.key);
+    window.history.replaceState({}, '', newUrl);
 
     // ----- Fetch and Render Specifications -----
     const modalDetails = document.querySelector('.modal-details');
