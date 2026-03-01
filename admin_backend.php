@@ -177,6 +177,19 @@ function regenerateThumbnailsJs($data) {
     file_put_contents($THUMBNAILS_JS_FILE, $jsContent);
 }
 
+// Cache Busting Function
+function bustHtmlCaches() {
+    $htmlFiles = glob(__DIR__ . '/*.html');
+    if (!$htmlFiles) return;
+    $timestamp = time();
+    foreach ($htmlFiles as $file) {
+        $content = file_get_contents($file);
+        $content = preg_replace('/(data\.js\?v=)[0-9a-zA-Z\.]+/', '${1}' . $timestamp, $content);
+        $content = preg_replace('/(thumbnails\.js\?v=)[0-9a-zA-Z\.]+/', '${1}' . $timestamp, $content);
+        file_put_contents($file, $content);
+    }
+}
+
 function regenerateDataJs($imagesDir, $outputFile) {
     $data = [];
     $metadata = loadMetadata();
@@ -266,6 +279,9 @@ function regenerateDataJs($imagesDir, $outputFile) {
     
     // Also regenerate thumbnails
     regenerateThumbnailsJs($data);
+    
+    // Synchronize HTML caches immediately
+    bustHtmlCaches();
 }
 
 
@@ -751,6 +767,7 @@ if ($action === 'save_variant' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $productKey = $input['product_key'] ?? '';
     $variantId = $input['variant_id'] ?? '';
     $variantName = $input['variant_name'] ?? '';
+    $variantCategory = $input['variant_category'] ?? '';
     $images = $input['images'] ?? [];
     
     if (!$productKey || !$variantName || empty($images)) {
@@ -775,6 +792,7 @@ if ($action === 'save_variant' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         $meta[$productKey]['variants'][] = [
             'id' => $variantId,
             'name' => $variantName,
+            'category' => $variantCategory,
             'images' => $images
         ];
     } else {
@@ -783,6 +801,7 @@ if ($action === 'save_variant' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($meta[$productKey]['variants'] as &$variant) {
             if ($variant['id'] === $variantId) {
                 $variant['name'] = $variantName;
+                $variant['category'] = $variantCategory;
                 $variant['images'] = $images;
                 $updated = true;
                 break;

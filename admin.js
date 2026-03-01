@@ -507,6 +507,7 @@ function openAddVariantModal() {
     document.getElementById('variant-modal').classList.remove('hidden');
     document.getElementById('variant-form').reset();
     document.getElementById('variant-id').value = '';
+    document.getElementById('variant-category').value = '';
     document.getElementById('variant-product-key').value = currentEditProductOriginalKey;
 
     // Render image selection list
@@ -520,6 +521,7 @@ function openEditVariantModal(variantId) {
     document.getElementById('variant-modal').classList.remove('hidden');
     document.getElementById('variant-id').value = variant.id;
     document.getElementById('variant-name').value = variant.name;
+    document.getElementById('variant-category').value = variant.category || '';
     document.getElementById('variant-product-key').value = currentEditProductOriginalKey;
 
     renderVariantImageSelection(variant.images);
@@ -574,6 +576,7 @@ async function handleVariantSubmit(e) {
         const productKey = document.getElementById('variant-product-key').value;
         const variantId = document.getElementById('variant-id').value;
         const variantName = document.getElementById('variant-name').value.trim();
+        const variantCategory = document.getElementById('variant-category').value.trim();
 
         const selectedImages = Array.from(document.querySelectorAll('.variant-image-checkbox:checked')).map(cb => cb.value);
 
@@ -589,6 +592,7 @@ async function handleVariantSubmit(e) {
                 product_key: productKey,
                 variant_id: variantId,
                 variant_name: variantName,
+                variant_category: variantCategory,
                 images: selectedImages
             })
         });

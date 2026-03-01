@@ -183,57 +183,17 @@ const renderLatestProductsCarousel = () => {
 
                 const loadingAttr = idx < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
                 return `
-                    <div class="product-carousel-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>
-                         <img src="${img}" alt="${p.name}" ${loadingAttr} decoding="async" class="carousel-img">
-                         <div class="carousel-arrow-icon">↗</div>
-                         <div class="carousel-glass-overlay">
-                            <h3 class="carousel-title-glass" title="${p.name}">${p.name}</h3>
+                    <div class="category-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>
+                         <img src="${img}" alt="${p.name}" ${loadingAttr} decoding="async">
+                         <div class="card-overlay">
+                            <h3 class="dynamic-text" title="${p.name}">${p.name}</h3>
+                            <span class="card-arrow">❯</span>
                          </div>
                     </div>
                 `;
             }).join('');
 
-            // Attach scroll logic to arrows
-            const prevBtn = document.getElementById('latest-prev');
-            const nextBtn = document.getElementById('latest-next');
-
-            if (prevBtn && nextBtn) {
-                const scrollAmount = 300; // Adjust based on card width
-
-                prevBtn.addEventListener('click', () => {
-                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-
-                nextBtn.addEventListener('click', () => {
-                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
-            }
-
-            // Optional: Auto Scroll (Pause on hover)
-            let autoScrollInterval;
-            const startAutoScroll = () => {
-                autoScrollInterval = setInterval(() => {
-                    // If near end, jump to start, else scroll right
-                    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
-                        container.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        container.scrollBy({ left: 300, behavior: 'smooth' });
-                    }
-                }, 3000);
-            };
-
-            const stopAutoScroll = () => {
-                clearInterval(autoScrollInterval);
-            };
-
-            // Start by default
-            startAutoScroll();
-
-            // Pause on hover or touch
-            container.addEventListener('mouseenter', stopAutoScroll);
-            container.addEventListener('mouseleave', startAutoScroll);
-            container.addEventListener('touchstart', stopAutoScroll, { passive: true });
-            container.addEventListener('touchend', startAutoScroll, { passive: true });
+            // Grid layout handled by CSS. Carousel auto-scroll removed per user request.
         });
     }, 0);
 };
@@ -666,24 +626,36 @@ function openModal(item) {
         modalVariantsContainer.innerHTML = '';
         if (item.variants && item.variants.length > 0) {
             modalVariantsContainer.style.display = 'block';
-            let html = '<h4 style="color: #FFD700; font-size: 14px; margin-bottom: 8px; font-weight: 600;">Variants</h4>';
-            html += '<div style="display: flex; gap: 10px; flex-wrap: wrap;">';
+            let html = '';
 
-            item.variants.forEach(variant => {
-                const thumb = variant.images && variant.images.length > 0 ? variant.images[0] : '';
-                html += `
-                    <div class="variant-tile" data-variant-id="${variant.id}" onclick='selectVariant(this, ${JSON.stringify(variant).replace(/'/g, "&#39;")}, ${JSON.stringify(item).replace(/'/g, "&#39;")})' style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 4px; transition: border-color 0.2s, background-color 0.2s; background: rgba(0,0,0,0.3); width: 80px; text-align: center;">
-                        <div style="width: 64px; height: 64px; border-radius: 4px; overflow: hidden; margin: 0 auto 4px auto; background: #000;">
-                            ${thumb.match(/\.(mp4|webm|ogg|mov)$/i)
-                        ? `<video src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;" muted></video>`
-                        : `<img src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;">`
-                    }
-                        </div>
-                        <div style="font-size: 14px; font-weight: bold; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${variant.name}">${variant.name}</div>
-                    </div>
-                `;
+            // Group variants by category
+            const groupedVariants = {};
+            item.variants.forEach(v => {
+                const cat = (v.category && v.category.trim() !== '') ? v.category.trim() : 'Other variants';
+                if (!groupedVariants[cat]) groupedVariants[cat] = [];
+                groupedVariants[cat].push(v);
             });
-            html += '</div>';
+
+            for (const [catName, vars] of Object.entries(groupedVariants)) {
+                html += `<h4 style="color: #FFD700; font-size: 14px; margin-top: 10px; margin-bottom: 8px; font-weight: 600;">${catName}</h4>`;
+                html += '<div style="display: flex; gap: 10px; flex-wrap: wrap;">';
+
+                vars.forEach(variant => {
+                    const thumb = variant.images && variant.images.length > 0 ? variant.images[0] : '';
+                    html += `
+                        <div class="variant-tile" data-variant-id="${variant.id}" onclick='selectVariant(this, ${JSON.stringify(variant).replace(/'/g, "&#39;")}, ${JSON.stringify(item).replace(/'/g, "&#39;")})' style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 4px; transition: border-color 0.2s, background-color 0.2s; background: rgba(0,0,0,0.3); width: 80px; text-align: center;">
+                            <div style="width: 64px; height: 64px; border-radius: 4px; overflow: hidden; margin: 0 auto 4px auto; background: #000;">
+                            ${thumb.match(/\.(mp4|webm|ogg|mov)$/i)
+                            ? `<video src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;" muted></video>`
+                            : `<img src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;">`
+                        }
+                            </div>
+                            <div style="font-size: 14px; font-weight: bold; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${variant.name}">${variant.name}</div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
             modalVariantsContainer.innerHTML = html;
         } else {
             modalVariantsContainer.style.display = 'none';
