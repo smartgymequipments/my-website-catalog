@@ -1948,19 +1948,16 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: #ccc;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: break-word;
+    line-height: 1.2;
 }
 
 @media (max-width: 768px) {
     .variant-name {
-        white-space: normal;
-        overflow: visible;
-        text-overflow: clip;
-        word-break: break-word;
         font-size: 13px;
         /* slight scaling down to handle multiple lines gracefully */
-        line-height: 1.2;
     }
 }
