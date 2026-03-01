@@ -701,8 +701,7 @@ function openModal(item) {
                             ? `<video src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;" muted></video>`
                             : `<img src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;">`
                         }
-                            </div>
-                            <div style="font-size: 14px; font-weight: bold; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${variant.name}">${variant.name}</div>
+                            <div style="font-size: 11px; font-weight: 600; color: #ccc; white-space: normal; line-height: 1.2; word-break: break-word; padding-top: 2px;" title="${variant.name}">${variant.name}</div>
                         </div>
                     `;
                 });
