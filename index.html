@@ -62,10 +62,31 @@
 
     <main class="container">
         <!-- Latest Arrivals Carousel -->
-        <section class="latest-products-section">
+        <section class="latest-products-section relative">
             <h2 class="section-title">Latest Arrivals</h2>
-            <div class="category-showcase" id="latest-products-carousel">
-                <!-- Cards will be dynamically injected here by JS -->
+            <div class="carousel-wrapper relative group">
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-black/60 hover:bg-yellow-400 hover:text-black text-white rounded-r border border-l-0 border-white/20 opacity-0 group-hover:opacity-100 transition-all cursor-pointer backdrop-blur-sm"
+                    aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <div class="category-showcase carousel-container" id="latest-products-carousel">
+                    <!-- Cards will be dynamically injected here by JS -->
+                </div>
+
+                <button id="carousel-next"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-black/60 hover:bg-yellow-400 hover:text-black text-white rounded-l border border-r-0 border-white/20 opacity-0 group-hover:opacity-100 transition-all cursor-pointer backdrop-blur-sm"
+                    aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </section>
         <!-- New Category Showcase Grid -->

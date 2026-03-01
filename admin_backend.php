@@ -450,6 +450,7 @@ if ($action === 'add_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'] ?? '';
     $category = $_POST['category'] ?? '';
     $subcategory = $_POST['subcategory'] ?? '';
+    $showInLatest = isset($_POST['show_in_latest']) ? $_POST['show_in_latest'] === 'true' : true; // Default true for new products
     
     if (!$title || !$category || empty($_FILES['images']['name'][0])) jsonResponse(['error' => 'Missing fields'], 400);
 
@@ -541,7 +542,8 @@ if ($action === 'add_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
     $meta[$key] = [
-        'created_at' => time()
+        'created_at' => time(),
+        'show_in_latest' => $showInLatest
     ];
     saveMetadata($meta);
 
@@ -664,6 +666,9 @@ if ($action === 'edit_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $newTitle = $_POST['title'] ?? '';
     $newCategory = $_POST['category'] ?? '';
     $newSubcategory = $_POST['subcategory'] ?? '';
+    
+    // Explicitly check for presence since checkboxes send nothing when unchecked
+    $showInLatest = isset($_POST['show_in_latest']) ? $_POST['show_in_latest'] === 'true' : false;
 
     if (!$originalFolder || !is_dir(__DIR__ . '/' . $originalFolder)) jsonResponse(['error' => 'Product not found'], 404);
 
@@ -719,10 +724,18 @@ if ($action === 'edit_product' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (isset($meta[$oldKey])) {
             $meta[$newKey] = $meta[$oldKey]; // Copy data
+            $meta[$newKey]['show_in_latest'] = $showInLatest; // Update toggle
             unset($meta[$oldKey]); // Remove old
             saveMetadata($meta);
         }
         $finalKey = $newKey;
+    } else {
+        // Path didn't change, just update metadata
+        $meta = loadMetadata();
+        if (isset($meta[$finalKey])) {
+            $meta[$finalKey]['show_in_latest'] = $showInLatest;
+            saveMetadata($meta);
+        }
     }
 
     regenerateDataJs($IMAGES_DIR, $DATA_JS_FILE);

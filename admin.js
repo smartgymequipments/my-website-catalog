@@ -267,6 +267,9 @@ function openEditModal(product) {
     // Set Category
     document.getElementById('edit-category').value = product.category;
 
+    // Set Latest Arrivals toggle
+    document.getElementById('edit-show-in-latest').checked = product.show_in_latest !== false; // Default to true if undefined
+
     // Fetch Subcategories then set Subcategory
     fetchSubcategories('edit', product.category).then(() => {
         document.getElementById('edit-subcategory').value = product.subcategory || 'General';

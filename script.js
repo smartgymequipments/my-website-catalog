@@ -160,8 +160,17 @@ const renderLatestProductsCarousel = () => {
             // Convert data object to array
             const products = Object.values(equipmentData);
 
-            // Filter items that have a date_added, and sort desc
-            const sorted = products.filter(p => p.date_added).sort((a, b) => b.date_added - a.date_added);
+            // Filter items that have show_in_latest = true (or default to true if missing for legacy)
+            const latestProducts = products.filter(p => {
+                // If it explicitly is typed false, skip it
+                if (p.show_in_latest === false) return false;
+
+                // Otherwise include it if it has a date_added (new product) or explicitly set to true
+                return p.show_in_latest === true || !!p.date_added;
+            });
+
+            // Sort remaining by date descending
+            const sorted = latestProducts.sort((a, b) => b.date_added - a.date_added);
 
             // Take top 10 latest
             const displayList = sorted.slice(0, 10);
@@ -169,6 +178,8 @@ const renderLatestProductsCarousel = () => {
             if (displayList.length === 0) {
                 document.querySelector('.latest-products-section')?.classList.add('hidden');
                 return;
+            } else {
+                document.querySelector('.latest-products-section')?.classList.remove('hidden');
             }
 
             container.innerHTML = displayList.map((p, idx) => {
@@ -183,7 +194,7 @@ const renderLatestProductsCarousel = () => {
 
                 const loadingAttr = idx < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
                 return `
-                    <div class="category-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})'>
+                    <div class="category-card" onclick='openModalFromSearch(${JSON.stringify(p).replace(/'/g, "&#39;")})' style="flex: 0 0 85%; max-width: 320px; scroll-snap-align: start;">
                          <img src="${img}" alt="${p.name}" ${loadingAttr} decoding="async">
                          <div class="card-overlay">
                             <h3 class="dynamic-text" title="${p.name}">${p.name}</h3>
@@ -193,7 +204,22 @@ const renderLatestProductsCarousel = () => {
                 `;
             }).join('');
 
-            // Grid layout handled by CSS. Carousel auto-scroll removed per user request.
+            // Bind Carousel Arrow Navigation
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+
+            if (prevBtn && nextBtn && container) {
+                // Determine scroll amount roughly based on card width
+                const scrollAmount = 300;
+
+                prevBtn.onclick = () => {
+                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                };
+
+                nextBtn.onclick = () => {
+                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                };
+            }
         });
     }, 0);
 };

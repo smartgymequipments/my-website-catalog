@@ -1803,6 +1803,31 @@ body {
     transform: rotate(45deg);
 }
 
+/* Latest Arrivals Carousel Restoration */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding: 1rem 0;
+
+    /* Hide scrollbars but keep functionality */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
 .carousel-nav-btn {
     position: absolute;
     z-index: 10;
