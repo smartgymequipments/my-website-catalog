@@ -703,7 +703,7 @@ function openModal(item) {
                             : `<img src="${thumb}" style="width: 100%; height: 100%; object-fit: cover;">`
                         }
                             </div>
-                            <div style="font-size: 14px; font-weight: bold; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${variant.name}">${variant.name}</div>
+                            <div class="variant-name" title="${variant.name}">${variant.name}</div>
                         </div>
                     `;
                 });
