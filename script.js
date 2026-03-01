@@ -654,6 +654,20 @@ function openModal(item) {
             modalVariantsContainer.style.display = 'block';
             let html = '';
 
+            let assignedImages = new Set();
+            item.variants.forEach(v => {
+                if (v.images) v.images.forEach(img => assignedImages.add(img));
+            });
+
+            let unassignedImages = [];
+            if (item.images) {
+                item.images.forEach(img => {
+                    if (!assignedImages.has(img)) {
+                        unassignedImages.push(img);
+                    }
+                });
+            }
+
             // Group variants by category
             const groupedVariants = {};
             item.variants.forEach(v => {
@@ -661,6 +675,18 @@ function openModal(item) {
                 if (!groupedVariants[cat]) groupedVariants[cat] = [];
                 groupedVariants[cat].push(v);
             });
+
+            if (unassignedImages.length > 0) {
+                if (!groupedVariants['Other variants']) {
+                    groupedVariants['Other variants'] = [];
+                }
+                groupedVariants['Other variants'].push({
+                    id: 'var_other_unassigned',
+                    name: 'Other',
+                    category: 'Other variants',
+                    images: unassignedImages
+                });
+            }
 
             for (const [catName, vars] of Object.entries(groupedVariants)) {
                 html += `<h4 style="color: #FFD700; font-size: 14px; margin-top: 10px; margin-bottom: 8px; font-weight: 600;">${catName}</h4>`;
